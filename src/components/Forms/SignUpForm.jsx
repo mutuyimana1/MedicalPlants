@@ -1,0 +1,110 @@
+import { Button, Form, Input } from "antd";
+import { useState } from "react";
+import sigunImage from "../../assets/images/undraw_undraw_undraw_undraw_sign_up_ln1s_-1-_s4bc_-1-_ee41_-1-_kf4d.svg";
+import { BiShow, BiSolidHide } from "react-icons/bi";
+import { useNavigate } from "react-router-dom";
+
+const SignUpForm = () => {
+    const [showPassword, setShowPassword] = useState(false);
+    const handlePasswordToggle = () => {
+        setShowPassword(!showPassword);
+      };
+    const [showResetPassword, setShowResetPassword] = useState(false);
+    const handleResetPasswordToggle = () => {
+        setShowResetPassword(!showResetPassword);
+      };
+  const onSubmit = async (values) => {
+    console.log("values", values);
+  };
+const navigate=useNavigate();
+  return (
+    <>
+      <div className="w-full flex mt-[5%] gap-10 justify-center items-center">
+        <div className="w-2/5  mt-10 border border-[#025222] rounded-md p-5">
+          <img src={sigunImage} className="w-full h-full"/>
+        </div>
+        <Form className="w-2/6" layout="vertical">
+            <h1 className="text-center text-lg font-medium text-[#030229]">Sign Up </h1>
+          <div className="flex w-full mt-6">
+            
+            <div className="w-1/2 mr-2">
+              <Form.Item label=<h1 className="text-base">First Name</h1> name={"name"}>
+                <Input
+                  placeholder="Enter first name"
+                  className="rounded-lg h-12"
+                />
+              </Form.Item>
+            </div>
+            <div className="w-1/2 ml-2">
+              <Form.Item label=<h1 className="text-base">Last Name</h1> name={"name"}>
+                <Input
+                  placeholder="Enter Last name"
+                  className="rounded-lg h-12"
+                />
+              </Form.Item>
+            </div>
+          </div>
+          <Form.Item label=<h1 className="text-base">Email</h1> name={"email"}>
+            <Input placeholder="Enter email" className="rounded-lg h-12" />
+          </Form.Item>
+          <Form.Item label=<h1 className="text-base">Phone Number</h1> name={"phone"}>
+            <Input
+              placeholder="Enter phone number"
+              className="rounded-lg h-12"
+            />
+          </Form.Item>
+          <div className="flex w-full mt-2">
+            <div className="w-1/2 mr-2">
+              <Form.Item label=<h1 className="text-base pt-2 ">Password</h1> name={"password"} className="relative">
+                <Input
+                  placeholder="Enter Password"
+                  className="rounded-lg h-12"
+                  type={showPassword ? "text" : "password"}
+                />
+                <button
+                className="absolute top-1 right-0 p-2 rounded-lg text-sm"
+                onClick={handlePasswordToggle}
+              >
+                {showPassword ? <BiSolidHide size={20} color="#025222"/> : <BiShow size={20} color="#025222"/>}
+              </button>
+              </Form.Item>
+            </div>
+            <div className="w-1/2 ml-2">
+              <Form.Item label=<h1 className="text-base pt-2">Confirm Password</h1> name={"confirm"} className="relative">
+                <Input
+                  placeholder="re-inter password"
+                  type={showResetPassword ? "text" : "password"}
+                  className="rounded-lg h-12"
+                />
+                 <button
+                className="absolute top-1 right-0 p-2 rounded-lg text-sm"
+                onClick={handleResetPasswordToggle}
+              >
+                {showResetPassword ? <BiSolidHide size={20} color="#025222"/> : <BiShow size={20} color="#025222"/>}
+              </button>
+              </Form.Item>
+            </div>
+          </div>
+          <div className="flex gap-5 float-right"><p>Orleady have an Account?</p> <Button onClick={()=>navigate("/login")}
+          type="submit"
+          className=" w-42 bg-[#025222] text-white disabled:opacity-50 disabled:cursor-not-allowed    "
+          // disabled={isPending}
+        >
+         Login
+        </Button></div>
+          <Button
+            type="submit"
+            className="mt-7 w-full bg-[#025222] text-white disabled:opacity-50 disabled:cursor-not-allowed    "
+            // disabled={isPending}
+            onClick={()=>navigate("/dash")}
+          >
+            {" "}
+            Sign Up
+          </Button>
+        </Form>
+      </div>
+    </>
+  );
+};
+
+export default SignUpForm;
