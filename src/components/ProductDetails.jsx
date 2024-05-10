@@ -11,10 +11,14 @@ import { HiOutlineMinus } from "react-icons/hi2";
 import Button from "./Button";
 import ProductCard from "./ProductCard";
 import Footer from "./Footer";
+import aboutImage from "../assets/images/product-1-1 (1).png";
+import aboutImage1 from "../assets/images/download (2).png";
+import aboutImage2 from "../assets/images/download (3).png";
+import aboutImage3 from "../assets/images/download (4).png";
 const ProductDetails = () => {
   const images = [img, img2, img3, img4];
-  const [currentImage,setCurrentImage]=useState(img2)
-const [count,setCount]=useState(1);
+  const [currentImage, setCurrentImage] = useState(img2);
+  const [count, setCount] = useState(1);
   const navigate = useNavigate();
   return (
     <div className="w-full">
@@ -23,18 +27,18 @@ const [count,setCount]=useState(1);
         <h1 className="text-2xl font-semibold text-center">Product Details</h1>
         <p className="text-base font-normal">Home /Product /Details</p>
       </div>
-      <div className="w-[85%] m-auto flex gap-5 h-[40rem]">
-        <div className="w-2/5 h-full">
+      <div className="w-[85%] m-auto md:flex gap-5 h-[40rem]">
+        <div className=" w-full md:w-2/5 h-full">
           {" "}
           <div className="w-full h-[70%] flex items-center justify-center bg-gray-200">
-            <img src={currentImage} alt="" className="w-[50%] h-[50%]"/>
+            <img src={currentImage} alt="" className="w-[50%] h-[50%]" />
           </div>
           <div className="w-full h-[25%] mt-2 bg-gray-200 rounded-sm flex gap-5 justify-center items-center">
             {images?.map((el) => {
               return (
                 <img
                   src={el}
-                  onClick={()=>setCurrentImage(el)}
+                  onClick={() => setCurrentImage(el)}
                   alt=""
                   className="w-24 h-24 rounded-md border border-green-300"
                 />
@@ -42,7 +46,7 @@ const [count,setCount]=useState(1);
             })}
           </div>
         </div>
-        <div className="ml-10 w-1/2">
+        <div className="ml-10 w-full md:w-1/2">
           <h1 className="text-base font-medium">Details about product</h1>
           <div className="flex gap-2 pt-3">
             <IoMdStar color="#FFBA00" size={20} />
@@ -53,19 +57,21 @@ const [count,setCount]=useState(1);
           </div>
           <div className="p-2 md:w-[55%] w-full mt-5">
             <h1 className="text-[#030229] font-medium text-2xl underline">
-              Banana Juice
+              Urtica massaica
             </h1>
             <p className="text-[#030229] font-medium text-md pt-3">
-              Sub Price:{" "}
-              <span className="font-medium text-sm pl-4"> 65000 RFW</span>
+              Kinyarwanda Name
+              <span className="font-medium text-sm pl-4"> Igisura</span>
             </p>
             <p className="text-[#030229] font-medium text-md py-1">
               {" "}
-              Tax: <span className="font-medium text-sm pl-4"> 500 RFW</span>
+              Scientific name:{" "}
+              <span className="font-medium text-sm pl-4"> Urtica massaica</span>
             </p>
             <p className="text-[#030229] font-medium text-md py-[2px]">
               {" "}
-              Bonus: <span className="font-medium text-sm pl-4"> 200 RFW</span>
+              Common name:{" "}
+              <span className="font-medium text-sm pl-4"> Urticaceae</span>
             </p>
             <p className="text-[#030229] font-medium text-md py-1">
               {" "}
@@ -73,33 +79,66 @@ const [count,setCount]=useState(1);
               <span className="font-bold text-xl pl-4"> 65300 RFW</span>
             </p>
             <p className="text-[#030229B2] text-sm pt-2">
-              Brand: <span className="pl-20">Sina Gerald </span>
+              Family: <span className="pl-20">Urticaceae </span>
             </p>
             <p className="text-[#030229B2] text-sm py-1">
-              Product Code: <span className="pl-8">344eed4 </span>
+              Part to be used: <span className="pl-8">Leaves and stem </span>
             </p>
             <p className="text-[#030229B2] text-sm">
-              Expired date: <span className="pl-11">Jan.2030 </span>
+              Medicinal use:{" "}
+              <span className="pl-11">
+                : Fresh roots are ground, cooked in banana beer and drunk to
+                treat gonorrhoea. Treatment of Arthritis and Joint Pain, Blood
+                Purification and Detoxification; Treatment of Urinary Disorders,
+                Bacteria; Biliousness; Bite; Bleeding; Complexion;
+                Constipation;Diabetes, Dysentery; Hemoptysis; Hemorrhoid;
+                Hepatosis ,Infection; Inflammation, Diarrheal
+              </span>
             </p>
             <p className="text-[#030229B2] text-sm pt-1">
-              Availability: <span className="pl-14"> in Stock </span>
+              Dosages and preparation:{" "}
+              <span className="pl-14">
+                {" "}
+                To orally administer the macerated fresh leaves or the filtrate
+                of dry and crushed stems: 2 spoons three times per day (morning,
+                midday, and evening) for 5 days.{" "}
+              </span>
             </p>
             <h1 className="text-[#030229] font-medium text-xl pt-4">
-              OverView
+              Side effects
             </h1>
             <p className="text-[#030229B2] text-sm pt-2">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip. Excepteur sint occaecat cupida...
+              Fresh roots are crushed, boiled and strained, and the liquid is
+              used to treat gonorrhoea and syphilis. Fresh leaf juice, sometimes
+              with Erythrina sacleuxii Hua, is used for the treatment of
+              leprosy. Leaf and roots are used for pleurisy, inflammatory
+              conditions of chest and for oxytocic activity. Is extensively used
+              in many skin disease medicine.
+            </p>
+            <h1 className="text-[#030229] font-medium text-xl pt-4">
+              Description
+            </h1>
+            <p className="text-[#030229B2] text-sm pt-2">
+              : Urtica massaica, may cause skin irritation upon contact due to
+              its stinging hairs, and in some cases, ingestion may lead to
+              gastrointestinal discomfort or allergic reactions
             </p>
           </div>
           <div>Categories:</div>
           <div className="flex gap-3 mt-2">
             <div className="flex items-center justify-center gap-2 border py-2 px-5 rounded-md">
-             <button disabled={count <= 1} onClick={()=>setCount(count-1)} ><HiOutlineMinus size={20} className="cursor-pointer"/></button> 
+              <button disabled={count <= 1} onClick={() => setCount(count - 1)}>
+                <HiOutlineMinus size={20} className="cursor-pointer" />
+              </button>
               <p className="px-4">{count}</p>
-             <button> <GoPlus size={20} onClick={()=>setCount(count+1)}  className="cursor-pointer"/></button>
+              <button>
+                {" "}
+                <GoPlus
+                  size={20}
+                  onClick={() => setCount(count + 1)}
+                  className="cursor-pointer"
+                />
+              </button>
             </div>
             <Button
               name={"Add To Cart"}
@@ -110,15 +149,70 @@ const [count,setCount]=useState(1);
           </div>
         </div>
       </div>
-      <div className="mt-10">
+      <div className="mt-[60rem] lg:mt-[50rem] xl:mt-[30rem] 2xl:mt-80">
         <h1 className="text-2xl font-semibold text-center">Related Products</h1>
       </div>
-      <div className="p-10 flex flex-wrap gap-5 w-[90%] m-auto">
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+      <div className="p-10 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5 w-full m-auto">
+        <ProductCard
+          status={"For Sale"}
+          img1={aboutImage1}
+          img2={aboutImage2}
+          name={"Urtica massaica"}
+          amount={40000}
+          btnName={"ReadMore"}
+          btnSecondName={"Add to cart"}
+          description={
+            "Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"
+          }
+        />
+        <ProductCard
+          status={"Sold"}
+          img1={aboutImage1}
+          img2={aboutImage}
+          name={"Rubia cordifolia L"}
+          amount={50000}
+          btnName={"ReadMore"}
+          btnSecondName={"Add to cart"}
+          description={
+            "Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"
+          }
+        />
+        <ProductCard
+          status={"discount"}
+          img1={aboutImage2}
+          img2={aboutImage1}
+          name={"Rubia cordifolia L"}
+          amount={40000}
+          btnName={"ReadMore"}
+          btnSecondName={"Add to cart"}
+          description={
+            "Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"
+          }
+        />
+        <ProductCard
+          status={"For Sale"}
+          img1={aboutImage1}
+          img2={aboutImage2}
+          name={"Rubia cordifolia L"}
+          amount={3000}
+          btnName={"ReadMore"}
+          btnSecondName={"Add to cart"}
+          description={
+            "Clerodendrum myricoides is a tropical flowering shrub known for itsstriking blue-violet flowers and glossy green foliage."
+          }
+        />
+        <ProductCard
+          status={"For Sale"}
+          img1={aboutImage}
+          img2={aboutImage1}
+          name={"Rubia cordifolia L"}
+          amount={78000}
+          btnName={"ReadMore"}
+          btnSecondName={"Add to cart"}
+          description={
+            ": Tetradenia riparia, also known as Misty Plume Bush, is an aromatic shrubnative to Africa, characterized by its fragrant foliage and clusters of small, white or palepink flowers."
+          }
+        />
       </div>
       <Footer />
     </div>
