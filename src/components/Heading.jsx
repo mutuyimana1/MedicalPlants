@@ -20,8 +20,8 @@ const Heading = () => {
     <>
     <div className="block md:flex justify-between pl-3 lg:pl-10 xl:pl-[15rem]">
       <div className="w-full md:w-[40%]  pt-[10rem]">
-        <h1 className="text-[2.2rem] 2xl:text-[4.2rem] font-medium leading[1rem] 2xl:leading-[4rem] text-[#003F13]">Discover Premium Health & Beauty Product Brand.</h1>
-        <p className="text-lg font-medium leading-[1.5rem] text-[#363636] py-8">Medicinal plants platform is dedicated to  provide source of accurate, comprehensive, and accessible information on medicinal plants..</p>
+        <h1 className="text-[2.2rem] 2xl:text-[4.2rem] font-medium leading[1rem] 2xl:leading-[4rem] text-[#003F13]">A Steward of Nature's Bounty.</h1>
+        <p className="text-lg font-medium leading-[1.5rem] text-[#363636] py-8"> a passionate aficionado of nature's wonders, embarks on a noble mission to harness the profound healing potential of medicinal plants. Driven by a deep-rooted love for botanical marvels, Mr. Herbs has dedicated himself to unravelling the myriad health benefits concealed within these green treasures.</p>
         <CustomButton/>
         {/* <div className="flex gap-2 mt-2 cursor-pointer pt-4 text-[#363636] font-bold">View All Products <MdOutlineReadMore size={25}/></div> */}
       </div>
