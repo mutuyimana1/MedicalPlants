@@ -44,9 +44,11 @@
    position: absolute;
    left: 0;
    right: 0; 
+   color: white;
+   font-size: 20px;
    border-radius: 3px; 
    top: 100%;
-   background-color: #61CE70;
+   background-color: #025222;
    margin-left: 4px;
    transform: translateY(-10px);
    visibility: none;

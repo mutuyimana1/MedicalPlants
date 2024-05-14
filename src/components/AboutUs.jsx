@@ -23,9 +23,9 @@ const AboutUs = () => {
       </div>
     </div>
     <div>
-      <div className="w-full shadow-md p-2 py-4">
+      <div className="w-full shadow-md p-2 py-4 bg-[#025222] text-white">
 
-    <h1 className="text-center font-medium text-[#363636] text-2xl ">Get More Information about Side Effects of using medicinal Plants</h1>
+    <h1 className="text-center font-medium  text-2xl ">Get More Information about Side Effects of using medicinal Plants</h1>
       </div>
       <div className="p-10 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5 w-full m-auto">
       <ProductCard  img1={aboutImage1} img2={aboutImage2} name={"Urtica massaica"} btnName={"ReadMore"} description={"Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"} onClick={()=>navigate("/product/view")}/>
@@ -35,11 +35,14 @@ const AboutUs = () => {
       <ProductCard  img1={aboutImage1} img2={aboutImage2} name={"Urtica massaica"} btnName={"ReadMore"} description={"Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"} onClick={()=>navigate("/product/view")}/>
       </div>
     </div>
-      <div className="px-20 pt-5">
-        <h1 className="text-center font-bold text-[#363636] text-2xl uppercase">Available medicinal products</h1>
+      <div className=" pt-5">
+        <div className="w-full shadow-md p-2 py-4 bg-[#025222] text-white">
+
+        <h1 className="text-center font-bold text-2xl uppercase">Available medicinal products</h1>
+        </div>
         <p className="text-center py-3">Torem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo tempor incididunt ut labore</p>
       </div>
-      <div className="p-10 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5 w-full m-auto">
+      <div className="p-10 px-20 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5 w-full m-auto">
         <ProductCard status={"For Sale"} img1={aboutImage1} img2={aboutImage2} name={"Urtica massaica"}amount={40000} btnName={"ReadMore"} btnSecondName={"Add to cart"} description={"Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"} onClick={()=>navigate("/product/details")}/>
         <ProductCard status={"Sold"} img1={aboutImage1} img2={aboutImage} name={"Rubia cordifolia L"}amount={50000} btnName={"ReadMore"} btnSecondName={"Add to cart"} description={"Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"} onClick={()=>navigate("/product/details")}/>
         <ProductCard status={"discount"} img1={aboutImage2} img2={aboutImage1} name={"Rubia cordifolia L"}amount={40000} btnName={"ReadMore"} btnSecondName={"Add to cart"} description={"Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"} onClick={()=>navigate("/product/details")}/>

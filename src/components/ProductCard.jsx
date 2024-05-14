@@ -6,7 +6,7 @@ const ProductCard = ({status,img1,img2,name,description,amount,btnName,btnSecond
   const [hidden, setHidden] = useState(true);
   return (
     <div className="shadow-md rounded-md ws-64 relative pb-3" >
-        <div className={`absolute top-2 ${status==="For Sale" && "bg-green-500 " } ${status==="Sold" && "bg-red-500 " } ${status==="discount"&& "bg-yellow-500 "} text-white px-1 py-0.5 rounded-md m-1`}>
+        <div className={`absolute top-2 ${status==="For Sale" && "bg-[#025222] " } ${status==="Sold" && "bg-red-500 " } ${status==="discount"&& "bg-yellow-500 "} text-white px-1 py-0.5 rounded-md m-1`}>
             <p> {status}</p>
         </div>
         {/* <div className="absolute top-12 bg-red-500 px-2 py-0.5 rounded-md m-1">

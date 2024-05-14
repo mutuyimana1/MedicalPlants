@@ -9,7 +9,7 @@ import { AiOutlineDelete } from "react-icons/ai";
 import { AiOutlineEdit } from "react-icons/ai";
 const items = [
   {
-    label:<div className='flex gap-2'><GrFormView size={23} color='green'/> <h1 className='text-green-500'>View</h1></div> ,
+    label:<div className='flex gap-2'><GrFormView size={23} color='green'/> <h1 className='text-[#025222]'>View</h1></div> ,
     key: '0',
   },
   {
