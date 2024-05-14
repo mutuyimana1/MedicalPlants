@@ -28,11 +28,11 @@ const AboutUs = () => {
     <h1 className="text-center font-medium text-[#363636] text-2xl ">Get More Information about Side Effects of using medicinal Plants</h1>
       </div>
       <div className="p-10 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5 w-full m-auto">
-      <ProductCard  img1={aboutImage1} img2={aboutImage2} name={"Urtica massaica"}amount={40000} btnName={"ReadMore"} description={"Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"} onClick={()=>navigate("/product/view")}/>
-      <ProductCard  img1={aboutImage1} img2={aboutImage2} name={"Urtica massaica"}amount={40000} btnName={"ReadMore"} description={"Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"} onClick={()=>navigate("/product/view")}/>
-      <ProductCard  img1={aboutImage1} img2={aboutImage2} name={"Urtica massaica"}amount={40000} btnName={"ReadMore"} description={"Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"} onClick={()=>navigate("/product/view")}/>
-      <ProductCard  img1={aboutImage1} img2={aboutImage2} name={"Urtica massaica"}amount={40000} btnName={"ReadMore"} description={"Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"} onClick={()=>navigate("/product/view")}/>
-      <ProductCard  img1={aboutImage1} img2={aboutImage2} name={"Urtica massaica"}amount={40000} btnName={"ReadMore"} description={"Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"} onClick={()=>navigate("/product/view")}/>
+      <ProductCard  img1={aboutImage1} img2={aboutImage2} name={"Urtica massaica"} btnName={"ReadMore"} description={"Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"} onClick={()=>navigate("/product/view")}/>
+      <ProductCard  img1={aboutImage1} img2={aboutImage2} name={"Urtica massaica"} btnName={"ReadMore"} description={"Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"} onClick={()=>navigate("/product/view")}/>
+      <ProductCard  img1={aboutImage1} img2={aboutImage2} name={"Urtica massaica"} btnName={"ReadMore"} description={"Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"} onClick={()=>navigate("/product/view")}/>
+      <ProductCard  img1={aboutImage1} img2={aboutImage2} name={"Urtica massaica"} btnName={"ReadMore"} description={"Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"} onClick={()=>navigate("/product/view")}/>
+      <ProductCard  img1={aboutImage1} img2={aboutImage2} name={"Urtica massaica"} btnName={"ReadMore"} description={"Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"} onClick={()=>navigate("/product/view")}/>
       </div>
     </div>
       <div className="px-20 pt-5">
