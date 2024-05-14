@@ -26,7 +26,7 @@ const ProductCard = ({status,img1,img2,name,description,amount,btnName,btnSecond
       <div className="px-4">
         <h1 className="font-bold text-lg ">{name}</h1>
         <p className="py-2">{description}</p>
-        <p>{amount} Rwf</p>
+        {amount &&<p>{amount} Rwf</p>}
        <div className="py-1 mt-2" onClick={onClick}><Button name={btnName} color="black" border={"red-500"} /></div> 
         {hidden ? (
           ""
