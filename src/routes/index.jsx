@@ -19,6 +19,7 @@ import VegetablePlants from '../pages/VegetablePlants'
 import FlowerPlants from '../pages/FlowerPlants'
 import EdiblePlants from '../pages/EdiblePlants'
 import OthersPlants from '../pages/OthersPlants'
+import ViewProducts from '../components/ViewProduct'
 const Index = () => {
   return (
     <Router>
@@ -27,9 +28,10 @@ const Index = () => {
         <Route path='/Product/details' element={<ProductDetails />} />
         <Route path='/shop' element={<Shop />} />
         <Route path='/medicinalplants/vegetables' element={<VegetablePlants />} />
-        <Route path='/medecinalplants/flowers' element={<FlowerPlants />} />
-        <Route path='/medecinalplants/edible' element={<EdiblePlants />} />
-        <Route path='/medecinalplants/others' element={<OthersPlants />} />
+        <Route path='/medicinalplants/flowers' element={<FlowerPlants />} />
+        <Route path='/medicinalplants/edible' element={<EdiblePlants />} />
+        <Route path='/medicinalplants/others' element={<OthersPlants />} />
+        <Route path='/Product/view' element={<ViewProducts />} />
         <Route path='/checkout' element={<Checkout />} />
         <Route path='/cart' element={<ViewCart />} />
         <Route path='/signup' element={<SignUpForm />} />

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import Button from "./Button";
 import { useNavigate } from "react-router-dom";
-const ProductCard = ({status,img1,img2,name,description,amount,btnName,btnSecondName}) => {
+const ProductCard = ({status,img1,img2,name,description,amount,btnName,btnSecondName,onClick}) => {
     const navigate=useNavigate();
   const [hidden, setHidden] = useState(true);
   return (
-    <div className="shadow-md rounded-md ws-64 relative pb-3" onClick={()=>navigate("/product/details")}>
-        <div className={`absolute top-2 ${status==="Sold"?"bg-red-500 ":"bg-green-500" } ${status==="discount"?"bg-yellow-500 ":"bg-green-500" } text-white px-1 py-0.5 rounded-md m-1`}>
+    <div className="shadow-md rounded-md ws-64 relative pb-3" >
+        <div className={`absolute top-2 ${status==="For Sale" && "bg-green-500 " } ${status==="Sold" && "bg-red-500 " } ${status==="discount"&& "bg-yellow-500 "} text-white px-1 py-0.5 rounded-md m-1`}>
             <p> {status}</p>
         </div>
         {/* <div className="absolute top-12 bg-red-500 px-2 py-0.5 rounded-md m-1">
@@ -27,11 +27,11 @@ const ProductCard = ({status,img1,img2,name,description,amount,btnName,btnSecond
         <h1 className="font-bold text-lg ">{name}</h1>
         <p className="py-2">{description}</p>
         <p>{amount} Rwf</p>
-       <div className="py-1 mt-2" onClick={()=>navigate("/productdetails")}><Button name={btnName} color="black" border={"red-500"} /></div> 
+       <div className="py-1 mt-2" onClick={onClick}><Button name={btnName} color="black" border={"red-500"} /></div> 
         {hidden ? (
           ""
         ) : (
-          <div className="absolute top-[10rem] w-full px-6 " onClick={()=>navigate("/productdetails")}>
+        btnSecondName &&  <div className="absolute top-[10rem] w-full px-6 " onClick={onClick}>
             <Button name={btnSecondName} color="red-500" bgColor={"white"}/>
           </div>
         )}

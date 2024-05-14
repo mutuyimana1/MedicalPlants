@@ -15,7 +15,7 @@ import aboutImage from "../assets/images/product-1-1 (1).png";
 import aboutImage1 from "../assets/images/download (2).png";
 import aboutImage2 from "../assets/images/download (3).png";
 import aboutImage3 from "../assets/images/download (4).png";
-const ProductDetails = () => {
+const ViewProducts = () => {
   const images = [img, img2, img3, img4];
   const [currentImage, setCurrentImage] = useState(img2);
   const [count, setCount] = useState(1);
@@ -48,13 +48,7 @@ const ProductDetails = () => {
         </div>
         <div className="ml-10 w-full md:w-1/2">
           <h1 className="text-base font-medium">Details about product</h1>
-          <div className="flex gap-2 pt-3">
-            <IoMdStar color="#FFBA00" size={20} />
-            <IoMdStar color="#FFBA00" size={20} />
-            <IoMdStar color="#FFBA00" size={20} />
-            <IoMdStar color="#FFBA00" size={20} />
-            <p>1 Review</p>
-          </div>
+        
           <div className="p-2 md:w-[55%] w-full mt-5">
             <h1 className="text-[#030229] font-medium text-2xl underline">
               Urtica massaica
@@ -72,11 +66,6 @@ const ProductDetails = () => {
               {" "}
               Common name:{" "}
               <span className="font-medium text-sm pl-4"> Urticaceae</span>
-            </p>
-            <p className="text-[#030229] font-medium text-md py-1">
-              {" "}
-              Total Price:{" "}
-              <span className="font-bold text-xl pl-4"> 65300 RFW</span>
             </p>
             <p className="text-[#030229B2] text-sm pt-2">
               Family: <span className="pl-20">Urticaceae </span>
@@ -125,28 +114,7 @@ const ProductDetails = () => {
             </p>
           </div>
           <div>Categories:</div>
-          <div className="flex gap-3 mt-2">
-            <div className="flex items-center justify-center gap-2 border py-2 px-5 rounded-md">
-              <button disabled={count <= 1} onClick={() => setCount(count - 1)}>
-                <HiOutlineMinus size={20} className="cursor-pointer" />
-              </button>
-              <p className="px-4">{count}</p>
-              <button>
-                {" "}
-                <GoPlus
-                  size={20}
-                  onClick={() => setCount(count + 1)}
-                  className="cursor-pointer"
-                />
-              </button>
-            </div>
-            <Button
-              name={"Add To Cart"}
-              color={"black"}
-              width={"[50px]"}
-              onClick={() => navigate("/cart")}
-            />
-          </div>
+        
         </div>
       </div>
       <div className="mt-[60rem] lg:mt-[50rem] xl:mt-[30rem] 2xl:mt-80">
@@ -154,66 +122,51 @@ const ProductDetails = () => {
       </div>
       <div className="p-10 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5 w-full m-auto">
         <ProductCard
-          status={"For Sale"}
           img1={aboutImage1}
+          onClick={()=>navigate("/product/view")}
           img2={aboutImage2}
-          onClick={()=>navigate("/product/details")}
           name={"Urtica massaica"}
-          amount={40000}
           btnName={"ReadMore"}
-          btnSecondName={"Add to cart"}
           description={
             "Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"
           }
         />
         <ProductCard
-          status={"Sold"}
           img1={aboutImage1}
           img2={aboutImage}
-          onClick={()=>navigate("/product/details")}
+          onClick={()=>navigate("/product/view")}
           name={"Rubia cordifolia L"}
-          amount={50000}
           btnName={"ReadMore"}
-          btnSecondName={"Add to cart"}
           description={
             "Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"
           }
         />
         <ProductCard
-          status={"discount"}
           img1={aboutImage2}
           img2={aboutImage1}
-          onClick={()=>navigate("/product/details")}
+          onClick={()=>navigate("/product/view")}
           name={"Rubia cordifolia L"}
-          amount={40000}
           btnName={"ReadMore"}
-          btnSecondName={"Add to cart"}
           description={
             "Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"
           }
         />
         <ProductCard
-          status={"For Sale"}
           img1={aboutImage1}
           img2={aboutImage2}
-          onClick={()=>navigate("/product/details")}
+          onClick={()=>navigate("/product/view")}
           name={"Rubia cordifolia L"}
-          amount={3000}
           btnName={"ReadMore"}
-          btnSecondName={"Add to cart"}
           description={
             "Clerodendrum myricoides is a tropical flowering shrub known for itsstriking blue-violet flowers and glossy green foliage."
           }
         />
         <ProductCard
-          status={"For Sale"}
           img1={aboutImage}
           img2={aboutImage1}
-          onClick={()=>navigate("/product/details")}
+          onClick={()=>navigate("/product/view")}
           name={"Rubia cordifolia L"}
-          amount={78000}
           btnName={"ReadMore"}
-          btnSecondName={"Add to cart"}
           description={
             ": Tetradenia riparia, also known as Misty Plume Bush, is an aromatic shrubnative to Africa, characterized by its fragrant foliage and clusters of small, white or palepink flowers."
           }
@@ -224,5 +177,4 @@ const ProductDetails = () => {
   );
 };
 
-
-export default ProductDetails;
+export default ViewProducts;

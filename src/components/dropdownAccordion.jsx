@@ -2,12 +2,12 @@ import React from 'react';
 import { CaretRightOutlined } from '@ant-design/icons';
 import { Collapse, theme } from 'antd';
 const text = `
-Finding the right health plan ensures you & your family stay financially protected when unexpected illness or injury strikes. But why stop there? ACKO Platinum Health Insurance Plans take it up a notch! With zero deductions on claims, and fantastic built-in add-ons, we provide an extra cushion during medical emergencies.
+Finding the right health plan ensures you & your family stay financially protected when unexpected illness or injury strikes. But why stop there? ACKO Platinum Health Insurance Plans take it up a notch! With zero deductions on claims, and fantastic built-in add-ons, we provide an extra cushion during medicinal emergencies.
 `;
 const getItems = (panelStyle) => [
   {
     key: '1',
-    label: <h1 className='text-lg font-medium'>Medical Plants</h1>,
+    label: <h1 className='text-lg font-medium'>medicinal Plants</h1>,
     children: <ul className='text-xl py-2 pl-10 cursor-pointer'>
         <li className='pt-1 cursor-pointer'>Vegetables</li>
         <li className='pt-1 cursor-pointer'>Flowers</li>

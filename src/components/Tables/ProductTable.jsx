@@ -74,8 +74,8 @@ const ProductTable = () => {
       // width:40
     },
     // {
-    //   title: 'Medical Use',
-    //   dataIndex: 'medicalUse',
+    //   title: 'medicinal Use',
+    //   dataIndex: 'medicinalUse',
      
     // },
     {
@@ -111,9 +111,9 @@ const ProductTable = () => {
   const data = [
     {
       key: '1',
-      name: 'Medical ',
+      name: 'medicinal ',
       description: "Dried leaves are boiled in water and drunk to treat liver disease.Bark is used for snake bite. Root and bark are used for East Coast fever in cattle,root is used for dysentery,diarrhea, impotence, sterility, spleen enlargement andcough.",
-      medicalUse: 'Dried leaves are boiled in water and drunk to treat liver disease.Bark is used for snake bite. Root and bark are used for East Coast fever in cattle,root is used for dysentery, diarrhea, impotence, sterility, spleen enlargement andcough.',
+      medicinalUse: 'Dried leaves are boiled in water and drunk to treat liver disease.Bark is used for snake bite. Root and bark are used for East Coast fever in cattle,root is used for dysentery, diarrhea, impotence, sterility, spleen enlargement andcough.',
       prepation:"To orally administer the macerated fresh leaves or the filtrateof dry and crushed stems: 2 spoons three times per day (morning, midday, and evening)for 5 days",
       effect:"Urtica massaica, may cause skin irritation upon contact due to its stinginghairs, and in some cases, ingestion may lead to gastrointestinal discomfort or allergicreactions.",
       kinyarwanda:"Igisura",
@@ -126,7 +126,7 @@ const ProductTable = () => {
       key: '2',
       name: 'Rubia cordifolia ',
       description: "Prodcuct descriptions",
-      medicalUse: 'Amenorrhea; Bacteria; Biliousness; Bite; Bleeding;Complexion; Constipation; Cystosis,Dermatosis; Diabetes, Dysentery;Dysmenorrhea; Dysuria; Edema; Enterosis; Epistaxis; Erysipelas; Hemoptysis;Hemorrhoid; Hepatosis ,Infection; Inflammation; Leukoderma; Leukorrhea;Menorrhagia; Nephrosis, Diarrheal',
+      medicinalUse: 'Amenorrhea; Bacteria; Biliousness; Bite; Bleeding;Complexion; Constipation; Cystosis,Dermatosis; Diabetes, Dysentery;Dysmenorrhea; Dysuria; Edema; Enterosis; Epistaxis; Erysipelas; Hemoptysis;Hemorrhoid; Hepatosis ,Infection; Inflammation; Leukoderma; Leukorrhea;Menorrhagia; Nephrosis, Diarrheal',
       prepation:"To orally administer the macerated fresh leaves or the filtrateof dry and crushed stems: 2 spoons three times per day (morning, midday, and evening)for 5 days",
       kinyarwanda:"Umukarambwe",
       scientific:"Rubiaceae Cordifolio",
@@ -145,19 +145,19 @@ const ProductTable = () => {
       familly:"Rubiaceae",
       part:"",
       description: "Fresh roots are crushed, boiled and strained, and the liquid is used to treat gonorrhoea and syphilis. Fresh leaf juice, sometimes with Erythrina sacleuxiiHua, is used for the treatment of leprosy. Leaf and roots are used for pleurisy,inflammatory conditions of chest and for oxytocic activity. Is extensively useinmany skin disease medicine",
-      medicalUse: ' Fresh roots are ground, cooked in banana beer and drunk to treatgonorrhoea. Treatment of Arthritis and Joint Pain, Blood Purification and Detoxification;Treatment of Urinary Disorders, Bacteria; Biliousness; Bite; Bleeding; Complexion;Constipation;Diabetes, Dysentery; Hemoptysis; Hemorrhoid; Hepatosis ,Infection;Inflammation, Diarrheal.',
+      medicinalUse: ' Fresh roots are ground, cooked in banana beer and drunk to treatgonorrhoea. Treatment of Arthritis and Joint Pain, Blood Purification and Detoxification;Treatment of Urinary Disorders, Bacteria; Biliousness; Bite; Bleeding; Complexion;Constipation;Diabetes, Dysentery; Hemoptysis; Hemorrhoid; Hepatosis ,Infection;Inflammation, Diarrheal.',
       prepation:"To orally administer the macerated fresh leaves or the filtrateof dry and crushed stems: 2 spoons three times per day (morning, midday, and evening)for 5 days"
     },
     {
       key: '4',
-      name: 'Medical ',
+      name: 'medicinal ',
       kinyarwanda:"Umubilizi",
       scientific:"Rubiaceae Cordifolio",
       common:"Indian madder or Manjistha",
       familly:"Rubiaceae",
       part:"",
       description: "Prodcuct descriptions",
-      medicalUse: 'Vegetables',
+      medicinalUse: 'Vegetables',
       prepation:"To orally administer the macerated fresh leaves or the filtrateof dry and crushed stems: 2 spoons three times per day (morning, midday, and evening)for 5 days"
     },
     {
@@ -169,7 +169,7 @@ const ProductTable = () => {
       familly:"Rubiaceae",
       part:"Leaves and fruits",
       description: "Prodcuct descriptions",
-      medicalUse: 'Vegetables',
+      medicinalUse: 'Vegetables',
       prepation:"To orally administer the macerated fresh leaves or the filtrateof dry and crushed stems: 2 spoons three times per day (morning, midday, and evening)for 5 days"
     },
   ];
@@ -185,7 +185,7 @@ const ProductTable = () => {
       <p>To orally administer the macerated fresh leaves or the filtrateof dry and crushed stems: 2 spoons three times per day (morning, midday, and evening)for 5 days</p>
         </div> 
       <div className='flex gap-3 mt-3'>
-      <h1 className='py-3 poppins-bold w-[26rem]'>Medical Use</h1>
+      <h1 className='py-3 poppins-bold w-[26rem]'>medicinal Use</h1>
       <p>Dried leaves are boiled in water and drunk to treat liver disease.Bark is used for snake bite. Root and bark are used for East Coast fever in cattle,root is used for dysentery, diarrhea, impotence, sterility, spleen enlargement andcough.</p>
         </div> 
       <div className='flex gap-3 mt-3'>

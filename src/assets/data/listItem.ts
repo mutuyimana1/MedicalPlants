@@ -12,15 +12,15 @@ export const dropdownElement=[
             },
             {
                 title:"flower",
-                path:"/medecinalplants/flowers"
+                path:"/medicinalplants/flowers"
             },
             {
                 title:"Edible Plants",
-                path:"/medecinalplants/edible"
+                path:"/medicinalplants/edible"
             },
             {
                 title:"Not for kitchen daily activities",
-                path:"/medecinalplants/others"
+                path:"/medicinalplants/others"
             },
         ]
     },

@@ -63,25 +63,25 @@ const columns = [
 const data = [
   {
     key: '1',
-    name: 'Medical ',
+    name: 'medicinal ',
     description: "Prodcuct descriptions",
     category: 'Vegetables',
   },
   {
     key: '2',
-    name: 'Medical ',
+    name: 'medicinal ',
     description: "Prodcuct descriptions",
     category: 'Vegetables',
   },
   {
     key: '3',
-    name: 'Medical ',
+    name: 'medicinal ',
     description: "Prodcuct descriptions",
     category: 'Vegetables',
   },
   {
     key: '4',
-    name: 'Medical ',
+    name: 'medicinal ',
     description: "Prodcuct descriptions",
     category: 'Vegetables',
   },
