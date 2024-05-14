@@ -11,7 +11,7 @@ import DashboardLayout from "../components/DashboardLayout"
 import CreateProduct from '../pages/Dashboard/CreateProduct'
 import Dashboard from '../pages/Dashboard/dashboard'
 import OverView from '../pages/Dashboard/OverView'
-import Dash from '../pages/Tes'
+// import Dash from '../pages/Tes'
 import AllProducts from "../pages/Dashboard/AllProducts"
 import AllUsers from '../pages/Dashboard/Users/allUsers'
 import UserOverView from '../pages/Dashboard/Users/UserOverView'
@@ -20,6 +20,7 @@ import FlowerPlants from '../pages/FlowerPlants'
 import EdiblePlants from '../pages/EdiblePlants'
 import OthersPlants from '../pages/OthersPlants'
 import ViewProducts from '../components/ViewProduct'
+import Dash from '../pages/Dashboard/dash'
 const Index = () => {
   return (
     <Router>
@@ -36,6 +37,7 @@ const Index = () => {
         <Route path='/cart' element={<ViewCart />} />
         <Route path='/signup' element={<SignUpForm />} />
         <Route path='/login' element={<LoginForm />} />
+        <Route path='/dash' element={<Dash />} />
         <Route path='/dashboard' element={<DashboardLayout />} />
         
         {/* Nested routes under "/dashboard" */}

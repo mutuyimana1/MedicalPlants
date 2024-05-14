@@ -30,7 +30,7 @@ const DashboardLayout = ({ children }) => {
   const navigate = useNavigate(); // Initializing useNavigate
   const items = [
     getItem('Dashboard', '1',<PieChartOutlined />,null, () => {
-      navigate("/test"); // Navigate to dashboard route
+      navigate("/dash"); // Navigate to dashboard route
     }),
     getItem('Products', 'sub1', <UserOutlined />, [
       getItem('overView', '3',null,null,()=>{navigate("/dashboard/product/overview")}),
@@ -78,7 +78,7 @@ const DashboardLayout = ({ children }) => {
       </Sider>
       <Layout>
         <Header style={{ padding: 0, background: colorBgContainer }}>
-          <h1 className='text-center'>Header Content</h1>
+          <h1 className='text-center'>Dasboard</h1>
         </Header>
         <Content style={{ margin: '4px 10px' }}>
           <div style={{ padding: 24, minHeight: "90vh", background: colorBgContainer }}>
