@@ -46,7 +46,7 @@ const ProductDetails = () => {
             })}
           </div>
         </div>
-        <div className="ml-10 w-full md:w-1/2">
+        <div className="ml-10 w-full md:w-1/2 mt-10">
           <h1 className="text-base font-medium">Details about product</h1>
           <div className="flex gap-2 pt-3">
             <IoMdStar color="#FFBA00" size={20} />
@@ -84,45 +84,7 @@ const ProductDetails = () => {
             <p className="text-[#030229B2] text-sm py-1">
               Part to be used: <span className="pl-8">Leaves and stem </span>
             </p>
-            <p className="text-[#030229B2] text-sm">
-              Medicinal use:{" "}
-              <span className="pl-11">
-                : Fresh roots are ground, cooked in banana beer and drunk to
-                treat gonorrhoea. Treatment of Arthritis and Joint Pain, Blood
-                Purification and Detoxification; Treatment of Urinary Disorders,
-                Bacteria; Biliousness; Bite; Bleeding; Complexion;
-                Constipation;Diabetes, Dysentery; Hemoptysis; Hemorrhoid;
-                Hepatosis ,Infection; Inflammation, Diarrheal
-              </span>
-            </p>
-            <p className="text-[#030229B2] text-sm pt-1">
-              Dosages and preparation:{" "}
-              <span className="pl-14">
-                {" "}
-                To orally administer the macerated fresh leaves or the filtrate
-                of dry and crushed stems: 2 spoons three times per day (morning,
-                midday, and evening) for 5 days.{" "}
-              </span>
-            </p>
-            <h1 className="text-[#030229] font-medium text-xl pt-4">
-              Side effects
-            </h1>
-            <p className="text-[#030229B2] text-sm pt-2">
-              Fresh roots are crushed, boiled and strained, and the liquid is
-              used to treat gonorrhoea and syphilis. Fresh leaf juice, sometimes
-              with Erythrina sacleuxii Hua, is used for the treatment of
-              leprosy. Leaf and roots are used for pleurisy, inflammatory
-              conditions of chest and for oxytocic activity. Is extensively used
-              in many skin disease medicine.
-            </p>
-            <h1 className="text-[#030229] font-medium text-xl pt-4">
-              Description
-            </h1>
-            <p className="text-[#030229B2] text-sm pt-2">
-              : Urtica massaica, may cause skin irritation upon contact due to
-              its stinging hairs, and in some cases, ingestion may lead to
-              gastrointestinal discomfort or allergic reactions
-            </p>
+            
           </div>
           <div>Categories:</div>
           <div className="flex gap-3 mt-2">
@@ -149,7 +111,49 @@ const ProductDetails = () => {
           </div>
         </div>
       </div>
-      <div className="mt-[60rem] lg:mt-[50rem] xl:mt-[30rem] 2xl:mt-80">
+      <div className="px-20 mt-[30rem] md:mt-5 lg:mts-[50rem] xls:mt-[30rem] 2xls:mt-80 ">
+            <h1 className="text-[#030229] font-medium text-2xl text-center py-1"> Medicinal use:{" "}</h1> 
+      <p className="text-[#030229B2] text-sm">
+             
+                Fresh roots are ground, cooked in banana beer and drunk to
+                treat gonorrhoea. Treatment of Arthritis and Joint Pain, Blood
+                Purification and Detoxification; Treatment of Urinary Disorders,
+                Bacteria; Biliousness; Bite; Bleeding; Complexion;
+                Constipation;Diabetes, Dysentery; Hemoptysis; Hemorrhoid;
+                Hepatosis ,Infection; Inflammation, Diarrheal
+             
+            </p>
+            <h1 className="text-[#030229] font-medium text-2xl text-center py-3"> Dosages and preparation:{" "}</h1>
+            <p className="text-[#030229B2] text-sm pt-1">
+              
+             
+                {" "}
+                To orally administer the macerated fresh leaves or the filtrate
+                of dry and crushed stems: 2 spoons three times per day (morning,
+                midday, and evening) for 5 days.{" "}
+             
+            </p>
+      <h1 className="text-[#030229] font-medium text-xl pt-4 text-center py-3">
+              Side effects
+            </h1>
+            <p className="text-[#030229B2] text-sm pt-2">
+              Fresh roots are crushed, boiled and strained, and the liquid is
+              used to treat gonorrhoea and syphilis. Fresh leaf juice, sometimes
+              with Erythrina sacleuxii Hua, is used for the treatment of
+              leprosy. Leaf and roots are used for pleurisy, inflammatory
+              conditions of chest and for oxytocic activity. Is extensively used
+              in many skin disease medicine.
+            </p>
+            <h1 className="text-[#030229] font-medium text-xl pt-4 text-center py-3">
+              Description
+            </h1>
+            <p className="text-[#030229B2] text-sm pt-2">
+              Urtica massaica, may cause skin irritation upon contact due to
+              its stinging hairs, and in some cases, ingestion may lead to
+              gastrointestinal discomfort or allergic reactions
+            </p>
+      </div>
+      <div className="mts-[60rem] lg:mts-[50rem] xls:mt-[30rem] 2xls:mt-80 mt-5">
         <h1 className="text-2xl font-semibold text-center">Related Products</h1>
       </div>
       <div className="p-10 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5 w-full m-auto">

@@ -16,17 +16,17 @@ const LoginForm = () => {
 const navigate=useNavigate();
   return (
     <>
-      <div className="w-full flex mt-[5%] gap-10 justify-center items-center">
-        <div className="w-2/5  mt-10 border border-[#025222] rounded-md p-5">
+      <div className="w-full md:flex mt-[5%] gap-10 justify-center items-center">
+        <div className="w-full md:w-2/5  mt-10 border border-[#025222] rounded-md p-5">
           <img src={loginImage} className="w-full h-full"/>
         </div>
-        <Form className="w-2/6" layout="vertical">
+        <Form className="w-full md:w-2/6" layout="vertical">
             <h1 className="text-center text-lg font-medium text-[#030229] py-2">Login </h1>
          
               <Form.Item label=<h1 className="text-base">Email</h1> name={"email"}>
                 <Input
                   placeholder="Email"
-                  className="rounded-lg h-12 "
+                  className="rounded-lg h-12"
                 />
               </Form.Item>
            

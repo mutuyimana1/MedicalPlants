@@ -5,9 +5,9 @@ export const loginAction=(data)=>async(dispatch)=>{
     dispatch(authAction.setIsFetching(true));
     try {
         const res=await loginService(data);
-        if(res.status===200){
+        if(res){
             dispatch(authAction.setIsFetching(false))
-            dispatch(authAction.login(res.data));
+            dispatch(authAction.login(res));
         }
     } catch (error) {
         console.log("errr",error)
