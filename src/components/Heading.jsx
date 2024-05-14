@@ -1,11 +1,11 @@
 import React from "react";
 import CustomButton from "./CustomButton";
 import { MdOutlineReadMore } from "react-icons/md";
-import headingImage from "../assets/images/landing-page-1.png"
+import headingImage from "../assets/images/Tetradenia riparia(umuravumba).jpg"
 import leaveImage from "../assets/images/homeimg.jpg"
-import img2 from "../assets/images/pexels-photo-4036233.jpeg"
-import img3 from "../assets/images/product-1-1 (1).png"
-import img4 from "../assets/images/product-8.png"
+import img2 from "../assets/images/Urtica dioica L.(igisura).jpg"
+import img3 from "../assets/images/Clerodendrum myricoides R. Br.(umukuzanyana).jpg"
+import img4 from "../assets/images/Clerodendrum myricoides R. Br.(umukuzanyana).jpg"
 import { Carousel } from "antd";
 const Heading = () => {
   const contentStyle = {
