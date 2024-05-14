@@ -7,7 +7,7 @@ import { IoIosCloseCircleOutline } from "react-icons/io";
 import "./header.css";
 import  LogoIcons from "../assets/images/Logo_1.png"
 import SubHeader from "./SubHeader";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const NavBar = () => {
   const navigate=useNavigate();
   const [openMenu,setOpenMenu]=useState(false)
@@ -29,7 +29,7 @@ const NavBar = () => {
               <>
                 <li key={index} className="list_menu">
                   <div key={index} className="nav-menu flex">
-                    <a href={el.path} className="text-lg font-medium ">{el.title}</a>
+                    <Link to={el.path} className="text-lg font-medium ">{el.title}</Link>
                     {el?.subMenu && (
                       <span className="menu_icon mt-1">
                         <RiArrowDropDownLine size={25}/>
