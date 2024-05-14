@@ -1,7 +1,7 @@
 import React from "react";
-import aboutImage from "../assets/images/product-1-1 (1).png";
-import aboutImage1 from "../assets/images/download (2).png";
-import aboutImage2 from "../assets/images/download (3).png";
+import aboutImage from "../assets/images/Tetradenia riparia(umuravumba).jpg";
+import aboutImage1 from "../assets/images/Urtica dioica L.(igisura).jpg";
+import aboutImage2 from "../assets/images/Clerodendrum myricoides R. Br.(umukuzanyana).jpg";
 import aboutImage3 from "../assets/images/download (4).png";
 import ProductCard from "./ProductCard";
 const AboutUs = () => {

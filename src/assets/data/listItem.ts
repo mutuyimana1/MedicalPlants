@@ -3,27 +3,27 @@ export const dropdownElement=[
         title:"Home",
         path:"/",
     },
-    // {
-    //     title:"Medicinal Plants",
-    //     subMenu:[
-    //         {
-    //             title:"Vegetables",
-    //             path:"/medicinalplants/vegetables"
-    //         },
-    //         {
-    //             title:"flower",
-    //             path:"/medicalplants/flowers"
-    //         },
-    //         {
-    //             title:"Edible Plants",
-    //             path:"/medicalplants/edible"
-    //         },
-    //         {
-    //             title:"Not for kitchen daily activities",
-    //             path:"/medicalplants/others"
-    //         },
-    //     ]
-    // },
+    {
+        title:"Medicinal Plants",
+        subMenu:[
+            {
+                title:"Vegetables",
+                path:"/medicinalplants/vegetables"
+            },
+            {
+                title:"flower",
+                path:"/medecinalplants/flowers"
+            },
+            {
+                title:"Edible Plants",
+                path:"/medecinalplants/edible"
+            },
+            {
+                title:"Not for kitchen daily activities",
+                path:"/medecinalplants/others"
+            },
+        ]
+    },
     {
         title:"Shop",
         path:"shop"

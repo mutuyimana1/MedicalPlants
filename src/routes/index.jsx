@@ -15,6 +15,10 @@ import Dash from '../pages/Tes'
 import AllProducts from "../pages/Dashboard/AllProducts"
 import AllUsers from '../pages/Dashboard/Users/allUsers'
 import UserOverView from '../pages/Dashboard/Users/UserOverView'
+import VegetablePlants from '../pages/VegetablePlants'
+import FlowerPlants from '../pages/FlowerPlants'
+import EdiblePlants from '../pages/EdiblePlants'
+import OthersPlants from '../pages/OthersPlants'
 const Index = () => {
   return (
     <Router>
@@ -22,6 +26,10 @@ const Index = () => {
         <Route path='/' element={<Home />} />
         <Route path='/Product/details' element={<ProductDetails />} />
         <Route path='/shop' element={<Shop />} />
+        <Route path='/medicinalplants/vegetables' element={<VegetablePlants />} />
+        <Route path='/medecinalplants/flowers' element={<FlowerPlants />} />
+        <Route path='/medecinalplants/edible' element={<EdiblePlants />} />
+        <Route path='/medecinalplants/others' element={<OthersPlants />} />
         <Route path='/checkout' element={<Checkout />} />
         <Route path='/cart' element={<ViewCart />} />
         <Route path='/signup' element={<SignUpForm />} />
