@@ -3,9 +3,12 @@ import { useState } from "react";
 import sigunImage from "../../assets/images/undraw_undraw_undraw_undraw_sign_up_ln1s_-1-_s4bc_-1-_ee41_-1-_kf4d.svg";
 import { BiShow, BiSolidHide } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
+import { loginAction } from "../../redux/auth/actions";
+import { useDispatch } from "react-redux";
 
 const SignUpForm = () => {
     const [showPassword, setShowPassword] = useState(false);
+    const dispatch=useDispatch();
     const handlePasswordToggle = () => {
         setShowPassword(!showPassword);
       };
@@ -15,6 +18,7 @@ const SignUpForm = () => {
       };
   const onSubmit = async (values) => {
     console.log("values", values);
+    await loginAction()(dispatch)
   };
 const navigate=useNavigate();
   return (
