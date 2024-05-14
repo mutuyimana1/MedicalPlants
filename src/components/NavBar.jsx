@@ -42,7 +42,7 @@ const NavBar = () => {
                         return (
                           <li key={index} className="menu_list">
                             <div className="nav_menu">
-                              <a href={sub.path}>{sub?.title}</a>
+                              <Link to={sub.path} >{sub?.title}</Link>
                             </div>
                           </li>
                         );
