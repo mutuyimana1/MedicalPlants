@@ -6,11 +6,13 @@ import { FaRegUserCircle } from "react-icons/fa";
 import { UserOutlined } from "@ant-design/icons";
 import { Avatar, Badge } from "antd";
 import { BsCart } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 const DashHeader = () => {
+    const navigate=useNavigate();
   const items = [
     {
       label: (
-        <div className="flex gap-3 mr-5 py-3">
+        <div className="flex gap-3 mr-5 py-3" onClick={()=>navigate("/")}>
           <IoMdLogOut size={20} color="red" />
           <p>Logout</p>
         </div>
