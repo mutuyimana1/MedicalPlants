@@ -83,6 +83,11 @@ const ProductTable = () => {
       dataIndex: 'part',
       // width:40
     },
+    {
+      title: 'Status',
+      dataIndex: 'status',
+      // width:40
+    },
     // {
     //   title: 'Preparations',
     //   dataIndex: 'prepation',
@@ -120,7 +125,8 @@ const ProductTable = () => {
       scientific:"Urtica massaica",
       common:"stinging nettle ",
       familly:"Urticaceae",
-      part:"Leaves and stem"
+      part:"Leaves and stem",
+      status:"Sold"
     },
     {
       key: '2',
@@ -134,7 +140,8 @@ const ProductTable = () => {
       familly:"Rubiaceae",
       part:"",
       preparation:"1–2 g powdered plant; 48–96 ml plant decoction",
-      effect:"Gastrointestinal Issues: Some people may experiencegastrointestinal discomfort such as nausea, vomiting, ordiarrhea, especially when consumed in large amounts."
+      effect:"Gastrointestinal Issues: Some people may experiencegastrointestinal discomfort such as nausea, vomiting, ordiarrhea, especially when consumed in large amounts.",
+      status:"added to cart"
     },
     {
       key: '3',
@@ -146,7 +153,8 @@ const ProductTable = () => {
       part:"",
       description: "Fresh roots are crushed, boiled and strained, and the liquid is used to treat gonorrhoea and syphilis. Fresh leaf juice, sometimes with Erythrina sacleuxiiHua, is used for the treatment of leprosy. Leaf and roots are used for pleurisy,inflammatory conditions of chest and for oxytocic activity. Is extensively useinmany skin disease medicine",
       medicinalUse: ' Fresh roots are ground, cooked in banana beer and drunk to treatgonorrhoea. Treatment of Arthritis and Joint Pain, Blood Purification and Detoxification;Treatment of Urinary Disorders, Bacteria; Biliousness; Bite; Bleeding; Complexion;Constipation;Diabetes, Dysentery; Hemoptysis; Hemorrhoid; Hepatosis ,Infection;Inflammation, Diarrheal.',
-      prepation:"To orally administer the macerated fresh leaves or the filtrateof dry and crushed stems: 2 spoons three times per day (morning, midday, and evening)for 5 days"
+      prepation:"To orally administer the macerated fresh leaves or the filtrateof dry and crushed stems: 2 spoons three times per day (morning, midday, and evening)for 5 days",
+      status:"wishListed"
     },
     {
       key: '4',
@@ -158,7 +166,8 @@ const ProductTable = () => {
       part:"",
       description: "Prodcuct descriptions",
       medicinalUse: 'Vegetables',
-      prepation:"To orally administer the macerated fresh leaves or the filtrateof dry and crushed stems: 2 spoons three times per day (morning, midday, and evening)for 5 days"
+      prepation:"To orally administer the macerated fresh leaves or the filtrateof dry and crushed stems: 2 spoons three times per day (morning, midday, and evening)for 5 days",
+      status:"Sold"
     },
     {
       key: '5',
@@ -170,7 +179,8 @@ const ProductTable = () => {
       part:"Leaves and fruits",
       description: "Prodcuct descriptions",
       medicinalUse: 'Vegetables',
-      prepation:"To orally administer the macerated fresh leaves or the filtrateof dry and crushed stems: 2 spoons three times per day (morning, midday, and evening)for 5 days"
+      prepation:"To orally administer the macerated fresh leaves or the filtrateof dry and crushed stems: 2 spoons three times per day (morning, midday, and evening)for 5 days",
+      status:"Sold"
     },
   ];
   return(<>

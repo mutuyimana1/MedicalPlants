@@ -11,6 +11,8 @@ import { useNavigate } from 'react-router-dom'; // Importing useNavigate
 import "../pages/style.css"
 import CreateProduct from '../pages/Dashboard/CreateProduct';
 import ProductTable from './Tables/ProductTable';
+import DashHeader from './DashHeader';
+import LogoIcons from "../assets/images/Logo_1.png"
 const { Header, Content, Footer, Sider } = Layout;
 
 function getItem(label, key, icon, children, onClick) {
@@ -34,10 +36,7 @@ const DashboardLayout = ({ children }) => {
     }),
     getItem('Products', 'sub1', <UserOutlined />, [
       getItem('overView', '3',null,null,()=>{navigate("/dashboard/product/overview")}),
-      getItem('AddProduct', '4', null, null, () => {
-        navigate('/dashboard/product/add'); 
-      }),
-      getItem('Products', '5',null,null,()=>{navigate("/dashboard/products")}),
+      getItem('Products', '4',null,null,()=>{navigate("/dashboard/products")}),
     ]),
     getItem('Users', 'sub2', <TeamOutlined />, [
       getItem('OverView', '6', null, null, () => {
@@ -46,11 +45,8 @@ const DashboardLayout = ({ children }) => {
       getItem('All Users', '8', null, null, () => {
         navigate('/dashboard/users'); 
       }),
-      getItem('Active Users', '9', null, null, () => {
-        navigate('#');
-      }),
     ]),
-    getItem('Files', '10', <FileOutlined />),
+    // getItem('Files', '10', <FileOutlined />),
   ];
   const {
     token: { colorBgContainer, borderRadiusLG },
@@ -60,7 +56,9 @@ const DashboardLayout = ({ children }) => {
     <Layout style={{ minHeight: '100vh' }}>
       <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)} style={{ height: "100vh" }}>
         <div className="demo-logo-vertical h-20 flex justify-center items-center">
-          <h1 onClick={()=>navigate("/")} className='cursor-pointer'>Logo & Back Home</h1>
+          <div onClick={()=>navigate("/")} className='cursor-pointer mx-4'>
+          <img src={LogoIcons} width={200} />
+          </div>
         </div>
         <Menu defaultSelectedKeys={['1']} mode="inline" items={items.map(item => {
           if (item.children) {
@@ -78,7 +76,7 @@ const DashboardLayout = ({ children }) => {
       </Sider>
       <Layout>
         <Header style={{ padding: 0, background: colorBgContainer }}>
-          <h1 className='text-center'>Dasboard</h1>
+          <DashHeader/>
         </Header>
         <Content style={{ margin: '4px 10px' }}>
           <div style={{ padding: 24, minHeight: "90vh", background: colorBgContainer }}>
