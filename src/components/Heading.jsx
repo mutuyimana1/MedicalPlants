@@ -1,11 +1,11 @@
 import React from "react";
 import CustomButton from "./CustomButton";
 import { MdOutlineReadMore } from "react-icons/md";
-import headingImage from "../assets/images/Tetradenia riparia(umuravumba).jpg";
+import headingImage from "../assets/images/depositphotos_210464032-stock-photo-close-green-leaves-water-drops.jpg";
 import leaveImage from "../assets/images/homeimg.jpg";
-import img2 from "../assets/images/Urtica dioica L.(igisura).jpg";
-import img3 from "../assets/images/Clerodendrum myricoides R. Br.(umukuzanyana).jpg";
-import img4 from "../assets/images/Clerodendrum myricoides R. Br.(umukuzanyana).jpg";
+import img2 from "../assets/images/HERO-How-To-Use-Up-Extra-Herbs-Before-They-Go-Bad-Saveur-06-scaled.jpg";
+import img3 from "../assets/images/istockphoto-618977310-612x612.jpg";
+import img4 from "../assets/images/depositphotos_387030350-stock-photo-medicinal-plants-bowls-dry-medicinal.jpg";
 import { Carousel } from "antd";
 const Heading = () => {
   const contentStyle = {
@@ -23,13 +23,13 @@ const Heading = () => {
           <h1 className="text-[2.2rem] 2xl:text-[4.2rem] font-medium leading[1rem] 2xl:leading-[4rem] text-[#003F13]">
             Discover the Healing Power of Medicinal Plants
           </h1>
-          <p className="text-lg font-medium leading-[1.5rem] text-[#363636] py-8">
-            Medicinal plants platform is dedicated to provide source of
-            accurate, comprehensive, and accessible information on medicinal
-            plants. We are dedicated to empowering individuals with knowledge
-            about the health benefits, side effects, uses, and safety of
-            medicinal plants, enabling them to make informed decisions about
-            their health and well-being.
+          <p className="text-lg font-medium leading-[1.5rem] text-[#363636] py-8 pr-4">
+            Are you feeling stressed? Struggling to manage life&apos;s
+            pressures? Seeking natural remedies to support your health,
+            including fighting cancer? We bring you a comprehensive guide to
+            medicinal plants that can transform your well-being. Explore our
+            selection of healing plants and embark on a journey to a healthier,
+            happier you.
           </p>
           <CustomButton />
           {/* <div className="flex gap-2 mt-2 cursor-pointer pt-4 text-[#363636] font-bold">View All Products <MdOutlineReadMore size={25}/></div> */}

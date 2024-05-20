@@ -21,6 +21,7 @@ import EdiblePlants from '../pages/EdiblePlants'
 import OthersPlants from '../pages/OthersPlants'
 import ViewProducts from '../components/ViewProduct'
 import Dash from '../pages/Dashboard/dash'
+import CreateUser from '../pages/Dashboard/CreateUser'
 const Index = () => {
   return (
     <Router>
@@ -43,6 +44,7 @@ const Index = () => {
         {/* Nested routes under "/dashboard" */}
         <Route path='/dash' element={<Dash/>}/>
             <Route path='/dashboard/product/add' element={<CreateProduct/>}/>
+            <Route path='/dashboard/user/add' element={<CreateUser/>}/>
             <Route path='/dashboard' element={<Dashboard/>}/>
             <Route path='/dashboard/product/overview' element={<OverView/>}/>
             <Route path='/dashboard/products' element={<AllProducts/>}/>
