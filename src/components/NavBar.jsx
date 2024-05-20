@@ -12,13 +12,13 @@ const NavBar = () => {
   const navigate=useNavigate();
   const [openMenu,setOpenMenu]=useState(false)
   return (
-    <nav className="fixed z-50 w-full top-0">
+    <nav className="fixed z-50 w-full top-0 divide-y-2">
     <SubHeader/>
     <header className="header shadow-md">
       <div className="wrapper">
-        <div className="logo cursor-pointer" onClick={()=>navigate("/")}>
+        {/* <div className="logo cursor-pointer" onClick={()=>navigate("/")}>
          <img src={LogoIcons} width={200} />
-        </div>
+        </div> */}
         <div className={`shadow ${openMenu && "active"}`}/>
         <ul className={`navigation ${openMenu && "active"}`}>
         <div className="close_menu">

@@ -5,24 +5,24 @@ export const dropdownElement=[
     },
     {
         title:"Medicinal Plants",
-        subMenu:[
-            {
-                title:"Vegetables",
-                path:"/medicinalplants/vegetables"
-            },
-            {
-                title:"flower",
-                path:"/medicinalplants/flowers"
-            },
-            {
-                title:"Edible Plants",
-                path:"/medicinalplants/edible"
-            },
-            {
-                title:"Not for kitchen daily activities",
-                path:"/medicinalplants/others"
-            },
-        ]
+        // subMenu:[
+        //     {
+        //         title:"Vegetables",
+        //         path:"/medicinalplants/vegetables"
+        //     },
+        //     {
+        //         title:"flower",
+        //         path:"/medicinalplants/flowers"
+        //     },
+        //     {
+        //         title:"Edible Plants",
+        //         path:"/medicinalplants/edible"
+        //     },
+        //     {
+        //         title:"Not for kitchen daily activities",
+        //         path:"/medicinalplants/others"
+        //     },
+        // ]
     },
     {
         title:"Shop",

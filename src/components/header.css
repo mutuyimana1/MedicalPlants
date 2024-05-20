@@ -147,3 +147,46 @@ font-size: 1.5rem;
         width: 100%;
     }
 }
+.container{
+    /* background-image: url("../assets/images/depositphotos_210464032-stock-photo-close-green-leaves-water-drops.jpg"); */
+    /* width: 100%; */
+    background-color: red;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+.customImg{
+    background-image: url("../assets/images/depositphotos_210464032-stock-photo-close-green-leaves-water-drops.jpg");
+    width: 100%;
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.customImg{
+    background-image: url("../assets/images/depositphotos_210464032-stock-photo-close-green-leaves-water-drops.jpg");
+    width: 100%;
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.customImg1{
+    background-image: url("../assets/images/pexels-mattycphoto-1113145.jpg");
+    width: 100%;
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.customImg2{
+    background-image: url("../assets/images/istockphoto-618977310-612x612.jpg");
+    width: 100%;
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.customImg3{
+    background-image: url("../assets/images/HERO-How-To-Use-Up-Extra-Herbs-Before-They-Go-Bad-Saveur-06-scaled.jpg");
+    width: 100%;
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
