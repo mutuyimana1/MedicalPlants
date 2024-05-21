@@ -22,7 +22,7 @@ const Heading = () => {
       <Carousel autoplay>
         <div className="customImg ">
           {/* <img src={headingImage} alt="imag" style={contentStyle} className="absolute top-0"/> */}
-          <div className="w-[40rem] m-auto bg-white mt-52 py-5 px-10">
+          <div className="w-[40rem] ml-[20%] m-sauto bg-white mt-52 py-5 px-10">
             <h1 className="text-xl text-center font-medium py-2">
               Are you Felling Stressed?
             </h1>
@@ -38,7 +38,7 @@ const Heading = () => {
           </div>
         </div>
         <div className=" customImg1">
-        <div className="w-[40rem] m-auto bg-white mt-52 py-5 px-10">
+        <div className="w-[40rem] ml-[20%] ma-auto bg-white mt-52 py-5 px-10">
             <h1 className="text-xl text-center font-medium py-2">
               Are you Felling Stressed?
             </h1>
@@ -54,7 +54,7 @@ const Heading = () => {
           </div>
         </div>
         <div className=" customImg2">
-        <div className="w-[40rem] m-auto bg-white mt-52 py-5 px-10">
+        <div className="w-[40rem] ml-[20%] md-auto bg-white mt-52 py-5 px-10">
             <h1 className="text-xl text-center font-medium py-2">
               Are you Felling Stressed?
             </h1>
@@ -70,7 +70,7 @@ const Heading = () => {
           </div>
         </div>
         <div className=" customImg3">
-        <div className="w-[40rem] m-auto bg-white mt-52 py-5 px-10">
+        <div className="w-[40rem] ml-[10%]  ms-auto bg-white mt-52 py-5 px-10">
             <h1 className="text-xl text-center font-medium py-2">
               Are you Felling Stressed?
             </h1>
