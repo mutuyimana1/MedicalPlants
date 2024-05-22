@@ -13,7 +13,7 @@ const AllPlants = () => {
           <h1 className="poppins-bold py-3">AllPlants</h1>
           <button
             className="text-white p-s2 px-4 bg-[#003F13] rounded-md text-xl"
-            onClick={() => navigate("/dashboard/product/add")}
+            onClick={() => navigate("/dashboard/plant/add")}
           >
             Add product
           </button>

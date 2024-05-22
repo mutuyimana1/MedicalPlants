@@ -1,6 +1,4 @@
-import React from "react";
 import CustomButton from "./CustomButton";
-import { MdOutlineReadMore } from "react-icons/md";
 import headingImage from "../assets/images/depositphotos_210464032-stock-photo-close-green-leaves-water-drops.jpg";
 import leaveImage from "../assets/images/homeimg.jpg";
 import img2 from "../assets/images/HERO-How-To-Use-Up-Extra-Herbs-Before-They-Go-Bad-Saveur-06-scaled.jpg";
