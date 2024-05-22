@@ -8,7 +8,7 @@ import { CiFacebook } from "react-icons/ci";
 import Footer from "../components/Footer";
 const ProductInfo = () => {
   return (
-    <>
+    <div>
       <NavBar />
       <div className="w-full h-screen bg-[url('https://media.istockphoto.com/id/175203893/photo/smiling-woman-with-healthy-skin-holding-cream.jpg?s=2048x2048&w=is&k=20&c=PyB-0SOmKlVtEFsHpuYh-IxJcdfbg-SIoYrWwEuZeBU=')] bg-cover mt-40 bg-fixed">
         <div className="bg-white relative top-1/2 px-40">
@@ -135,7 +135,7 @@ const ProductInfo = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

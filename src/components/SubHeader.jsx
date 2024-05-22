@@ -19,13 +19,13 @@ const SubHeader = () => {
             <Badge count={1}>
               <Avatar
                 shape="circle"
-                icon={<IoMdNotificationsOutline size={22} />}
+                icon={<IoMdNotificationsOutline size={22} color="white"/>}
               />
             </Badge>
           </Space>
-          <FaFacebook size={28} className="text-black "/>
-          <AiFillTwitterCircle size={30} className="text-black "/>
-          <SiYoutubemusic size={30} className="text-black "/>
+          <FaFacebook size={28} className="text-white "/>
+          <AiFillTwitterCircle size={30} className="text-white "/>
+          <SiYoutubemusic size={30} className="text-white "/>
         </div>
       </div>
     </div>
