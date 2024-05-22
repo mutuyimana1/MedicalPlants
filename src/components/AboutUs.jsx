@@ -9,10 +9,23 @@ import prImg2 from "../assets/images/slideshow-v1-2.webp"
 import prImg3 from "../assets/images/slideshow-v1-1.webp"
 import ProductCard from "./ProductCard";
 import { useNavigate } from "react-router-dom";
+import { Carousel } from "antd";
+import Badge from 'react-bootstrap/Badge';
+import Button from 'react-bootstrap/Button';
+import UnControlebleSlideShow from "./UnControllebleSlideShow";
 const AboutUs = () => {
   const navigate = useNavigate();
+  const contentStyle = {
+    margin: 0,
+    height: '160px',
+    color: '#fff',
+    lineHeight: '160px',
+    textAlign: 'center',
+    background: '#364d79',
+  };
   return (
     <>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <div className="bg-white block md:flex justify-between px-10 pt-10">
       <div className="w-full md:w-1/2 relative">
@@ -49,32 +62,44 @@ const AboutUs = () => {
       <div className="bg-white block md:flex justify-between px-10 pt-10">
         <div className="w-full md:w-1/2 relative">
           <div className="w-[25rem] h-[25rem] m-auto absolute -top-20 right-3 lg:right-32">
+=======
+    
+     {/* <Carousel autoplay >
+     <div className="bg-white block md:flex justify-between px-s10 pt-10 " style={contentStyle}>
+        <div className="w-full md:w-1/2 pb-5">
+          <div className="w-[25rem] h-[20rem] m-auto">
+>>>>>>> 0f91f6c (revert design)
             <img src={aboutImage} alt="" className="w-full h-full " />
           </div>
         </div>
         <div className="w-full md:w-2/3 pt-80 md:pt-10">
           <h1 className="text-4xl font-medium leading-[4rem] text-[#363636] w-full lg:w-1/2 ">
-            Make Your Skin Shine & Be Good to your Skin.
+            Plants for healthy.
           </h1>
 
           <p className="text-lg font-medium leading-[1.5rem] text-[#363636] py-8 w-2/3">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Dignissimos velit molestiae assumenda, exercitationem soluta eaque
-            nostrum incidunt nemo, sapiente fuga officiis expedita. Repellendus
-            saepe architecto earum qui optio nobis. Quis. Lorem ipsum dolor sit
-            amet consectetur adipisicing elit. Laudantium vel iste
-            necessitatibus dolorum autem. Harum tenetur rerum corrupti, sit
-            facere, facilis repudiandae dolor molestiae sed molestias excepturi
-            porro cum ex?{" "}
+            Explore nature's pharmacy with us, where each leaf, flower, and root
+            holds the secret to holistic well-being and vibrant health.
           </p>
         </div>
       </div>
       <div>
-        <div className="w-full shadow-md p-2 py-4 bg-[#025222] text-white">
+        <h3 style={contentStyle}>2</h3>
+      </div>
+      <div>
+        <h3 style={contentStyle}>3</h3>
+      </div>
+      <div>
+        <h3 style={contentStyle}>4</h3>
+      </div>
+    </Carousel> */}
+     
+      <div>
+        {/* <div className="w-full shadow-md p-2 py-4 bg-[#025222] text-white">
           <h1 className="text-center font-medium  text-2xl ">
             Get More Information about Side Effects of using medicinal Plants
           </h1>
-        </div>
+        </div> */}
         <div className="p-10 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5 w-full m-auto">
           <ProductCard
             img1={aboutImage1}
@@ -82,7 +107,7 @@ const AboutUs = () => {
             name={"Urtica massaica"}
             btnName={"ReadMore"}
             description={
-              "Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"
+              "Fresh roots are crushed, boiled and strained"
             }
             onClick={() => navigate("/product/view")}
           />
@@ -92,7 +117,7 @@ const AboutUs = () => {
             name={"Urtica massaica"}
             btnName={"ReadMore"}
             description={
-              "Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"
+              "Fresh roots are crushed, boiled and strained"
             }
             onClick={() => navigate("/product/view")}
           />
@@ -102,7 +127,7 @@ const AboutUs = () => {
             name={"Urtica massaica"}
             btnName={"ReadMore"}
             description={
-              "Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"
+              "Fresh roots are crushed, boiled and strained"
             }
             onClick={() => navigate("/product/view")}
           />
@@ -112,7 +137,7 @@ const AboutUs = () => {
             name={"Urtica massaica"}
             btnName={"ReadMore"}
             description={
-              "Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"
+              "Fresh roots are crushed, boiled and strained"
             }
             onClick={() => navigate("/product/view")}
           />
@@ -122,14 +147,68 @@ const AboutUs = () => {
             name={"Urtica massaica"}
             btnName={"ReadMore"}
             description={
-              "Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
             }
             onClick={() => navigate("/product/view")}
           />
         </div>
       </div>
+<<<<<<< HEAD
       <div className=" pt-5">
 >>>>>>> 28c20d3 (return back on our design)
+=======
+      {/* <div className=" pt-5">
+>>>>>>> 0f91f6c (revert design)
         <div className="w-full shadow-md p-2 py-4 bg-[#025222] text-white">
           <h1 className="text-center font-bold text-2xl uppercase">
             Available medicinal plant products
@@ -149,6 +228,7 @@ const AboutUs = () => {
           Torem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo
           tempor incididunt ut labore
         </p>
+<<<<<<< HEAD
       </div>
       <div className="p-10 px-20 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5 w-full m-auto">
         <ProductCard
@@ -218,6 +298,10 @@ const AboutUs = () => {
         />
 >>>>>>> 28c20d3 (return back on our design)
       </div>
+=======
+      </div> */}
+     
+>>>>>>> 0f91f6c (revert design)
     </>
   );
 };

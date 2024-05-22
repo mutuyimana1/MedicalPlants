@@ -27,9 +27,9 @@ const NavBar = () => {
           {dropdownElement.map((el, index) => {
             return (
               <>
-                <li key={index} className="list_menu">
+                <li key={index} className="list_menu text-black">
                   <div key={index} className="nav-menu flex">
-                    <Link to={el.path} className="text-lg font-medium ">{el.title}</Link>
+                    <Link to={el.path} className="text-lg font-medium text-black">{el.title}</Link>
                     {el?.subMenu && (
                       <span className="menu_icon mt-1">
                         <RiArrowDropDownLine size={25}/>
