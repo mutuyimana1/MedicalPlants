@@ -12,9 +12,9 @@ const SubHeader = () => {
         <h1 className="text-white text-base text-center">99 Roving St, Big City PKU 23456</h1>
         <div className="flex gap-5 pt-3 sm:pt-0 justify-center items-center">
         <Space size={24} className="mr-10 ">
-            <Badge count={1}>
+            {/* <Badge count={1}>
               <Avatar shape="circle" icon={<BsCart />} />
-            </Badge>
+            </Badge> */}
             <Badge count={1}>
               <Avatar
                 shape="circle"

@@ -22,6 +22,7 @@ import OthersPlants from '../pages/OthersPlants'
 import ViewProducts from '../components/ViewProduct'
 import Dash from '../pages/Dashboard/dash'
 import CreateUser from '../pages/Dashboard/CreateUser'
+import MedecinalPlants from '../pages/MedecinalPlants'
 const Index = () => {
   return (
     <Router>
@@ -40,6 +41,7 @@ const Index = () => {
         <Route path='/login' element={<LoginForm />} />
         <Route path='/dash' element={<Dash />} />
         <Route path='/dashboard' element={<DashboardLayout />} />
+        <Route path='/plants' element={<MedecinalPlants />} />
         
         {/* Nested routes under "/dashboard" */}
         <Route path='/dash' element={<Dash/>}/>

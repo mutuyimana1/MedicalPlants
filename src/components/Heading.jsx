@@ -54,7 +54,7 @@ const Heading = () => {
           {/* </div> */}
         </div>
       </div>
-      <div className="w-full h-[25vh]">
+      <div className="w-full h-[5vh]">
         <img src={leaveImage} alt="" className="w-full h-full bg-top" />
       </div>
     </>

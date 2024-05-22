@@ -13,18 +13,18 @@ const ProductCard = ({status,img1,img2,name,description,amount,btnName,btnSecond
             <p>-10%</p>
         </div> */}
       <div
-        className="w-full h-52 bg-[#eeeff0] px-20 rounded-md flex items-center justify-center"
+        className="w-full h-[17rem] bg-[#eeeff0] px-10 rounded-md flex items-center justify-center"
         onMouseEnter={() => setHidden(false)}
         onMouseLeave={() => setHidden(true)}
       >
         {hidden ? (
-          <img src={img1} alt="" className="w-full h-32  rounded-sm " />
+          <img src={img1} alt="" className="w-full h-[17rem]  rounded-sm " />
         ) : (
-          <img src={img2} alt="" className="w-full h-32  rounded-sm " />
+          <img src={img2} alt="" className="w-full h-[17rem]  rounded-sm " />
         )}
       </div>
       <div className="px-4">
-        <h1 className="font-bold text-lg ">{name}</h1>
+        <h1 className="font-bold text-lg text-center pt-3">{name}</h1>
         <p className="py-2">{description}</p>
         {amount &&<p>{amount} Rwf</p>}
        <div className="py-1 mt-2" onClick={onClick}><Button name={btnName} color="black" border={"red-500"} /></div> 
