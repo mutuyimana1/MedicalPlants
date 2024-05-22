@@ -9,6 +9,10 @@ import prImg2 from "../assets/images/slideshow-v1-2.webp"
 import prImg3 from "../assets/images/slideshow-v1-1.webp"
 import ProductCard from "./ProductCard";
 import { useNavigate } from "react-router-dom";
+import { Carousel } from "antd";
+import Badge from 'react-bootstrap/Badge';
+import Button from 'react-bootstrap/Button';
+import UnControlebleSlideShow from "./UnControllebleSlideShow";
 const AboutUs = () => {
   const navigate = useNavigate();
   return (
