@@ -9,6 +9,7 @@ export const createAccountAction = (data) => async (dispatch) => {
     if (res) {
       dispatch(authAction.setIsFetching(false));
       dispatch(authAction.setNew(res));
+      console.log("res data",res)
       notification.success({message:"Successfully created"})
     }
   } catch (error) {

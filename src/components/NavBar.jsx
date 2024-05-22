@@ -8,17 +8,21 @@ import "./header.css";
 import  LogoIcons from "../assets/images/Logo_1.png"
 import SubHeader from "./SubHeader";
 import { Link, useNavigate } from "react-router-dom";
+import { Input, Select, Space } from 'antd';
 const NavBar = () => {
   const navigate=useNavigate();
   const [openMenu,setOpenMenu]=useState(false)
+  const { Search } = Input;
+  const onSearch = (value, _e, info) => console.log(info?.source, value);
   return (
     <nav className="fixed z-50 w-full top-0 divide-y-2">
     <SubHeader/>
     <header className="header shadow-md">
       <div className="wrapper">
-        {/* <div className="logo cursor-pointer" onClick={()=>navigate("/")}>
+        <div className="logo cursor-pointer" onClick={()=>navigate("/")}>
          <img src={LogoIcons} width={200} />
-        </div> */}
+        </div>
+        <Search placeholder="input search text" onSearch={onSearch} enterButton style={{width:"30%"}}/>
         <div className={`shadow ${openMenu && "active"}`}/>
         <ul className={`navigation ${openMenu && "active"}`}>
         <div className="close_menu">

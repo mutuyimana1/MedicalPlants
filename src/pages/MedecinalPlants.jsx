@@ -27,7 +27,7 @@ const onSearch = (value, _e, info) => console.log(info?.source, value);
       <div className="w-full h-screen bg-[url('https://media.istockphoto.com/id/175203893/photo/smiling-woman-with-healthy-skin-holding-cream.jpg?s=2048x2048&w=is&k=20&c=PyB-0SOmKlVtEFsHpuYh-IxJcdfbg-SIoYrWwEuZeBU=')] bg-cover mt-[7rem] bg-fixed">
         <div className="w-full relative top-3 z-50">
         <div className="bg-white px-10 py-4 w-1/3 fixed right-0 flex gap-5">
-        <Search placeholder="input search text" onSearch={onSearch} enterButton style={{width:"200px",marginTop:"10px"}}/>
+        {/* <Search placeholder="input search text" onSearch={onSearch} enterButton style={{width:"200px",marginTop:"10px"}}/> */}
         <CategoriesAccordion/>
         <Select
     showSearch

@@ -13,7 +13,7 @@ const ProductCard = ({status,img1,img2,name,description,amount,btnName,btnSecond
             <p>-10%</p>
         </div> */}
       <div
-        className="w-full h-[17rem] bg-[#eeeff0] px-10 rounded-md flex items-center justify-center"
+        className="w-full h-[17rem] bg-[#eeeff0] px-8 py-4 rounded-md flex items-center justify-center"
         onMouseEnter={() => setHidden(false)}
         onMouseLeave={() => setHidden(true)}
       >

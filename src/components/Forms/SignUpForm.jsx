@@ -9,6 +9,7 @@ import { Spin } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
 const SignUpForm = () => {
   const {auth}=useSelector((state)=>state)
+  
     const [showPassword, setShowPassword] = useState(false);
     const dispatch=useDispatch();
     const handlePasswordToggle = () => {
@@ -68,7 +69,7 @@ const navigate=useNavigate();
             <Input placeholder="Enter email" className="rounded-lg h-12" />
           </Form.Item>
          
-          <Form.Item name="mobile" label=<h1 className="text-base">Phone Number</h1> >
+          <Form.Item name="phone" label=<h1 className="text-base">Phone Number</h1> >
             <Input
               placeholder="Enter phone number"
               className="rounded-lg h-12"
