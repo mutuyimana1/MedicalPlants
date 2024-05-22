@@ -6,10 +6,10 @@ import { BiSolidQuoteAltLeft } from "react-icons/bi";
 import { FaRegComment, FaWhatsapp, FaXTwitter } from "react-icons/fa6";
 import { CiFacebook } from "react-icons/ci";
 import Footer from "../components/Footer";
-const ProductInfo = () => {
+const PlantInfo = () => {
   return (
-    <div>
-      <NavBar />
+  <div>
+     <NavBar />
       <div className="w-full h-screen bg-[url('https://media.istockphoto.com/id/175203893/photo/smiling-woman-with-healthy-skin-holding-cream.jpg?s=2048x2048&w=is&k=20&c=PyB-0SOmKlVtEFsHpuYh-IxJcdfbg-SIoYrWwEuZeBU=')] bg-cover mt-40 bg-fixed">
         <div className="bg-white relative top-1/2 px-40">
           <h1 className="font-bold text-center text-2xl pt-10">
@@ -103,7 +103,7 @@ const ProductInfo = () => {
                 <FaWhatsapp />
               </div>
               <div className="flex gap-3">
-                <FaRegComment className="mt-1"/>
+                <FaRegComment className="mt-1" />
                 <p>0 Comments</p>
               </div>
             </div>
@@ -131,12 +131,12 @@ const ProductInfo = () => {
               <p>Sign up with your email address to receive news and updates!</p>
 
             </div> */}
-            <Footer/>
+            <Footer />
           </div>
         </div>
       </div>
-    </div>
+  </div>
   );
 };
 
-export default ProductInfo;
+export default PlantInfo;

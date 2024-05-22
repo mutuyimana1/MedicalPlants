@@ -3,26 +3,26 @@ const Footer = () => {
       <div className='mt-10'>
           
   
-  <footer className="bg-white dark:bg-gray-900">
+  <footer className="bg-gray-900 dark:bg-gray-900">
       <div className="mx-auto w-full max-w-screen-xl">
         <div className="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
           <div>
               <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Location</h2>
-              <ul className="text-gray-500 dark:text-gray-400 font-medium">
+              <ul className=" font-medium text-white">
                   <li className="mb-4">
-                      <a href="#" className=" hover:underline">Rutsiro,Rwanda</a>
+                      <a href="#" className=" hover:underline text-white">Rutsiro,Rwanda</a>
                   </li>
                   <li className="mb-4">
-                      <a href="#" className="hover:underline">NR7,Kivumu Sector,​</a>
+                      <a href="#" className="hover:underline text-white">NR7,Kivumu Sector,​</a>
                   </li>
                   <li className="mb-4">
-                      <a href="#" className="hover:underline">Western Province</a>
+                      <a href="#" className="hover:underline text-white">Western Province</a>
                   </li>
                   <li className="mb-4">
-                      <a href="#" className="hover:underline">Binyunju Cell</a>
+                      <a href="#" className="hover:underline text-white">Binyunju Cell</a>
                   </li>
                   <li className="mb-4">
-                      <a href="#" className="hover:underline">tarafipolo Village</a>
+                      <a href="#" className="hover:underline text-white">tarafipolo Village</a>
                   </li>
               </ul>
           </div>
@@ -30,16 +30,16 @@ const Footer = () => {
               <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Auick Link</h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                   <li className="mb-4">
-                      <a href="/" className="hover:underline">Home</a>
+                      <a href="/" className="hover:underline text-white">Home</a>
                   </li>
                   <li className="mb-4">
-                      <a href="/home/about" className="hover:underline">About</a>
+                      <a href="" className="hover:underline text-white">About</a>
                   </li>
                   <li className="mb-4">
-                      <a href="/home/contact" className="hover:underline">Contact Us</a>
+                      <a href="/home/contact" className="hover:underline text-white">Contact Us</a>
                   </li>
                   <li className="mb-4">
-                      <a href="/home/project" className="hover:underline">Project</a>
+                      <a href="/home/project" className="hover:underline text-white">Project</a>
                   </li>
               </ul>
           </div>
@@ -55,16 +55,16 @@ const Footer = () => {
               <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Others</h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                   <li className="mb-4">
-                      <a href="#" className="hover:underline">new</a>
+                      <a href="#" className="hover:underline text-white">new</a>
                   </li>
                   <li className="mb-4">
-                      <a href="#" className="hover:underline">Update</a>
+                      <a href="#" className="hover:underline text-white">Update</a>
                   </li>
                   <li className="mb-4">
-                      <a href="#" className="hover:underline">Activities</a>
+                      <a href="#" className="hover:underline text-white">Activities</a>
                   </li>
                   <li className="mb-4">
-                      <a href="#" className="hover:underline">Next</a>
+                      <a href="#" className="hover:underline text-white">Next</a>
                   </li>
               </ul>
           </div>
