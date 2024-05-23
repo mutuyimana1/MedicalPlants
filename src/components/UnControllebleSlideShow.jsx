@@ -10,7 +10,7 @@ function UnControlebleSlideShow() {
       <div className="bg-white block md:flex justify-between px-10 pt-10 ">
         <div className="w-full md:w-1/2 pb-5">
           <div className="w-[25rem] h-[20rem] m-auto">
-            <img src={ExampleCarouselImage} alt="" className="w-full h-full " />
+            <img src={ExampleCarouselImage} alt="" className="w-full h-full rounded-md" />
           </div>
         </div>
         <div className="w-full md:w-2/3 pt-80 md:pt-10">
@@ -33,7 +33,7 @@ function UnControlebleSlideShow() {
         <div className="bg-white block md:flex justify-between px-10 pt-10 ">
         <div className="w-full md:w-1/2 pb-5">
           <div className="w-[25rem] h-[20rem] m-auto">
-            <img src={ExampleCarouselImage2} alt="" className="w-full h-full " />
+            <img src={ExampleCarouselImage2} alt="" className="w-full h-full rounded-md" />
           </div>
         </div>
         <div className="w-full md:w-2/3 pt-80 md:pt-10">
@@ -56,7 +56,7 @@ function UnControlebleSlideShow() {
         <div className="bg-white block md:flex justify-between px-10 pt-10 ">
         <div className="w-full md:w-1/2 pb-5">
           <div className="w-[25rem] h-[20rem] m-auto">
-            <img src={ExampleCarouselImage3} alt="" className="w-full h-full " />
+            <img src={ExampleCarouselImage3} alt="" className="w-full h-full rounded-md" />
           </div>
         </div>
         <div className="w-full md:w-2/3 pt-80 md:pt-10">

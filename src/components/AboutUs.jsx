@@ -26,7 +26,7 @@ const AboutUs = () => {
             name={"Urtica massaica"}
             btnName={"ReadMore"}
             description={
-              "Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"
+              "Fresh roots are crushed, boiled and strained"
             }
             onClick={() => navigate("/product/view")}
           />
@@ -36,7 +36,7 @@ const AboutUs = () => {
             name={"Urtica massaica"}
             btnName={"ReadMore"}
             description={
-              "Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"
+              "Fresh roots are crushed, boiled and strained"
             }
             onClick={() => navigate("/product/view")}
           />
@@ -46,7 +46,7 @@ const AboutUs = () => {
             name={"Urtica massaica"}
             btnName={"ReadMore"}
             description={
-              "Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"
+              "Fresh roots are crushed, boiled and strained"
             }
             onClick={() => navigate("/product/view")}
           />
@@ -56,7 +56,7 @@ const AboutUs = () => {
             name={"Urtica massaica"}
             btnName={"ReadMore"}
             description={
-              "Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"
+              "Fresh roots are crushed, boiled and strained"
             }
             onClick={() => navigate("/product/view")}
           />
@@ -66,7 +66,7 @@ const AboutUs = () => {
             name={"Urtica massaica"}
             btnName={"ReadMore"}
             description={
-              "Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"
+              "Fresh roots are crushed, boiled and strained"
             }
             onClick={() => navigate("/product/view")}
           />
@@ -76,7 +76,7 @@ const AboutUs = () => {
             name={"Urtica massaica"}
             btnName={"ReadMore"}
             description={
-              "Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"
+              "Fresh roots are crushed, boiled and strained"
             }
             onClick={() => navigate("/product/view")}
           />
@@ -86,7 +86,7 @@ const AboutUs = () => {
             name={"Urtica massaica"}
             btnName={"ReadMore"}
             description={
-              "Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"
+              "Fresh roots are crushed, boiled and strained"
             }
             onClick={() => navigate("/product/view")}
           />
@@ -96,7 +96,7 @@ const AboutUs = () => {
             name={"Urtica massaica"}
             btnName={"ReadMore"}
             description={
-              "Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"
+              "Fresh roots are crushed, boiled and strained"
             }
             onClick={() => navigate("/product/view")}
           />
@@ -106,7 +106,7 @@ const AboutUs = () => {
             name={"Urtica massaica"}
             btnName={"ReadMore"}
             description={
-              "Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"
+              "Fresh roots are crushed, boiled and strained"
             }
             onClick={() => navigate("/product/view")}
           />
@@ -116,7 +116,7 @@ const AboutUs = () => {
             name={"Urtica massaica"}
             btnName={"ReadMore"}
             description={
-              "Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"
+              "Fresh roots are crushed, boiled and strained"
             }
             onClick={() => navigate("/product/view")}
           />
