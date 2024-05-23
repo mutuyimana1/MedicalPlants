@@ -13,6 +13,7 @@ const Heading = () => {
     width: "100%",
     lineHeight: "160px",
     textAlign: "center",
+    borderRadius:"6px"
   };
   return (
     <>
@@ -32,28 +33,28 @@ const Heading = () => {
           <CustomButton />
           {/* <div className="flex gap-2 mt-2 cursor-pointer pt-4 text-[#363636] font-bold">View All Products <MdOutlineReadMore size={25}/></div> */}
         </div>
-        <div className="  pt-[5rem] w-full md:w-[60%]">
+        <div className="  pt-[5rem] w-full md:w-[60%] rounded-md">
           {/* <img src={headingImage} alt="landing image" className="w-full " /> */}
           {/* <div className='w-1/2'> */}
-          <Carousel autoplay>
-            <div>
+          <Carousel autoplay className="rounded-md">
+            <div className="rounded-md">
               <img src={headingImage} alt="imag" style={contentStyle} />
             </div>
-            <div>
+            <div className="rounded-md">
               <img src={img2} alt="imag" style={contentStyle} />
             </div>
-            <div>
+            <div className="rounded-md">
               <img src={img3} alt="imag" style={contentStyle} />
             </div>
-            <div>
+            <div className="rounded-md">
               <img src={img4} alt="imag" style={contentStyle} />
             </div>
           </Carousel>
           {/* </div> */}
         </div>
       </div>
-      <div className="w-full h-[25vh]">
-        <img src={leaveImage} alt="" className="w-full h-full bg-top" />
+      <div className="w-full h-[5vh]">
+        <img src={leaveImage} alt="" className="w-full h-full bg-top rounded-md" />
       </div>
     </>
   );
