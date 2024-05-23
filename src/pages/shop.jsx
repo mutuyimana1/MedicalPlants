@@ -24,6 +24,7 @@ const contentStyle = {
   width:"100%",
   lineHeight: '160px',
   textAlign: 'center',
+  borderRadius:"8px"
 };
 const Shop = () => {
   const onChange = (currentSlide) => {
@@ -34,7 +35,11 @@ const Shop = () => {
     <>
     <NavBar/>
     <div className='mt-40 md:flex  gap-10 px-20'>
-        <div className='w-full md:w-1/2'>
+        <div className='mt-5 w-full'>
+            <h1 className='py-4 text-lg font-medium '>Select your prefered medicinal Plants</h1>
+            <DropDownAccordion/>
+        </div>
+        <div className='w-full md:w-[60%] pt-4'>
         <Carousel autoplay>
       <div>
         <img src={img1} alt="imag" style={contentStyle}/>
@@ -50,10 +55,6 @@ const Shop = () => {
       <img src={img4} alt="imag" style={contentStyle}/>
       </div>
     </Carousel>
-        </div>
-        <div className='mt-5 w-full'>
-            <h1 className='py-4 text-lg font-medium '>Select your prefered medicinal Plants</h1>
-            <DropDownAccordion/>
         </div>
     </div>
     <div className='mt-5'>
