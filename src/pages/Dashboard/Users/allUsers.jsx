@@ -66,7 +66,7 @@ const AllUsers = () => {
   <DashboardLayout>
   <div className='flex justify-between my-5'> 
        <h1 className='poppins-bold py-3'>Users</h1> 
-       <button className='text-white p-s2 px-4 bg-[#003F13] rounded-md text-xl' onClick={()=>navigate("/dashboard/user/add")}>Add User</button></div>
+       <button className='text-white h-10 px-4 bg-[#003F13] rounded-md text-xl' onClick={()=>navigate("/dashboard/user/add")}>Add User</button></div>
     <Table columns={columns} dataSource={data} size="middle" />
     </DashboardLayout>
   </>

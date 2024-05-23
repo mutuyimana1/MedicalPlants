@@ -19,7 +19,7 @@ const OverView = () => {
         <div className='flex justify-between my-2'>
 
         <h1 className='poppins-bold py-3'>Products</h1>
-        <button className='text-white p-s2 px-4 bg-[#003F13] rounded-md text-xl' onClick={()=>navigate("/dashboard/product/add")}>Add Product</button>
+        <button className='text-white h-10 px-4 bg-[#003F13] rounded-md text-xl' onClick={()=>navigate("/dashboard/product/add")}>Add Product</button>
         </div>
         <ProductTable/>
         </div>
