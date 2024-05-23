@@ -25,11 +25,11 @@ const onSearch = (value, _e, info) => console.log(info?.source, value);
     <>
       <NavBar />
       <div className="w-full h-screen bg-[url('https://media.istockphoto.com/id/175203893/photo/smiling-woman-with-healthy-skin-holding-cream.jpg?s=2048x2048&w=is&k=20&c=PyB-0SOmKlVtEFsHpuYh-IxJcdfbg-SIoYrWwEuZeBU=')] bg-cover mt-[7rem] bg-fixed">
-        <div className="w-full relative top-3 z-50">
-        <div className="bg-white px-10 py-4 w-1/3 fixed right-0 flex gap-5">
+        {/* <div className="w-full relative top-3 z-50"> */}
+        {/* <div className="bg-white px-10 py-4 w-1/3 fixed right-0 flex gap-5"> */}
         {/* <Search placeholder="input search text" onSearch={onSearch} enterButton style={{width:"200px",marginTop:"10px"}}/> */}
-        <CategoriesAccordion/>
-        <Select
+        {/* <CategoriesAccordion/> */}
+        {/* <Select
     showSearch
     style={{
       width: 200,
@@ -85,14 +85,14 @@ const onSearch = (value, _e, info) => console.log(info?.source, value);
         label: 'Not for kitchen daily activities',
       },
     ]}
-  />
+  /> */}
 
-        </div>
-        </div>
+        {/* </div> */}
+        {/* </div> */}
         <h1 className="pt-20 text-center  text-2xl font-bold">Medicinal Plants</h1>
         <div className="bg-white relative top-[20%] px-5">
           <h1 className="font-bold text-center text-2xl pt-5">
-            Outdoor Fitness: Best Exercises in the Fresh Air for Active People
+            Vegetables
           </h1>
           <div className="p-10 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5 w-full m-auto">
           <ProductCard
@@ -196,6 +196,439 @@ const onSearch = (value, _e, info) => console.log(info?.source, value);
             onClick={() => navigate("/product/view")}
           />
         </div>
+        <div className="p-2 border rounded-md w-40 text-center">View More </div>
+        </div>
+        <div className="bg-white relative top-[20%] px-5">
+          <h1 className="font-bold text-center text-2xl pt-5">
+            Flowers
+          </h1>
+          <div className="p-10 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5 w-full m-auto">
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+        </div>
+        <div className="p-2 border rounded-md w-40 text-center">View More </div>
+        </div>
+        <div className="bg-white relative top-[20%] px-5">
+          <h1 className="font-bold text-center text-2xl pt-5">
+            Fluits
+          </h1>
+          <div className="p-10 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5 w-full m-auto">
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+        </div>
+        <div className="p-2 border rounded-md w-40 text-center">View More </div>
+        </div>
+        <div className="bg-white relative top-[20%] px-5">
+          <h1 className="font-bold text-center text-2xl pt-5">
+           Routes
+          </h1>
+          <div className="p-10 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5 w-full m-auto">
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+        </div>
+        <div className="p-2 border rounded-md w-40 text-center">View More </div>
+        </div>
+        <div className="bg-white relative top-[20%] px-5 py-4">
+          <h1 className="font-bold text-center text-2xl pt-5">
+            Spices
+          </h1>
+          <div className="p-10 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5 w-full m-auto">
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+          <ProductCard
+            img1={aboutImage1}
+            img2={aboutImage2}
+            name={"Urtica massaica"}
+            btnName={"ReadMore"}
+            description={
+              "Fresh roots are crushed, boiled and strained"
+            }
+            onClick={() => navigate("/product/view")}
+          />
+        </div>
+        <div className="p-2 border rounded-md w-40 text-center ">View More </div>
         </div>
         <Footer/>
       </div>

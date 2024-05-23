@@ -23,6 +23,64 @@ const NavBar = () => {
          <img src={LogoIcons} width={200} />
         </div>
         <Search placeholder="input search text" onSearch={onSearch} enterButton style={{width:"30%"}}/>
+        <Select
+    showSearch
+    style={{
+      width: 200,
+      height:50
+    }}
+    placeholder="filter Plant by Categories"
+    optionFilterProp="children"
+    filterOption={(input, option) => (option?.label ?? '').includes(input)}
+    filterSort={(optionA, optionB) =>
+      (optionA?.label ?? '').toLowerCase().localeCompare((optionB?.label ?? '').toLowerCase())
+    }
+    
+      
+    options={[
+      {
+        value: '1',
+        label: 'Vegetables',
+      },
+      {
+        value: '2',
+        label: 'Flowers',
+      },
+      {
+        value: '3',
+        label: 'Spices',
+      },
+      {
+        value: '4',
+        label: 'Fruit',
+      },
+      {
+        value: '5',
+        label: 'Resolved',
+      },
+      {
+        value: '6', 
+        label: 'Stem',
+      },
+      {
+        value: '7',
+        label: 'Roots',
+      },
+      {
+        value: '8',
+        label: 'Lesser- known ',
+      },
+      {
+        value: '9',
+        label: 'Edible Plants',
+      },
+      {
+        value: '10',
+        label: 'Not for kitchen daily activities',
+      },
+    ]}
+  />
+
         <div className={`shadow ${openMenu && "active"}`}/>
         <ul className={`navigation ${openMenu && "active"}`}>
         <div className="close_menu">

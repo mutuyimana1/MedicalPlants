@@ -23,9 +23,9 @@ const ProductDetails = () => {
   return (
     <div className="w-full">
       <NavBar />
-      <div className="flex justify-between w-full px-20 py-10 mt-28">
-        <h1 className="text-2xl font-semibold text-center">Product Details</h1>
-        <p className="text-base font-normal">Home /Product /Details</p>
+      <div className="flex justify-between w-full px-20 py-10 mt-36">
+        <h1 className="text-2xl font-semibold text-center ">Plant Details</h1>
+        <p className="text-lg font-normal">Home /Product /Details</p>
       </div>
       <div className="w-[85%] m-auto md:flex gap-5 h-[40rem]">
         <div className=" w-full md:w-2/5 h-full">
@@ -47,7 +47,7 @@ const ProductDetails = () => {
           </div>
         </div>
         <div className="ml-10 w-full md:w-1/2 mt-10">
-          <h1 className="text-base font-medium">Details about product</h1>
+          <h1 className="text-base font-medium">Details about Plant</h1>
           <div className="flex gap-2 pt-3">
             <IoMdStar color="#FFBA00" size={20} />
             <IoMdStar color="#FFBA00" size={20} />
@@ -111,7 +111,7 @@ const ProductDetails = () => {
           </div>
         </div>
       </div>
-      <div className="px-20 mt-[30rem] md:mt-5 lg:mts-[50rem] xls:mt-[30rem] 2xls:mt-80 ">
+      <div className="px-20 mt-[30rem] md:mt-5 lg:mts-[50rem] xls:mt-[30rem] 2xls:mt-80 w-[75%] m-auto">
             <h1 className="text-[#030229] font-medium text-2xl text-center py-1"> Medicinal use:{" "}</h1> 
       <p className="text-[#030229B2] text-sm">
              
