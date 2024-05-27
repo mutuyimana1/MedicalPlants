@@ -12,7 +12,9 @@ export const createAccountAction = (data) => async (dispatch) => {
       notification.success({ message: "Successfully created" });
     }
   } catch (error) {
+    dispatch(authAction.setIsFetching(false));
     console.log("errr", error);
+    notification.warning({ message: error?.AxiosError?.response?.statusText });
     notification.warning({ message: error?.AxiosError?.response?.statusText });
   }
 };
@@ -27,6 +29,8 @@ export const loginAction = (data) => async (dispatch) => {
       notification.success({ message: "Success" });
     }
   } catch (error) {
+    console.log("errr", error);
+    dispatch(authAction.setIsFetching(false));
     notification.warning({ message: error });
   }
 };

@@ -12,7 +12,7 @@ import CreateProduct from "../pages/Dashboard/CreateProduct";
 import Dashboard from "../pages/Dashboard/dashboard";
 import OverView from "../pages/Dashboard/OverView";
 // import Dash from '../pages/Tes'
-import AllProducts from "../pages/Dashboard/AllProducts";
+import AllProducts from "../pages/Dashboard/plant/AllPlants";
 import AllUsers from "../pages/Dashboard/Users/allUsers";
 import UserOverView from "../pages/Dashboard/Users/UserOverView";
 import VegetablePlants from "../pages/VegetablePlants";
@@ -24,6 +24,8 @@ import Dash from "../pages/Dashboard/dash";
 import CreateUser from "../pages/Dashboard/CreateUser";
 import ProductInfo from "../pages/ProductInfo";
 import MedecinalPlants from "../pages/MedecinalPlants";
+import AllPlants from "../pages/Dashboard/plant/AllPlants";
+import AllCategories from "../pages/Dashboard/plantCategory/Categories";
 const Index = () => {
   return (
     <Router>
@@ -54,7 +56,8 @@ const Index = () => {
         <Route path="/dashboard/user/add" element={<CreateUser />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/dashboard/plant/overview" element={<OverView />} />
-        <Route path="/dashboard/plants" element={<AllProducts />} />
+        <Route path="/dashboard/plants" element={<AllPlants />} />
+        <Route path="/dashboard/category" element={<AllCategories />} />
         <Route path="/dashboard/users" element={<AllUsers />} />
         <Route path="//dashboard/user/overview" element={<UserOverView />} />
       </Routes>

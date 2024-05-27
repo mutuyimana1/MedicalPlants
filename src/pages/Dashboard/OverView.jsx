@@ -1,7 +1,7 @@
 import React from "react";
 import OverviewCard from "../../components/OverViewCard";
 import { FaProductHunt } from "react-icons/fa6";
-import ProductTable from "../../components/Tables/ProductTable";
+import ProductTable from "../../components/Tables/CategoryTable";
 import DashboardLayout from "../../components/DashboardLayout";
 import { useNavigate } from "react-router-dom";
 const OverView = () => {
@@ -33,9 +33,9 @@ const OverView = () => {
           />
         </div>
         <div className="flex justify-between my-2 mt-5">
-          <h1 className="poppins py-3 font-semibold text-xl">Plants</h1>
+          <h1 className="poppins font-semibold text-xl">Plants</h1>
           <button
-            className="text-white p-s2 px-4 bg-[#003F13] rounded-md text-xl"
+            className="text-white p-s2 px-4 py-2 bg-[#003F13] rounded-md text-xl"
             onClick={() => navigate("/dashboard/plant/add")}
           >
             Add Product

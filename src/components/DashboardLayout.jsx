@@ -37,6 +37,9 @@ const DashboardLayout = ({ children }) => {
       getItem("overView", "3", null, null, () => {
         navigate("/dashboard/plant/overview");
       }),
+      getItem("Category", "2", null, null, () => {
+        navigate("/dashboard/category");
+      }),
       getItem("Plants", "4", null, null, () => {
         navigate("/dashboard/plants");
       }),

@@ -7,10 +7,12 @@ import { IoIosCloseCircleOutline } from "react-icons/io";
 import "./header.css";
 import  LogoIcons from "../assets/images/Logo_1.png"
 import SubHeader from "./SubHeader";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Input, Select, Space } from 'antd';
 const NavBar = () => {
   const navigate=useNavigate();
+  const {pathname}=useLocation();
+  console.log("pathh",pathname.includes("plant"))
   const [openMenu,setOpenMenu]=useState(false)
   const { Search } = Input;
   const onSearch = (value, _e, info) => console.log(info?.source, value);
@@ -22,8 +24,8 @@ const NavBar = () => {
         <div className="logo cursor-pointer" onClick={()=>navigate("/")}>
          <img src={LogoIcons} width={200} />
         </div>
-        <Search placeholder="input search text" onSearch={onSearch} enterButton style={{width:"30%"}}/>
-        <Select
+     {(pathname.includes("plant") || pathname.includes("shop")) && <Search placeholder="input search text" onSearch={onSearch} enterButton style={{width:"30%"}}/>}
+     {(pathname.includes("plant") || pathname.includes("shop")) &&  <Select
     showSearch
     style={{
       width: 200,
@@ -79,7 +81,7 @@ const NavBar = () => {
         label: 'Not for kitchen daily activities',
       },
     ]}
-  />
+  />}
 
         <div className={`shadow ${openMenu && "active"}`}/>
         <ul className={`navigation ${openMenu && "active"}`}>

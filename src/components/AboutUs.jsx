@@ -1,5 +1,5 @@
 import aboutImage from "../assets/images/depositphotos_387030350-stock-photo-medicinal-plants-bowls-dry-medicinal.jpg";
-import aboutImage1 from "../assets/images/Urtica dioica L.(igisura).jpg";
+import aboutImage1 from "../assets/images/banner-v4-2.webp";
 import aboutImage2 from "../assets/images/Clerodendrum myricoides R. Br.(umukuzanyana).jpg";
 
 import leaveImage from "../assets/images/homeimg.jpg";
