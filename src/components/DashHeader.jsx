@@ -21,9 +21,9 @@ const DashHeader = () => {
     try {
       setIsLoading(true);
       api
-        .get("/user/logout")
+        .get("/user/logout", {}, { withCredentials: true })
         .then((res) => {
-          console.log("res", res);
+          console.log("res for logout", res);
         })
         .catch((err) => {
           console.log("err", err);

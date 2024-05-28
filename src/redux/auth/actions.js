@@ -27,8 +27,10 @@ export const loginAction = (data) => async (dispatch) => {
     if (res?.status === 200) {
       dispatch(authAction.setIsFetching(false));
       dispatch(authAction.login(res));
+      localStorage.setItem("userToken", res.data.token);
       toastMessage("success", "User logged in successfully");
     }
+    dispatch(authAction.setIsFetching(false));
   } catch (error) {
     console.log("errr", error);
     dispatch(authAction.setIsFetching(false));
