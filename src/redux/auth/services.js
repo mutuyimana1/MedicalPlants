@@ -1,11 +1,9 @@
 import axios from "axios";
+import { BACKEND_URL } from "../../utils/constant";
 
 export const accountService = async (data) => {
   try {
-    const res = await axios.post(
-      "http://localhost:5000/api/user/register",
-      data
-    );
+    const res = await axios.post(BACKEND_URL + "/user/register", data);
     return res;
   } catch (err) {
     console.log("error", err);
@@ -13,8 +11,7 @@ export const accountService = async (data) => {
 };
 export const loginService = async (data) => {
   try {
-    const res = await axios.post("http://localhost:5000/api/user/login", data);
-    console.log("RREEESSS", res);
+    const res = await axios.post(BACKEND_URL + "/user/login", data);
     return res;
   } catch (err) {
     console.log("error", err);

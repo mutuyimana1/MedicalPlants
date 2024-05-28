@@ -1,12 +1,6 @@
-import React, { useState } from "react";
-import {
-  DesktopOutlined,
-  FileOutlined,
-  PieChartOutlined,
-  TeamOutlined,
-  UserOutlined,
-} from "@ant-design/icons";
-import { Breadcrumb, Layout, Menu, theme } from "antd";
+import { useState } from "react";
+import { PieChartOutlined, TeamOutlined } from "@ant-design/icons";
+import { Layout, Menu, theme } from "antd";
 import { useNavigate } from "react-router-dom"; // Importing useNavigate
 import "../pages/style.css";
 
@@ -14,6 +8,7 @@ import DashHeader from "./DashHeader";
 import LogoIcons from "../assets/images/Logo_1.png";
 
 import { Md18UpRating } from "react-icons/md";
+
 const { Header, Content, Footer, Sider } = Layout;
 
 function getItem(label, key, icon, children, onClick) {

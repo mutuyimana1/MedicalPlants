@@ -1,4 +1,5 @@
 import { authAction } from ".";
+import { toastMessage } from "../../utils/toast";
 import { accountService, loginService } from "./services";
 import { notification } from "antd";
 export const createAccountAction = (data) => async (dispatch) => {
@@ -22,11 +23,11 @@ export const loginAction = (data) => async (dispatch) => {
   dispatch(authAction.setIsFetching(true));
   try {
     const res = await loginService(data);
+    console.log("res?.status", res);
     if (res?.status === 200) {
-      console.log("response", res);
       dispatch(authAction.setIsFetching(false));
       dispatch(authAction.login(res));
-      notification.success({ message: "Success" });
+      toastMessage("success", "User logged in successfully");
     }
   } catch (error) {
     console.log("errr", error);
