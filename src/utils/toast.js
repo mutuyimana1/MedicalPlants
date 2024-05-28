@@ -20,8 +20,8 @@ export const toastMessage = (type, message) => {
 };
 
 export const errorHandler = (error) => {
-  if (error?.response?.data?.message) {
-    toastMessage("error", error.response.data.message);
+  if (error?.response?.data?.error) {
+    toastMessage("error", error.response.data.error);
   } else {
     toastMessage("error", error.message);
   }

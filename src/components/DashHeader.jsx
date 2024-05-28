@@ -12,7 +12,7 @@ import axios from "axios";
 import { errorHandler, toastMessage } from "../utils/toast";
 import { useDispatch, useSelector } from "react-redux";
 const DashHeader = () => {
-  const { auth } = useSelector((state) => state);
+  const { loggeduser, token } = useSelector((state) => state.loggedIn);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -21,16 +21,17 @@ const DashHeader = () => {
     try {
       setIsLoading(true);
       api
-        .get("/user/logout", {}, { withCredentials: true })
+        .get("/user/logout", {})
         .then((res) => {
+          toastMessage("success", "Logged out successfull");
           console.log("res for logout", res);
+          navigate("/");
         })
         .catch((err) => {
-          console.log("err", err);
+          navigate("/");
+          errorHandler(err);
         });
-      toastMessage("success", "Logged out successfull");
       // dispatch();
-      // navigate("/");
     } catch (error) {
       errorHandler(error);
       setIsLoading(false);

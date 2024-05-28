@@ -1,6 +1,5 @@
 import axios from "axios";
 import { BACKEND_URL } from "./constant";
-import { useSelector } from "react-redux";
 
 export const setAuthHeaders = (token, extra) => {
   return {
