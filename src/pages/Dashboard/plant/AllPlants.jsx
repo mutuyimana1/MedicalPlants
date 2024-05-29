@@ -1,5 +1,3 @@
-import React from "react";
-import ProductDetails from "../../../components/ProductDetails";
 import ProductTable from "../../../components/Tables/CategoryTable";
 import DashboardLayout from "../../../components/DashboardLayout";
 import { useNavigate } from "react-router-dom";

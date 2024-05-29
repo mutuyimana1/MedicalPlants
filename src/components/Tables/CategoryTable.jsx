@@ -7,10 +7,13 @@ import { GrFormView } from "react-icons/gr";
 import { Dropdown, Space } from "antd";
 import { AiOutlineDelete } from "react-icons/ai";
 import { AiOutlineEdit } from "react-icons/ai";
+import { useSelector } from "react-redux";
 
-const ProductTable = () => {
+const CategoryTable = () => {
+  const { categories } = useSelector((state) => state.category);
   const [open, setOpen] = useState(false);
 
+  console.log("OOPOP", categories);
   const showDrawer = () => {
     setOpen(true);
   };
@@ -52,15 +55,13 @@ const ProductTable = () => {
   ];
   const columns = [
     {
-      title: "Picture",
-      dataIndex: "name",
-      render: (text, record) => (
-        <img src={img} alt="" className="rounded-full w-10 h-10" />
-      ),
+      title: "#",
+      dataIndex: "",
+      render: (text, record) => <div>1</div>,
     },
     {
       title: "Name",
-      dataIndex: "name",
+      dataIndex: "title",
       // width:40
     },
     // {
@@ -70,14 +71,24 @@ const ProductTable = () => {
     // },
     {
       title: "Description",
-      dataIndex: "kinyarwanda",
+      dataIndex: "description",
       // width:40
     },
 
     {
       title: "Status",
       dataIndex: "status",
+      render: (data, record) => {
+        return <div>{"Active"}</div>;
+      },
       // width:40
+    },
+    {
+      title: "Created At",
+      dataIndex: "createdAt",
+      render: (data, record) => {
+        return <div>{data.split("T")[0]}</div>;
+      },
     },
     // {
     //   title: 'Preparations',
@@ -189,7 +200,7 @@ const ProductTable = () => {
   ];
   return (
     <>
-      <Table columns={columns} dataSource={data} size="middle" />
+      <Table columns={columns} dataSource={categories} size="middle" />
       <Drawer
         title="Medicoma Details"
         onClose={onClose}
@@ -240,4 +251,4 @@ const ProductTable = () => {
     </>
   );
 };
-export default ProductTable;
+export default CategoryTable;

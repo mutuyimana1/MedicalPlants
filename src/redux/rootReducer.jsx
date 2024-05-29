@@ -3,11 +3,12 @@ import { combineReducers } from "redux";
 
 // import usersSlice from "./slices/usersSlice/usersSlice";
 import loggedInSlice from "./slices/loggedInSlice/loggedInSlice";
+import categorySlice from "./slices/category/categorySlice";
 
 const RootReducer = combineReducers({
   // utils: utilsSlice,
   loggedIn: loggedInSlice,
-  // users: usersSlice,
+  category: categorySlice,
 });
 
 export default RootReducer;

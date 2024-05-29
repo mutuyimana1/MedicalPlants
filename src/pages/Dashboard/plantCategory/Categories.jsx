@@ -1,9 +1,7 @@
-import React from "react";
-import PlantDetails from "../../../components/PlantDetails";
-import PlantTable from "../../../components/Tables/PlantTable";
 import DashboardLayout from "../../../components/DashboardLayout";
 import { useNavigate } from "react-router-dom";
-import ProductTable from "../../../components/Tables/CategoryTable";
+
+import CategoryTable from "../../../components/Tables/CategoryTable";
 
 const AllCategories = () => {
   const navigate = useNavigate();
@@ -14,12 +12,12 @@ const AllCategories = () => {
           <h1 className="poppins text-xl font-semibold">All Categories</h1>
           <button
             className="text-white px-4 py-2 bg-[#003F13] rounded-md text-lg"
-            onClick={() => navigate("/dashboard/plant/add")}
+            onClick={() => navigate("/dashboard/category/add")}
           >
             Add Category
           </button>
         </div>
-        <ProductTable />
+        <CategoryTable />
       </div>
     </DashboardLayout>
   );
