@@ -20,7 +20,7 @@ const UserOverView = () => {
        <div className='mt-5'>
         <div className='flex justify-between'> 
        <h1 className='poppins-bold py-3'>Top Users</h1> 
-       <button className='text-white p-s2 px-4 bg-[#003F13] rounded-md text-xl' onClick={()=>navigate("/dashboard/user/add")}>Add User</button>
+       <button className='text-white h-10 px-4 bg-[#003F13] rounded-md text-xl' onClick={()=>navigate("/dashboard/user/add")}>Add User</button>
        </div>
         <UsersTable/>
        </div>

@@ -11,7 +11,7 @@ const AllProducts = () => {
     <div>
 <div className='flex justify-between my-5'>
 
-       <h1 className='poppins-bold py-3'>AllProducts</h1><button className='text-white p-s2 px-4 bg-[#003F13] rounded-md text-xl' onClick={()=>navigate("/dashboard/product/add")}>Add product</button>
+       <h1 className='poppins-bold py-3'>AllProducts</h1><button className='text-white h-10 px-4 bg-[#003F13] rounded-md text-xl' onClick={()=>navigate("/dashboard/product/add")}>Add product</button>
 </div>
         <ProductTable/>
         </div>
