@@ -4,10 +4,35 @@ import { ShippingAddressForm } from "./Forms/ShippingForm";
 import { PaymentMethodForm } from "./Forms/PaymentForm";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
+import SubHeader from "./SubHeader";
+import LogoIcons from "../assets/images/Logo_1.png";
+import { Steps } from "antd";
 const Checkout = () => {
   return (
     <div className="w-full">
-    <NavBar/>
+    {/* <NavBar/> */}
+    {/* <SubHeader/> */}
+      <div className="flex justify-between bg-white shadow-md px-10 py-1 fixed top-0 z-10 w-full">
+          <div className="logo cursor-pointer " onClick={() => navigate("/")}>
+            <img src={LogoIcons} width={200} />
+          </div>
+          <div className="w-1/3 p-4">
+            <Steps 
+              current={1}
+              items={[
+                {
+                  title: "Carts"
+                },
+                {
+                  title: "Checkout"
+                },
+                {
+                  title: "Delivery"
+                }
+              ]}
+            />
+          </div>
+        </div>
       <div className="w-[80%] bg-white gap-4 m-auto flex mt-32 relative">
         <div className="w-[60%] bg-white border px-20 py-4 border-gsray-400">
           <div>
@@ -20,7 +45,7 @@ const Checkout = () => {
             </div>
           </div>
         </div>
-        <div className="w-[40%] fixed top-[7.8rem] p-3 right-4 bg-gray-100 ">
+        <div className="w-[40%] fixed top-[6rem] p-3 right-4 bg-gray-100 ">
           <div className="flex gap-5 p-5">
             <div className="relative">
               <img

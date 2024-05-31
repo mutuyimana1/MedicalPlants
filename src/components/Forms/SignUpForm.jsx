@@ -9,7 +9,7 @@ import { Spin } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
 const SignUpForm = () => {
   const {auth}=useSelector((state)=>state)
-  
+  const [form] = Form.useForm();
     const [showPassword, setShowPassword] = useState(false);
     const dispatch=useDispatch();
     const handlePasswordToggle = () => {
@@ -19,9 +19,11 @@ const SignUpForm = () => {
     const handleResetPasswordToggle = () => {
         setShowResetPassword(!showResetPassword);
       };
+
   const onSubmit = async (values) => {
     console.log("values", values);
-    await createAccountAction({...values})(dispatch)
+    // await createAccountAction({...values})(dispatch)
+    form.resetFields();
   };
 const navigate=useNavigate();
   return (
@@ -44,7 +46,7 @@ const navigate=useNavigate();
         <div className="w-full md:w-2/5  mtd-10 border border-[#025222] rounded-md  md:p-5 ">
           <img src={sigunImage} className="w-full h-full m-10 md:m-0"/>
         </div>
-        <Form className="w-full md:w-2/6 p-5 md:p-0" layout="vertical" onFinish={onSubmit}>
+        <Form className="w-full md:w-2/6 p-5 md:p-0" layout="vertical" form={form} onFinish={onSubmit}>
             <h1 className="text-center text-lg font-medium text-[#030229]">Sign Up </h1>
           <div className="flex w-full mt-6">
             
