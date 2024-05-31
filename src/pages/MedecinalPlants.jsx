@@ -1,26 +1,120 @@
 import React from "react";
 import NavBar from "../components/NavBar";
 import "../components/header.css";
-import CategoriesAccordion from "../components/CategoriesAccordion";
 import ProductCard from "../components/ProductCard";
-import aboutImage from "../assets/images/depositphotos_387030350-stock-photo-medicinal-plants-bowls-dry-medicinal.jpg";
 import aboutImage1 from "../assets/images/Urtica dioica L.(igisura).jpg";
 import aboutImage2 from "../assets/images/Clerodendrum myricoides R. Br.(umukuzanyana).jpg";
 import Footer from "../components/Footer";
-import { AudioOutlined } from '@ant-design/icons';
-import { Input, Select, Space } from 'antd';
-
+import { Collapse } from 'antd';
 const MedecinalPlants = () => {
-    const { Search } = Input;
-const suffix = (
-  <AudioOutlined
-    style={{
-      fontSize: 16,
-      color: '#1677ff',
-    }}
-  />
-);
-const onSearch = (value, _e, info) => console.log(info?.source, value);
+const items = [
+  {
+    key: '1',
+    label: <h1>See more</h1>,
+    children:<div className="p-10 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5 w-full m-auto">
+    <ProductCard
+      img1={aboutImage1}
+      img2={aboutImage2}
+      name={"Urtica massaica"}
+      btnName={"ReadMore"}
+      description={
+        "Fresh roots are crushed, boiled and strained"
+      }
+      onClick={() => navigate("/product/view")}
+    />
+    <ProductCard
+      img1={aboutImage1}
+      img2={aboutImage2}
+      name={"Urtica massaica"}
+      btnName={"ReadMore"}
+      description={
+        "Fresh roots are crushed, boiled and strained"
+      }
+      onClick={() => navigate("/product/view")}
+    />
+    <ProductCard
+      img1={aboutImage1}
+      img2={aboutImage2}
+      name={"Urtica massaica"}
+      btnName={"ReadMore"}
+      description={
+        "Fresh roots are crushed, boiled and strained"
+      }
+      onClick={() => navigate("/product/view")}
+    />
+    <ProductCard
+      img1={aboutImage1}
+      img2={aboutImage2}
+      name={"Urtica massaica"}
+      btnName={"ReadMore"}
+      description={
+        "Fresh roots are crushed, boiled and strained"
+      }
+      onClick={() => navigate("/product/view")}
+    />
+    <ProductCard
+      img1={aboutImage1}
+      img2={aboutImage2}
+      name={"Urtica massaica"}
+      btnName={"ReadMore"}
+      description={
+        "Fresh roots are crushed, boiled and strained"
+      }
+      onClick={() => navigate("/product/view")}
+    />
+    <ProductCard
+      img1={aboutImage1}
+      img2={aboutImage2}
+      name={"Urtica massaica"}
+      btnName={"ReadMore"}
+      description={
+        "Fresh roots are crushed, boiled and strained"
+      }
+      onClick={() => navigate("/product/view")}
+    />
+    <ProductCard
+      img1={aboutImage1}
+      img2={aboutImage2}
+      name={"Urtica massaica"}
+      btnName={"ReadMore"}
+      description={
+        "Fresh roots are crushed, boiled and strained"
+      }
+      onClick={() => navigate("/product/view")}
+    />
+    <ProductCard
+      img1={aboutImage1}
+      img2={aboutImage2}
+      name={"Urtica massaica"}
+      btnName={"ReadMore"}
+      description={
+        "Fresh roots are crushed, boiled and strained"
+      }
+      onClick={() => navigate("/product/view")}
+    />
+    <ProductCard
+      img1={aboutImage1}
+      img2={aboutImage2}
+      name={"Urtica massaica"}
+      btnName={"ReadMore"}
+      description={
+        "Fresh roots are crushed, boiled and strained"
+      }
+      onClick={() => navigate("/product/view")}
+    />
+    <ProductCard
+      img1={aboutImage1}
+      img2={aboutImage2}
+      name={"Urtica massaica"}
+      btnName={"ReadMore"}
+      description={
+        "Fresh roots are crushed, boiled and strained"
+      }
+      onClick={() => navigate("/product/view")}
+    />
+  </div>,
+  },
+];
   return (
     <>
       <NavBar />
@@ -304,7 +398,8 @@ const onSearch = (value, _e, info) => console.log(info?.source, value);
             onClick={() => navigate("/product/view")}
           />
         </div>
-        <div className="p-2 border rounded-md w-40 text-center">View More </div>
+        <Collapse defaultActiveKey={['1']} ghost items={items} />
+        {/* <div className="p-2 border rounded-md w-40 text-center">View More </div> */}
         </div>
         <div className="bg-white relative top-[20%] px-5">
           <h1 className="font-bold text-center text-2xl pt-5">
