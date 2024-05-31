@@ -2,9 +2,11 @@ import DashboardLayout from "../../../components/DashboardLayout";
 import { useNavigate } from "react-router-dom";
 
 import CategoryTable from "../../../components/Tables/CategoryTable";
+import { useState } from "react";
 
 const AllCategories = () => {
   const navigate = useNavigate();
+
   return (
     <DashboardLayout>
       <div>

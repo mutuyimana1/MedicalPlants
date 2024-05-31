@@ -7,8 +7,10 @@ import { GrFormView } from "react-icons/gr";
 import { Dropdown, Space } from "antd";
 import { AiOutlineDelete } from "react-icons/ai";
 import { AiOutlineEdit } from "react-icons/ai";
+import { useSelector } from "react-redux";
 
 const PlantTable = () => {
+  const { plants } = useSelector((state) => state.plants);
   const [open, setOpen] = useState(false);
 
   const showDrawer = () => {
@@ -23,7 +25,7 @@ const PlantTable = () => {
       label: (
         <div className="flex gap-2" onClick={showDrawer}>
           <GrFormView size={23} color="green" />{" "}
-          <h1 className="text-[#025222]">View</h1>
+          <h1 className="text-[#025222] text-lg">View</h1>
         </div>
       ),
       key: "0",
@@ -32,7 +34,7 @@ const PlantTable = () => {
       label: (
         <div className="flex gap-2">
           <AiOutlineEdit size={23} color="black" />{" "}
-          <h1 className="text-black">Edit</h1>
+          <h1 className="text-black text-lg">Edit</h1>
         </div>
       ),
       key: "1",
@@ -44,12 +46,14 @@ const PlantTable = () => {
       label: (
         <div className="flex gap-2">
           <AiOutlineDelete size={23} color="red" />{" "}
-          <h1 className="text-red-500">Delete</h1>
+          <h1 className="text-red-500 text-lg">Delete</h1>
         </div>
       ),
       key: "3",
     },
   ];
+
+  console.log("plants", plants);
   const columns = [
     {
       title: "Picture",
@@ -88,11 +92,6 @@ const PlantTable = () => {
       dataIndex: "familly",
       // width:40
     },
-    // {
-    //   title: 'medicinal Use',
-    //   dataIndex: 'medicinalUse',
-
-    // },
     {
       title: "Part to be used",
       dataIndex: "part",

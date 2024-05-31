@@ -8,12 +8,20 @@ import { Dropdown, Space } from "antd";
 import { AiOutlineDelete } from "react-icons/ai";
 import { AiOutlineEdit } from "react-icons/ai";
 import { useSelector } from "react-redux";
+import DeleteCategory from "../../pages/Dashboard/plantCategory/modal/DeleteCategory";
 
 const CategoryTable = () => {
   const { categories } = useSelector((state) => state.category);
   const [open, setOpen] = useState(false);
 
-  console.log("OOPOP", categories);
+  const [openDeleteModal, setOpenDeleteModal] = useState(false);
+  const [categoryId, setCategoryId] = useState(""); // to store the id of the category
+
+  const [selectedCategory, setSelectedCategory] = useState({
+    title: "",
+    description: "",
+  }); // to store the selected category
+
   const showDrawer = () => {
     setOpen(true);
   };
@@ -21,6 +29,15 @@ const CategoryTable = () => {
   const onClose = () => {
     setOpen(false);
   };
+
+  const handleDeleteModal = () => {
+    setOpenDeleteModal(!openDeleteModal);
+  };
+  const handleDelete = (key) => {
+    setCategoryId(key);
+    handleDeleteModal();
+  };
+
   const items = [
     {
       label: (
@@ -57,7 +74,7 @@ const CategoryTable = () => {
     {
       title: "#",
       dataIndex: "",
-      render: (text, record) => <div>1</div>,
+      render: (text, record, index) => <div>{index + 1}</div>,
     },
     {
       title: "Name",
@@ -105,7 +122,13 @@ const CategoryTable = () => {
         <Dropdown
           className="text-sm"
           menu={{
-            items,
+            items: items.map((item) => ({
+              ...item,
+              onClick:
+                item.key === "3"
+                  ? () => handleDelete(record._id)
+                  : item.onClick,
+            })),
           }}
           trigger={["click"]}
         >
@@ -200,6 +223,11 @@ const CategoryTable = () => {
   ];
   return (
     <>
+      <DeleteCategory
+        handleModal={handleDeleteModal}
+        isModalOpen={openDeleteModal}
+        id={categoryId}
+      />
       <Table columns={columns} dataSource={categories} size="middle" />
       <Drawer
         title="Medicoma Details"

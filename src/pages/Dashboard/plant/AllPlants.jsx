@@ -1,6 +1,7 @@
 import ProductTable from "../../../components/Tables/CategoryTable";
 import DashboardLayout from "../../../components/DashboardLayout";
 import { useNavigate } from "react-router-dom";
+import PlantTable from "../../../components/Tables/PlantTable";
 
 const AllPlants = () => {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ const AllPlants = () => {
             Add Plant
           </button>
         </div>
-        <ProductTable />
+        <PlantTable />
       </div>
     </DashboardLayout>
   );
