@@ -7,6 +7,7 @@
     /* padding: 1rem 0; */
     color: black;
 }
+:where(.css-dev-only-do-not-override-kghr11).ant-collapse>.ant-collapse-item >.ant-collapse-header .ant-collapse-arrow {display: none;}
 .header .wrapper{
     width: 100%;
     margin: 0 auto;
