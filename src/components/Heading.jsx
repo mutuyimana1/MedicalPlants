@@ -1,6 +1,4 @@
-import React from "react";
 import CustomButton from "./CustomButton";
-import { MdOutlineReadMore } from "react-icons/md";
 import headingImage from "../assets/images/depositphotos_210464032-stock-photo-close-green-leaves-water-drops.jpg";
 import leaveImage from "../assets/images/banner-v4-2.webp";
 import img2 from "../assets/images/banner-v4-2.webp";

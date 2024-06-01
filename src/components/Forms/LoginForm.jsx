@@ -1,27 +1,45 @@
 import { Button, Form, Input } from "antd";
 import { useState } from "react";
 import loginImage from "../../assets/images/undraw_secure_login_pdn4.svg";
-import { BiShow, BiSolidHide } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
-import { loginAction } from "../../redux/auth/actions";
-import { useDispatch, useSelector } from "react-redux";
+// import { loginAction } from "../../redux/auth/actions";
+import { useDispatch } from "react-redux";
 import { Spin } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
+import { api } from "../../utils/helpers";
+import { errorHandler } from "../../utils/toast";
+import {
+  setLoggedInUser,
+  setToken,
+} from "../../redux/slices/loggedInSlice/loggedInSlice";
+
 const LoginForm = () => {
-  const { auth } = useSelector((state) => state);
+  const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
-  const handlePasswordToggle = () => {
-    setShowPassword(!showPassword);
-  };
+  const navigate = useNavigate();
 
   const onSubmit = async (values) => {
-    console.log("values", values);
-    await loginAction({ ...values })(dispatch);
-    navigate("/dash");
+    setLoading(true);
+    await api
+      .post("/user/login", values)
+      .then((res) => {
+        setLoading(false);
+        console.log("res login", res);
+        dispatch(setLoggedInUser(res.data.user));
+        dispatch(setToken(res.data.token));
+        localStorage.setItem("userToken", res.data.token);
+
+        if (res.status === 200) {
+          navigate("/dash");
+        }
+      })
+      .catch((error) => {
+        errorHandler(error);
+        setLoading(false);
+      });
   };
-  const navigate = useNavigate();
-  console.log("auth", auth);
+
   return (
     <>
       <div className="w-full md:flex mt-[5%] gap-10 justify-center items-center">
@@ -57,10 +75,10 @@ const LoginForm = () => {
 
           <Button
             htmlType="submit"
-            className="mt-7 w-full bg-[#025222] text-white disabled:opacity-50 disabled:cursor-not-allowed  text-lg hover:text-[#025222]  py-4"
+            className="mt-7 w-full bg-[#025222] text-white disabled:opacity-50 disabled:cursor-not-allowed hover:text-[#025222] h-12 text-[18px] "
           >
             {" "}
-            {auth?.isFetching ? (
+            {loading ? (
               <Spin
                 indicator={<LoadingOutlined spin color="white" />}
                 className="text-white"
@@ -70,12 +88,12 @@ const LoginForm = () => {
             )}
           </Button>
 
-          <div className="flex gap-5 float-right mt-5">
-            <p>not have an Account?</p>{" "}
+          <div className="flex gap-5 float-right mt-4 items-center ">
+            <p className="text-lg mt-3">Not have an Account?</p>
             <Button
               onClick={() => navigate("/signup")}
               type="submit"
-              className=" w-42 bg-[#025222] text-white disabled:opacity-50 disabled:cursor-not-allowed    "
+              className=" w-42 bg-[#025222] text-white disabled:opacity-50 disabled:cursor-not-allowed h-12 text-lg    "
               // disabled={isPending}
             >
               Signup

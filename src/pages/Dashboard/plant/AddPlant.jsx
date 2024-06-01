@@ -1,9 +1,8 @@
-import React from "react";
-import { Button, Checkbox, Form, Input, Select } from "antd";
-import UploadComponent from "../../components/UploadComponent";
-import DashboardLayout from "../../components/DashboardLayout";
+import { Button, Form, Input, Select } from "antd";
+import UploadComponent from "../../../components/UploadComponent";
+import DashboardLayout from "../../../components/DashboardLayout";
 
-const CreateProduct = () => {
+const AddPlant = () => {
   const onFinish = (values) => {
     console.log("Success:", values);
   };
@@ -248,4 +247,4 @@ const CreateProduct = () => {
     </DashboardLayout>
   );
 };
-export default CreateProduct;
+export default AddPlant;

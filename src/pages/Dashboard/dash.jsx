@@ -1,11 +1,21 @@
-import React from "react";
+import { useEffect } from "react";
 import DashboardLayout from "../../components/DashboardLayout";
 import OverViewCard from "../../components/OverViewCard";
 import { RiMoneyEuroCircleLine } from "react-icons/ri";
 import ProductChart from "./ProductChart";
 import CustomPieChart from "./CustomPieChart";
 import ProductOverviewTable from "../../components/Tables/ProductOverViewTable";
+import { useDispatch } from "react-redux";
+import { fetchCategory } from "../../redux/slices/category/categoryThunks";
+import { fetchPlants } from "../../redux/slices/plant/plantThunks";
 const Dash = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchCategory());
+    dispatch(fetchPlants());
+  }, []);
+
   return (
     <DashboardLayout>
       <div className="flex gap-5">
@@ -61,20 +71,18 @@ const Dash = () => {
               Recent Activities
             </h1>
             <div className=" divide-y ">
-                <div className="mt-2 p-2">
-                    
-              <p>User Created </p>
-              <p>
-                created By <span>Claude</span>{" "}
-              </p>
-                </div>
-                <div className="mt-3 p-2">
-                    
-              <p>Product wishList </p>
-              <p>
-                Done By <span>Claude</span>{" "}
-              </p>
-                </div>
+              <div className="mt-2 p-2">
+                <p>User Created </p>
+                <p>
+                  created By <span>Claude</span>{" "}
+                </p>
+              </div>
+              <div className="mt-3 p-2">
+                <p>Product wishList </p>
+                <p>
+                  Done By <span>Claude</span>{" "}
+                </p>
+              </div>
             </div>
           </div>
         </div>

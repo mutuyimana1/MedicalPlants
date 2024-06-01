@@ -8,10 +8,19 @@ import { Dropdown, Space } from "antd";
 import { AiOutlineDelete } from "react-icons/ai";
 import { AiOutlineEdit } from "react-icons/ai";
 import { useSelector } from "react-redux";
+import DeleteCategory from "../../pages/Dashboard/plantCategory/modal/DeleteCategory";
 
-const PlantTable = () => {
-  const { plants } = useSelector((state) => state.plants);
+const CategoryTable = () => {
+  const { categories } = useSelector((state) => state.category);
   const [open, setOpen] = useState(false);
+
+  const [openDeleteModal, setOpenDeleteModal] = useState(false);
+  const [categoryId, setCategoryId] = useState(""); // to store the id of the category
+
+  const [selectedCategory, setSelectedCategory] = useState({
+    title: "",
+    description: "",
+  }); // to store the selected category
 
   const showDrawer = () => {
     setOpen(true);
@@ -20,12 +29,21 @@ const PlantTable = () => {
   const onClose = () => {
     setOpen(false);
   };
+
+  const handleDeleteModal = () => {
+    setOpenDeleteModal(!openDeleteModal);
+  };
+  const handleDelete = (key) => {
+    setCategoryId(key);
+    handleDeleteModal();
+  };
+
   const items = [
     {
       label: (
-        <div className="flex gap-2" onClick={showDrawer}>
+        <div className="flex gap-2 " onClick={showDrawer}>
           <GrFormView size={23} color="green" />{" "}
-          <h1 className="text-[#025222] text-lg">View</h1>
+          <h1 className="text-[#025222] text-sm">View</h1>
         </div>
       ),
       key: "0",
@@ -34,7 +52,7 @@ const PlantTable = () => {
       label: (
         <div className="flex gap-2">
           <AiOutlineEdit size={23} color="black" />{" "}
-          <h1 className="text-black text-lg">Edit</h1>
+          <h1 className="text-black text-sm">Edit</h1>
         </div>
       ),
       key: "1",
@@ -46,25 +64,21 @@ const PlantTable = () => {
       label: (
         <div className="flex gap-2">
           <AiOutlineDelete size={23} color="red" />{" "}
-          <h1 className="text-red-500 text-lg">Delete</h1>
+          <h1 className="text-red-500 text-sm">Delete</h1>
         </div>
       ),
       key: "3",
     },
   ];
-
-  console.log("plants", plants);
   const columns = [
     {
-      title: "Picture",
-      dataIndex: "name",
-      render: (text, record) => (
-        <img src={img} alt="" className="rounded-full w-10 h-10" />
-      ),
+      title: "#",
+      dataIndex: "",
+      render: (text, record, index) => <div>{index + 1}</div>,
     },
     {
       title: "Name",
-      dataIndex: "name",
+      dataIndex: "title",
       // width:40
     },
     // {
@@ -73,34 +87,25 @@ const PlantTable = () => {
     //   width:400
     // },
     {
-      title: "Vernacular name , Kinyarwanda name",
-      dataIndex: "kinyarwanda",
+      title: "Description",
+      dataIndex: "description",
       // width:40
     },
-    {
-      title: "Scientific name",
-      dataIndex: "scientific",
-      // width:40
-    },
-    {
-      title: "Common name",
-      dataIndex: "common",
-      // width:40
-    },
-    {
-      title: "Family",
-      dataIndex: "familly",
-      // width:40
-    },
-    {
-      title: "Part to be used",
-      dataIndex: "part",
-      // width:40
-    },
+
     {
       title: "Status",
       dataIndex: "status",
+      render: (data, record) => {
+        return <div>{"Active"}</div>;
+      },
       // width:40
+    },
+    {
+      title: "Created At",
+      dataIndex: "createdAt",
+      render: (data, record) => {
+        return <div>{data.split("T")[0]}</div>;
+      },
     },
     // {
     //   title: 'Preparations',
@@ -115,8 +120,15 @@ const PlantTable = () => {
       dataIndex: "action",
       render: (text, record) => (
         <Dropdown
+          className="text-sm"
           menu={{
-            items,
+            items: items.map((item) => ({
+              ...item,
+              onClick:
+                item.key === "3"
+                  ? () => handleDelete(record._id)
+                  : item.onClick,
+            })),
           }}
           trigger={["click"]}
         >
@@ -211,7 +223,12 @@ const PlantTable = () => {
   ];
   return (
     <>
-      <Table columns={columns} dataSource={data} size="middle" />
+      <DeleteCategory
+        handleModal={handleDeleteModal}
+        isModalOpen={openDeleteModal}
+        id={categoryId}
+      />
+      <Table columns={columns} dataSource={categories} size="middle" />
       <Drawer
         title="Medicoma Details"
         onClose={onClose}
@@ -219,7 +236,9 @@ const PlantTable = () => {
         width={1000}
       >
         <div className="flex gap-3">
-          <h1 className="py-3 poppins-bold w-[38rem]">Plant Description</h1>
+          <h1 className="py-3 poppins-bold w-[38rem]  text-lg">
+            Product Description
+          </h1>
           <p>
             Fresh roots are crushed, boiled and strained, and the liquid is used
             to treat gonorrhoea and syphilis. Fresh leaf juice, sometimes with
@@ -230,7 +249,9 @@ const PlantTable = () => {
           </p>
         </div>
         <div className="flex gap-3 mt-3">
-          <h1 className="py-3 poppins-bold w-[18rem]">Plant Preparation</h1>
+          <h1 className="py-3 poppins-bold w-[18rem] text-lg">
+            Product Preparation
+          </h1>
           <p>
             To orally administer the macerated fresh leaves or the filtrateof
             dry and crushed stems: 2 spoons three times per day (morning,
@@ -238,7 +259,7 @@ const PlantTable = () => {
           </p>
         </div>
         <div className="flex gap-3 mt-3">
-          <h1 className="py-3 poppins-bold w-[26rem]">medicinal Use</h1>
+          <h1 className="py-3 poppins-bold w-[26rem] text-lg">medicinal Use</h1>
           <p>
             Dried leaves are boiled in water and drunk to treat liver
             disease.Bark is used for snake bite. Root and bark are used for East
@@ -247,7 +268,7 @@ const PlantTable = () => {
           </p>
         </div>
         <div className="flex gap-3 mt-3">
-          <h1 className="py-3 poppins-bold w-[18rem]">Side Effect</h1>
+          <h1 className="py-3 poppins-bold w-[18rem] text-lg">Side Effect</h1>
           <p>
             Gastrointestinal Issues: Some people may experiencegastrointestinal
             discomfort such as nausea, vomiting, ordiarrhea, especially when
@@ -258,4 +279,4 @@ const PlantTable = () => {
     </>
   );
 };
-export default PlantTable;
+export default CategoryTable;
