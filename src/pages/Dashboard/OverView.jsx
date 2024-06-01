@@ -10,7 +10,7 @@ const OverView = () => {
     <DashboardLayout>
       <div>
         <h1 className="poppins py-3 text-xl font-semibold">Plant OverView</h1>
-        <div className="flex gap-5 flex-wrap">
+        {/* <div className="flex gap-5 flex-wrap">
           <OverviewCard
             text={"Total Product"}
             total={"120"}
@@ -31,7 +31,7 @@ const OverView = () => {
             total={"20"}
             icon={<FaProductHunt size={20} />}
           />
-        </div>
+        </div> */}
         <div className="flex justify-between my-2 mt-5">
           <h1 className="poppins font-semibold text-xl">Plants</h1>
           <button

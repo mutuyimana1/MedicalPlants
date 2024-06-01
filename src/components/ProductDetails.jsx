@@ -11,25 +11,23 @@ import aboutImage from "../assets/images/product-1-1 (1).png";
 import aboutImage1 from "../assets/images/download (2).png";
 import aboutImage2 from "../assets/images/download (3).png";
 import { useDispatch, useSelector } from "react-redux";
-import { viewplantAction } from "../redux/shop/actions";
+import { fetchSinglePlant } from "../redux/slices/plant/plantThunks";
 const ProductDetails = () => {
-  const { shop } = useSelector((state) => state);
-  const [currentImage, setCurrentImage] = useState(shop?.singlePlant?.data?.images && shop.singlePlant.data.images[0]?.url);
+  const { plant } = useSelector((state) => state.plants);
+  const [currentImage, setCurrentImage] = useState(plant?.images && plant?.images[0]?.url);
   const [count, setCount] = useState(1);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { plantId } = useParams();
-console.log("details",shop?.singlePlant?.data)
   useEffect(() => {
-    viewplantAction(plantId)(dispatch);
+    fetchSinglePlant(plantId)(dispatch);
   }, [plantId, dispatch]);
 
   useEffect(() => {
-    if (shop?.singlePlant?.data?.images) {
-      setCurrentImage(shop.singlePlant.data.images[0]?.url);
+    if (plant?.images) {
+      setCurrentImage(plant?.images[0]?.url);
     }
-    // shop?.singlePlant?.data?.images
-  }, [shop,shop?.singlePlant?.data?.images]);
+  }, [plant,plant?.images]);
   return (
     <div className="w-full">
       <NavBar />
@@ -44,7 +42,7 @@ console.log("details",shop?.singlePlant?.data)
             <img src={currentImage} alt="" className="w-[50%] h-[50%] rounded-md" />
           </div>
           <div className="w-full h-[25%] mt-2 bg-gray-200 rounded-sm flex gap-5 justify-center items-center">
-            {shop?.singlePlant?.data?.images?.map((el) => {
+            {plant?.images?.map((el) => {
               return (
                 <img
                   src={el?.url}
@@ -64,40 +62,40 @@ console.log("details",shop?.singlePlant?.data)
             <IoMdStar color="#FFBA00" size={20} />
             <IoMdStar color="#FFBA00" size={20} />
             <IoMdStar color="#FFBA00" size={20} />
-            <p>{shop?.singlePlant?.data?.totalrating} Review</p>
+            <p>{plant?.totalrating} Review</p>
           </div>
           <div className="p-2 md:w-[55%] w-full mt-5">
             <h1 className="text-[#030229] font-medium text-2xl underline">
-              {shop?.singlePlant?.data?.title}
+              {plant?.title}
             </h1>
             <p className="text-[#030229] font-medium text-md pt-3">
               Kinyarwanda Name
-              <span className="font-medium text-sm pl-4"> {shop?.singlePlant?.data?.kinyarwandaName}</span>
+              <span className="font-medium text-sm pl-4"> {plant?.kinyarwandaName}</span>
             </p>
             <p className="text-[#030229] font-medium text-md py-1">
               {" "}
               Scientific name:{" "}
-              <span className="font-medium text-sm pl-4"> {shop?.singlePlant?.data?.scientificName}</span>
+              <span className="font-medium text-sm pl-4"> {plant?.scientificName}</span>
             </p>
             <p className="text-[#030229] font-medium text-md py-[2px]">
               {" "}
               Common name:{" "}
-              <span className="font-medium text-sm pl-4"> {shop?.singlePlant?.data?.commonName}</span>
+              <span className="font-medium text-sm pl-4"> {plant?.commonName}</span>
             </p>
             <p className="text-[#030229] font-medium text-md py-1">
               {" "}
               Total Price:{" "}
-              <span className="font-bold text-xl pl-4"> {shop?.singlePlant?.data?.price} RFW</span>
+              <span className="font-bold text-xl pl-4"> {plant?.price} RFW</span>
             </p>
             <p className="text-[#030229B2] text-sm pt-2">
-              Family: <span className="pl-20">{shop?.singlePlant?.data?.slug} </span>
+              Family: <span className="pl-20">{plant?.slug} </span>
             </p>
             <p className="text-[#030229B2] text-sm py-1">
               Part to be used: <span className="pl-8">Leaves and stem </span>
             </p>
             
           </div>
-          <div>Categories: {shop?.singlePlant?.data?.category}</div>
+          <div>Categories: {plant?.category}</div>
           <div className="flex gap-3 mt-2">
             <div className="flex items-center justify-center gap-2 border py-2 px-5 rounded-md">
               <button disabled={count <= 1} onClick={() => setCount(count - 1)}>
@@ -125,7 +123,7 @@ console.log("details",shop?.singlePlant?.data)
       <div className="px-20 mt-[30rem] md:mt-5 lg:mts-[50rem] xls:mt-[30rem] 2xls:mt-80 w-[75%] m-auto">
             <h1 className="text-[#030229] font-medium text-2xl text-center py-1"> Medicinal use:{" "}</h1> 
             <ul className="text-[#030229B2] text-sm ">
-            {shop?.singlePlant?.data?.howToUse?.map((el)=>{
+            {plant?.howToUse?.map((el)=>{
               console.log("how",el)
               return(
 
@@ -145,7 +143,7 @@ console.log("details",shop?.singlePlant?.data)
             </p> */}
             <h1 className="text-[#030229] font-medium text-2xl text-center py-3"> Dosages and preparation:{" "}</h1>
             <p className="text-[#030229B2] text-sm pt-1">
-            {shop?.singlePlant?.data?.dosages?.adults}
+            {plant?.dosages?.adults}
              
             </p>
       <h1 className="text-[#030229] font-medium text-xl pt-4 text-center py-3">
@@ -163,7 +161,7 @@ console.log("details",shop?.singlePlant?.data)
               Description
             </h1>
             <p className="text-[#030229B2] text-sm pt-2">
-            {shop?.singlePlant?.data?.description}
+            {plant?.description}
             </p>
       </div>
       <div className="mts-[60rem] lg:mts-[50rem] xls:mt-[30rem] 2xls:mt-80 mt-5">

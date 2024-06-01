@@ -21,3 +21,14 @@ export const fetchSinglePlant = createAsyncThunk(
     }
   }
 );
+export const fetchPlantByCategories = createAsyncThunk(
+  "fetchPlantByCategories",
+  async (query) => {
+    try {
+      const response = await api.get(`/plants/${query}`);
+      return response.data;
+    } catch (err) {
+      throw new Error(err);
+    }
+  }
+);
