@@ -3,10 +3,12 @@ import DashboardLayout from "../../../components/DashboardLayout";
 import { api } from "../../../utils/helpers";
 import { errorHandler, toastMessage } from "../../../utils/toast";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 
 const AddCategory = () => {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
   const onFinish = async (values) => {
     setLoading(true);
     console.log("Success:", values);
@@ -16,6 +18,7 @@ const AddCategory = () => {
       .then((res) => {
         setLoading(false);
         form.resetFields();
+
         toastMessage("success", res.data.message);
       })
       .catch((error) => {

@@ -5,7 +5,7 @@ const initialState = {
   is_plant_loading: false,
   is_plants_loading: false,
   plant: {},
-  plants: [],
+  allplants: [],
 };
 
 const plantsSlice = createSlice({
@@ -19,7 +19,7 @@ const plantsSlice = createSlice({
       .addCase(fetchPlants.fulfilled, (state, action) => {
         const data = action.payload;
         state.is_plants_loading = false;
-        state.plants = data;
+        state.allplants = data;
       })
       .addCase(fetchPlants.rejected, (state, action) => {
         console.log(action.error.message, "error");
