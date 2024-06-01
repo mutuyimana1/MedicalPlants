@@ -33,11 +33,12 @@ const Shop = () => {
   const onChange = (currentSlide) => {
     console.log(currentSlide);
   };
+  const category="leaves";
   const dispatch=useDispatch();
   const navigate=useNavigate();
 
   useEffect(()=>{
-    getAllPlantsAction()(dispatch)
+    getAllPlantsAction("")(dispatch)
   },[dispatch])
   return (
     <>

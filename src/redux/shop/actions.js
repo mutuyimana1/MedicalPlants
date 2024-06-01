@@ -1,10 +1,10 @@
 import { shopAction } from ".";
 import { getAllPlantsService, viewPlantsService } from "./services";
 import { notification } from "antd";
-export const getAllPlantsAction = () => async (dispatch) => {
+export const getAllPlantsAction = (query) => async (dispatch) => {
   dispatch(shopAction.setIsFetching(true));
   try {
-    const res = await getAllPlantsService();
+    const res = await getAllPlantsService(query);
     console.log("data",res)
     if (res) {
       dispatch(shopAction.setIsFetching(false));
