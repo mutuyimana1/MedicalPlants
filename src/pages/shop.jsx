@@ -85,7 +85,7 @@ const Shop = () => {
                   key={i}
                   status={"For Sale"}
                   img1={el?.images[0]?.url}
-                  img2={aboutImage2}
+                  img2={el?.images[1]?.url}
                   name={el?.title}
                   amount={el?.price}
                   btnName={"ReadMore"}

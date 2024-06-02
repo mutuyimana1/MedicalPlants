@@ -43,3 +43,14 @@ export const fetchCart = createAsyncThunk(
     }
   }
 );
+export const deleteCart = createAsyncThunk(
+  "deleteCart",
+  async () => {
+    try {
+      const response = await api.delete(`/user/empty-cart`);
+      return response.data;
+    } catch (err) {
+      throw new Error(err);
+    }
+  }
+);
