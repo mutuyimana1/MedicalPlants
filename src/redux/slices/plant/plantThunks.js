@@ -32,3 +32,14 @@ export const fetchPlantByCategories = createAsyncThunk(
     }
   }
 );
+export const fetchCart = createAsyncThunk(
+  "fetchCart",
+  async () => {
+    try {
+      const response = await api.get(`/user/cart`);
+      return response.data;
+    } catch (err) {
+      throw new Error(err);
+    }
+  }
+);

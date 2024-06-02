@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchPlants, fetchSinglePlant ,fetchPlantByCategories} from "./plantThunks";
+import { fetchPlants, fetchSinglePlant ,fetchPlantByCategories, fetchCart} from "./plantThunks";
 
 const initialState = {
   is_plant_loading: false,
@@ -8,6 +8,7 @@ const initialState = {
   allplants: [],
   singlePlant:{},
   plantCategory:{},
+  cartItems:{}
 };
 
 const plantsSlice = createSlice({
@@ -48,6 +49,18 @@ const plantsSlice = createSlice({
         state.plantCategory = data;
       })
       .addCase(fetchPlantByCategories.rejected, (state, action) => {
+        console.log(action.error.message, "error");
+        state.is_plant_loading  = false;
+      })
+      .addCase(fetchCart.pending, (state) => {
+        state.is_plant_loading  = true;
+      })
+      .addCase(fetchCart.fulfilled, (state, action) => {
+        const data = action.payload;
+        state.is_plant_loading  = false;
+        state.cartItems = data;
+      })
+      .addCase(fetchCart.rejected, (state, action) => {
         console.log(action.error.message, "error");
         state.is_plant_loading  = false;
       })

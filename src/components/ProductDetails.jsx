@@ -11,9 +11,14 @@ import aboutImage from "../assets/images/product-1-1 (1).png";
 import aboutImage1 from "../assets/images/download (2).png";
 import aboutImage2 from "../assets/images/download (3).png";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchSinglePlant } from "../redux/slices/plant/plantThunks";
+import { fetchPlants, fetchSinglePlant } from "../redux/slices/plant/plantThunks";
+import { Skeleton } from "antd";
+import { api } from "../utils/helpers";
+import { toastMessage } from "../utils/toast";
+import { Spin } from "antd";
+import { LoadingOutlined } from "@ant-design/icons";
 const ProductDetails = () => {
-  const { plant } = useSelector((state) => state.plants);
+  const { plant,allplants,is_plants_loading } = useSelector((state) => state.plants);
   const [currentImage, setCurrentImage] = useState(plant?.images && plant?.images[0]?.url);
   const [count, setCount] = useState(1);
   const navigate = useNavigate();
@@ -28,6 +33,35 @@ const ProductDetails = () => {
       setCurrentImage(plant?.images[0]?.url);
     }
   }, [plant,plant?.images]);
+  useEffect(() => {
+    dispatch(fetchPlants());
+  }, [dispatch]);
+  const [loading, setLoading] = useState(false);
+  // const dispatch = useDispatch();
+  const onFinish = async (values) => {
+    setLoading(true);
+    console.log("Success:", values);
+
+    await api
+      .post("/user/cart", {
+        cart: [
+          {
+            _id: plantId,
+            count: 1,
+          }
+        ],
+      })
+      .then((res) => {
+        setLoading(false);
+        toastMessage("success", res.statusText);
+        navigate("/cart")
+        console.log("msg",res)
+      })
+      .catch((error) => {
+        setLoading(false);
+        errorHandler(error);
+      });
+  };
   return (
     <div className="w-full">
       <NavBar />
@@ -112,10 +146,13 @@ const ProductDetails = () => {
               </button>
             </div>
             <Button
-              name={"Add To Cart"}
+              name={loading?<Spin
+                indicator={<LoadingOutlined spin size={25} color="black"/>}
+                className="text-black"
+              />:"Add To Cart"}
               color={"black"}
               width={"[50px]"}
-              onClick={() => navigate("/cart")}
+              onClick={() => onFinish()}
             />
           </div>
         </div>
@@ -167,73 +204,34 @@ const ProductDetails = () => {
       <div className="mts-[60rem] lg:mts-[50rem] xls:mt-[30rem] 2xls:mt-80 mt-5">
         <h1 className="text-2xl font-semibold text-center">Related Products</h1>
       </div>
+
+      {is_plants_loading ? (
+          <div className="grid grid-cols-4 gap-4">
+            <Skeleton />
+            <Skeleton />
+            <Skeleton />
+            <Skeleton />
+          </div>
+        ) : (
       <div className="p-10 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5 w-full m-auto">
-        <ProductCard
-          status={"For Sale"}
-          img1={aboutImage1}
-          img2={aboutImage2}
-          onClick={()=>navigate("/product/details")}
-          name={"Urtica massaica"}
-          amount={40000}
-          btnName={"ReadMore"}
-          btnSecondName={"Add to cart"}
-          description={
-            "Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"
-          }
-        />
-        <ProductCard
-          status={"Sold"}
-          img1={aboutImage1}
-          img2={aboutImage}
-          onClick={()=>navigate("/product/details")}
-          name={"Rubia cordifolia L"}
-          amount={50000}
-          btnName={"ReadMore"}
-          btnSecondName={"Add to cart"}
-          description={
-            "Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"
-          }
-        />
-        <ProductCard
-          status={"discount"}
-          img1={aboutImage2}
-          img2={aboutImage1}
-          onClick={()=>navigate("/product/details")}
-          name={"Rubia cordifolia L"}
-          amount={40000}
-          btnName={"ReadMore"}
-          btnSecondName={"Add to cart"}
-          description={
-            "Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"
-          }
-        />
-        <ProductCard
-          status={"For Sale"}
-          img1={aboutImage1}
-          img2={aboutImage2}
-          onClick={()=>navigate("/product/details")}
-          name={"Rubia cordifolia L"}
-          amount={3000}
-          btnName={"ReadMore"}
-          btnSecondName={"Add to cart"}
-          description={
-            "Clerodendrum myricoides is a tropical flowering shrub known for itsstriking blue-violet flowers and glossy green foliage."
-          }
-        />
-        <ProductCard
-          status={"For Sale"}
-          img1={aboutImage}
-          img2={aboutImage1}
-          onClick={()=>navigate("/product/details")}
-          name={"Rubia cordifolia L"}
-          amount={78000}
-          btnName={"ReadMore"}
-          btnSecondName={"Add to cart"}
-          description={
-            ": Tetradenia riparia, also known as Misty Plume Bush, is an aromatic shrubnative to Africa, characterized by its fragrant foliage and clusters of small, white or palepink flowers."
-          }
-        />
-      </div>
+      {allplants.map((el, i) => {
+              console.log("plant data", el);
+              return (
+                <ProductCard
+                  key={i}
+                  status={"For Sale"}
+                  img1={el?.images[0]?.url}
+                  img2={el?.images[1]?.url}
+                  name={el?.title}
+                  amount={el?.price}
+                  btnName={"ReadMore"}
+                  // btnSecondName={"Add to cart"}
+                  description={el?.description}
+                  onClick={() => navigate(`/shop/${el?._id}`)}
+                />
+              );
+            })}
+      </div>)}
       <Footer />
     </div>
   );
