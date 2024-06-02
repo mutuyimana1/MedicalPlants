@@ -18,7 +18,6 @@ const AddCategory = () => {
       .then((res) => {
         setLoading(false);
         form.resetFields();
-
         toastMessage("success", res.data.message);
       })
       .catch((error) => {

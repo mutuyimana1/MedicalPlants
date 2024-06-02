@@ -1,10 +1,8 @@
-import React, { useState } from "react";
-import { Divider, Drawer, Table } from "antd";
-import img from "../../assets/images/pexels-photo-4036233.jpeg";
+import { useState } from "react";
+import { Drawer, Table } from "antd";
 import { BsThreeDots } from "react-icons/bs";
-import { DownOutlined } from "@ant-design/icons";
 import { GrFormView } from "react-icons/gr";
-import { Dropdown, Space } from "antd";
+import { Dropdown } from "antd";
 import { AiOutlineDelete } from "react-icons/ai";
 import { AiOutlineEdit } from "react-icons/ai";
 import { useSelector } from "react-redux";
@@ -16,11 +14,6 @@ const CategoryTable = () => {
 
   const [openDeleteModal, setOpenDeleteModal] = useState(false);
   const [categoryId, setCategoryId] = useState(""); // to store the id of the category
-
-  const [selectedCategory, setSelectedCategory] = useState({
-    title: "",
-    description: "",
-  }); // to store the selected category
 
   const showDrawer = () => {
     setOpen(true);
