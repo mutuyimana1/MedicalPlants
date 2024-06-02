@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import NavBar from "../components/NavBar";
 import "../components/header.css";
 import ProductCard from "../components/ProductCard";
@@ -20,7 +20,7 @@ import Spices from "./plantCategories/Spices";
 import Edible from "./plantCategories/Edible";
 const MedecinalPlants = () => {
   const { plantCategory } = useSelector((state) => state.plants);
-
+  const [selectedCategories,setSelectedCategories]=useState("")
   const navigate = useNavigate();
   const items = [
     {
@@ -116,78 +116,25 @@ const MedecinalPlants = () => {
   useEffect(() => {
     fetchPlantByCategories(`?category=leaves`)(dispatch);
   }, [dispatch]);
-  console.log("plant categories", plantCategory);
+  console.log("plant categories medecinalCategory", selectedCategories);
   return (
     <>
-      <NavBar />
+      <NavBar setSelectedCategories={setSelectedCategories}/>
       <div className="w-full h-screen bg-[url('https://media.istockphoto.com/id/175203893/photo/smiling-woman-with-healthy-skin-holding-cream.jpg?s=2048x2048&w=is&k=20&c=PyB-0SOmKlVtEFsHpuYh-IxJcdfbg-SIoYrWwEuZeBU=')] bg-cover mt-[7rem] bg-fixed">
-        {/* <div className="w-full relative top-3 z-50"> */}
-        {/* <div className="bg-white px-10 py-4 w-1/3 fixed right-0 flex gap-5"> */}
-        {/* <Search placeholder="input search text" onSearch={onSearch} enterButton style={{width:"200px",marginTop:"10px"}}/> */}
-        {/* <CategoriesAccordion/> */}
-        {/* <Select
-    showSearch
-    style={{
-      width: 200,
-      height:50
-    }}
-    placeholder="Search to Select"
-    optionFilterProp="children"
-    filterOption={(input, option) => (option?.label ?? '').includes(input)}
-    filterSort={(optionA, optionB) =>
-      (optionA?.label ?? '').toLowerCase().localeCompare((optionB?.label ?? '').toLowerCase())
-    }
-    
-      
-    options={[
-      {
-        value: '1',
-        label: 'Vegetables',
-      },
-      {
-        value: '2',
-        label: 'Flowers',
-      },
-      {
-        value: '3',
-        label: 'Spices',
-      },
-      {
-        value: '4',
-        label: 'Fruit',
-      },
-      {
-        value: '5',
-        label: 'Resolved',
-      },
-      {
-        value: '6', 
-        label: 'Stem',
-      },
-      {
-        value: '7',
-        label: 'Roots',
-      },
-      {
-        value: '8',
-        label: 'Lesser- known ',
-      },
-      {
-        value: '9',
-        label: 'Edible Plants',
-      },
-      {
-        value: '10',
-        label: 'Not for kitchen daily activities',
-      },
-    ]}
-  /> */}
-
-        {/* </div> */}
-        {/* </div> */}
         <h1 className="pt-20 text-center  text-2xl font-bold">
           Medicinal Plants
         </h1>
+        {selectedCategories ? <>
+        {selectedCategories==="leaves" && <LeavesPlants/>}
+       {selectedCategories==="Vegetables" && <Vegetables />}
+       {selectedCategories==="not for kitchen daily activities" && <NotChecken />}
+        {selectedCategories==="flowers" && <Flower />}
+        {selectedCategories==="fruit" && <Fruits />}
+        {selectedCategories==="rootes" && <Routes />}
+        {selectedCategories==="spices" && <Spices />}
+        {selectedCategories==="edible" && <Edible />}
+      
+        </>:<>
         <LeavesPlants />
         <Vegetables />
         <NotChecken />
@@ -196,7 +143,11 @@ const MedecinalPlants = () => {
         <Routes />
         <Spices />
         <Edible />
+        </>}
+       <div className="mt-[15rem]">
+
         <Footer />
+       </div>
       </div>
     </>
   );

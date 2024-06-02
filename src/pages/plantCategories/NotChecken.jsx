@@ -10,9 +10,8 @@ const NotChecken = () => {
     const navigate=useNavigate();
   const dispatch=useDispatch();
   useEffect(()=>{
-    fetchPlantByCategories(`?category=Not for kitchen daily activities plants`)(dispatch)
+    fetchPlantByCategories(`?category=not for kitchen daily activities`)(dispatch)
   },[dispatch])
-  console.log("plant categories",plantCategory)
     return (
       <>
           <div className="bg-white relative top-[19%] px-5">

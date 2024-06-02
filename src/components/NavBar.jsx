@@ -9,13 +9,18 @@ import  LogoIcons from "../assets/images/Logo_1.png"
 import SubHeader from "./SubHeader";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Input, Select, Space } from 'antd';
-const NavBar = () => {
+const NavBar = (props) => {
   const navigate=useNavigate();
   const {pathname}=useLocation();
-  console.log("pathh",pathname.includes("plant"))
+  console.log("pathhghgdssdghsdgh",props)
   const [openMenu,setOpenMenu]=useState(false)
   const { Search } = Input;
   const onSearch = (value, _e, info) => console.log(info?.source, value);
+  const handleChange = (value) => {
+    pathname.includes("shop") && props?.setSelectedCategory(value)
+    pathname.includes("plant") && props?.setSelectedCategories(value)
+    console.log(`selected ${value}`);
+  };
   return (
     <nav className="fixed z-50 w-full top-0 divide-y-2">
     <SubHeader/>
@@ -25,63 +30,61 @@ const NavBar = () => {
          <img src={LogoIcons} width={200} />
         </div>
      {(pathname.includes("plant") || pathname.includes("shop")) && <Search  placeholder="input search text" onSearch={onSearch} enterButton style={{width:"30%"}}/>}
-     {(pathname.includes("plant") || pathname.includes("shop")) &&  <Select
-    showSearch
-    style={{
-      width: 200,
-      height:50
-    }}
-    placeholder="filter Plant by Categories"
-    optionFilterProp="children"
-    filterOption={(input, option) => (option?.label ?? '').includes(input)}
-    filterSort={(optionA, optionB) =>
-      (optionA?.label ?? '').toLowerCase().localeCompare((optionB?.label ?? '').toLowerCase())
-    }
-    
+     {(pathname.includes("plant") || pathname.includes("shop")) && <Select
+     placeholder="Select by Categories"
+      defaultValue=""
+      style={{ width: 200,height:50 }}
+      onChange={handleChange}
+      options={[
+        
+        {
+          value: 'Vegetables',
+          label: 'Vegetables',
+        },
+        {
+          value: 'leaves',
+          label: 'Leaves',
+        },
+        {
+          value: 'flowers',
+          label: 'Flowers',
+        },
+        {
+          value: 'spices',
+          label: 'Spices',
+        },
+        {
+          value: 'fruit',
+          label: 'Fruit',
+        },
+        {
+          value: 'resolved',
+          label: 'Resolved',
+        },
+        {
+          value: 'stem', 
+          label: 'Stem',
+        },
+        {
+          value: 'rootes',
+          label: 'Roots',
+        },
+        {
+          value: 'lesser',
+          label: 'Lesser- known ',
+        },
+        {
+          value: 'edible',
+          label: 'Edible Plants',
+        },
+        {
+          value: 'not for kitchen daily activities',
+          label: 'Not for kitchen daily activities',
+        },
+      ]}
+    />
       
-    options={[
-      {
-        value: '1',
-        label: 'Vegetables',
-      },
-      {
-        value: '2',
-        label: 'Flowers',
-      },
-      {
-        value: '3',
-        label: 'Spices',
-      },
-      {
-        value: '4',
-        label: 'Fruit',
-      },
-      {
-        value: '5',
-        label: 'Resolved',
-      },
-      {
-        value: '6', 
-        label: 'Stem',
-      },
-      {
-        value: '7',
-        label: 'Roots',
-      },
-      {
-        value: '8',
-        label: 'Lesser- known ',
-      },
-      {
-        value: '9',
-        label: 'Edible Plants',
-      },
-      {
-        value: '10',
-        label: 'Not for kitchen daily activities',
-      },
-    ]}
-  />}
+  }
 
         <div className={`shadow ${openMenu && "active"}`}/>
         <ul className={`navigation ${openMenu && "active"}`}>

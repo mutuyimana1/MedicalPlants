@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import ProductCard from "../../components/ProductCard";
 
-const LeavesPlants = () => {
+const LeavesPlants = (props) => {
     const { plantCategory } = useSelector((state) => state.plants);
     
     const navigate=useNavigate();
