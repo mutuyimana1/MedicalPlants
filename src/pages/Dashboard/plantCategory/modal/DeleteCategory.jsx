@@ -36,6 +36,7 @@ const DeleteCategory = ({ isModalOpen, handleModal, id }) => {
       onOk={handleOk}
       onCancel={handleCancel}
       confirmLoading={loading}
+      okText={loading ? "Deleting" : "Delete"}
     >
       <span className="">Are you sure to delete this category?</span>
     </Modal>

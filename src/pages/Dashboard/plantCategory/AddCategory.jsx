@@ -4,6 +4,7 @@ import { api } from "../../../utils/helpers";
 import { errorHandler, toastMessage } from "../../../utils/toast";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { fetchCategory } from "../../../redux/slices/category/categoryThunks";
 
 const AddCategory = () => {
   const [form] = Form.useForm();
@@ -18,6 +19,7 @@ const AddCategory = () => {
       .then((res) => {
         setLoading(false);
         form.resetFields();
+        dispatch(fetchCategory());
         toastMessage("success", res.data.message);
       })
       .catch((error) => {

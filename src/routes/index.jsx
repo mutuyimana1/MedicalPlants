@@ -27,6 +27,7 @@ import MedecinalPlants from "../pages/MedecinalPlants";
 import AllPlants from "../pages/Dashboard/plant/AllPlants";
 import AllCategories from "../pages/Dashboard/plantCategory/Categories";
 import AddCategory from "../pages/Dashboard/plantCategory/AddCategory";
+import AddPlant from "../pages/Dashboard/plant/AddPlant";
 const Index = () => {
   return (
     <Router>
@@ -53,7 +54,7 @@ const Index = () => {
 
         {/* Nested routes under "/dashboard" */}
         <Route path="/dash" element={<Dash />} />
-        <Route path="/dashboard/plant/add" element={<CreateProduct />} />
+        <Route path="/dashboard/plant/add" element={<AddPlant />} />
         <Route path="/dashboard/category/add" element={<AddCategory />} />
         <Route path="/dashboard/user/add" element={<CreateUser />} />
         <Route path="/dashboard" element={<Dashboard />} />
