@@ -12,7 +12,7 @@ import {
   setLoggedInUser,
   setToken,
 } from "../../redux/slices/loggedInSlice/loggedInSlice";
-
+import "./forms.css"
 const LoginForm = () => {
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();

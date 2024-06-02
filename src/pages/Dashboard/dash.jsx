@@ -8,6 +8,7 @@ import ProductOverviewTable from "../../components/Tables/ProductOverViewTable";
 import { useDispatch } from "react-redux";
 import { fetchCategory } from "../../redux/slices/category/categoryThunks";
 import { fetchPlants } from "../../redux/slices/plant/plantThunks";
+import { FaUsers } from "react-icons/fa6";
 const Dash = () => {
   const dispatch = useDispatch();
 
@@ -39,6 +40,7 @@ const Dash = () => {
           text={"ToDay's Sales"}
           icon={<RiMoneyEuroCircleLine size={23} />}
         />
+        <OverViewCard text={"Total Users"} total={"4000"} icon={<FaUsers size={20}/>}/>
       </div>
       <div className="flex gap-5 flex-wrap w-full">
         <div className="mt-5 bg-white p-5 w-1/2 rounded-md shadow-md ">

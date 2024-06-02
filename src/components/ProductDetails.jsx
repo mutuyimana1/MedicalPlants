@@ -11,25 +11,57 @@ import aboutImage from "../assets/images/product-1-1 (1).png";
 import aboutImage1 from "../assets/images/download (2).png";
 import aboutImage2 from "../assets/images/download (3).png";
 import { useDispatch, useSelector } from "react-redux";
-import { viewplantAction } from "../redux/shop/actions";
+import { fetchPlants, fetchSinglePlant } from "../redux/slices/plant/plantThunks";
+import { Skeleton } from "antd";
+import { api } from "../utils/helpers";
+import { toastMessage } from "../utils/toast";
+import { Spin } from "antd";
+import { LoadingOutlined } from "@ant-design/icons";
 const ProductDetails = () => {
-  const { shop } = useSelector((state) => state);
-  const [currentImage, setCurrentImage] = useState(shop?.singlePlant?.data?.images && shop.singlePlant.data.images[0]?.url);
+  const { plant,allplants,is_plants_loading } = useSelector((state) => state.plants);
+  const [currentImage, setCurrentImage] = useState(plant?.images && plant?.images[0]?.url);
   const [count, setCount] = useState(1);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { plantId } = useParams();
-console.log("details",shop?.singlePlant?.data)
   useEffect(() => {
-    viewplantAction(plantId)(dispatch);
+    fetchSinglePlant(plantId)(dispatch);
   }, [plantId, dispatch]);
 
   useEffect(() => {
-    if (shop?.singlePlant?.data?.images) {
-      setCurrentImage(shop.singlePlant.data.images[0]?.url);
+    if (plant?.images) {
+      setCurrentImage(plant?.images[0]?.url);
     }
-    // shop?.singlePlant?.data?.images
-  }, [shop,shop?.singlePlant?.data?.images]);
+  }, [plant,plant?.images]);
+  useEffect(() => {
+    dispatch(fetchPlants());
+  }, [dispatch]);
+  const [loading, setLoading] = useState(false);
+  // const dispatch = useDispatch();
+  const onFinish = async (values) => {
+    setLoading(true);
+    console.log("Success:", values);
+
+    await api
+      .post("/user/cart", {
+        cart: [
+          {
+            _id: plantId,
+            count: 1,
+          }
+        ],
+      })
+      .then((res) => {
+        setLoading(false);
+        toastMessage("success", res.statusText);
+        navigate("/cart")
+        console.log("msg",res)
+      })
+      .catch((error) => {
+        setLoading(false);
+        errorHandler(error);
+      });
+  };
   return (
     <div className="w-full">
       <NavBar />
@@ -44,7 +76,7 @@ console.log("details",shop?.singlePlant?.data)
             <img src={currentImage} alt="" className="w-[50%] h-[50%] rounded-md" />
           </div>
           <div className="w-full h-[25%] mt-2 bg-gray-200 rounded-sm flex gap-5 justify-center items-center">
-            {shop?.singlePlant?.data?.images?.map((el) => {
+            {plant?.images?.map((el) => {
               return (
                 <img
                   src={el?.url}
@@ -64,40 +96,40 @@ console.log("details",shop?.singlePlant?.data)
             <IoMdStar color="#FFBA00" size={20} />
             <IoMdStar color="#FFBA00" size={20} />
             <IoMdStar color="#FFBA00" size={20} />
-            <p>{shop?.singlePlant?.data?.totalrating} Review</p>
+            <p>{plant?.totalrating} Review</p>
           </div>
           <div className="p-2 md:w-[55%] w-full mt-5">
             <h1 className="text-[#030229] font-medium text-2xl underline">
-              {shop?.singlePlant?.data?.title}
+              {plant?.title}
             </h1>
             <p className="text-[#030229] font-medium text-md pt-3">
               Kinyarwanda Name
-              <span className="font-medium text-sm pl-4"> {shop?.singlePlant?.data?.kinyarwandaName}</span>
+              <span className="font-medium text-sm pl-4"> {plant?.kinyarwandaName}</span>
             </p>
             <p className="text-[#030229] font-medium text-md py-1">
               {" "}
               Scientific name:{" "}
-              <span className="font-medium text-sm pl-4"> {shop?.singlePlant?.data?.scientificName}</span>
+              <span className="font-medium text-sm pl-4"> {plant?.scientificName}</span>
             </p>
             <p className="text-[#030229] font-medium text-md py-[2px]">
               {" "}
               Common name:{" "}
-              <span className="font-medium text-sm pl-4"> {shop?.singlePlant?.data?.commonName}</span>
+              <span className="font-medium text-sm pl-4"> {plant?.commonName}</span>
             </p>
             <p className="text-[#030229] font-medium text-md py-1">
               {" "}
               Total Price:{" "}
-              <span className="font-bold text-xl pl-4"> {shop?.singlePlant?.data?.price} RFW</span>
+              <span className="font-bold text-xl pl-4"> {plant?.price} RFW</span>
             </p>
             <p className="text-[#030229B2] text-sm pt-2">
-              Family: <span className="pl-20">{shop?.singlePlant?.data?.slug} </span>
+              Family: <span className="pl-20">{plant?.slug} </span>
             </p>
             <p className="text-[#030229B2] text-sm py-1">
               Part to be used: <span className="pl-8">Leaves and stem </span>
             </p>
             
           </div>
-          <div>Categories: {shop?.singlePlant?.data?.category}</div>
+          <div>Categories: {plant?.category}</div>
           <div className="flex gap-3 mt-2">
             <div className="flex items-center justify-center gap-2 border py-2 px-5 rounded-md">
               <button disabled={count <= 1} onClick={() => setCount(count - 1)}>
@@ -114,10 +146,13 @@ console.log("details",shop?.singlePlant?.data)
               </button>
             </div>
             <Button
-              name={"Add To Cart"}
+              name={loading?<Spin
+                indicator={<LoadingOutlined spin size={25} color="black"/>}
+                className="text-black"
+              />:"Add To Cart"}
               color={"black"}
               width={"[50px]"}
-              onClick={() => navigate("/cart")}
+              onClick={() => onFinish()}
             />
           </div>
         </div>
@@ -125,7 +160,7 @@ console.log("details",shop?.singlePlant?.data)
       <div className="px-20 mt-[30rem] md:mt-5 lg:mts-[50rem] xls:mt-[30rem] 2xls:mt-80 w-[75%] m-auto">
             <h1 className="text-[#030229] font-medium text-2xl text-center py-1"> Medicinal use:{" "}</h1> 
             <ul className="text-[#030229B2] text-sm ">
-            {shop?.singlePlant?.data?.howToUse?.map((el)=>{
+            {plant?.howToUse?.map((el)=>{
               console.log("how",el)
               return(
 
@@ -145,7 +180,7 @@ console.log("details",shop?.singlePlant?.data)
             </p> */}
             <h1 className="text-[#030229] font-medium text-2xl text-center py-3"> Dosages and preparation:{" "}</h1>
             <p className="text-[#030229B2] text-sm pt-1">
-            {shop?.singlePlant?.data?.dosages?.adults}
+            {plant?.dosages?.adults}
              
             </p>
       <h1 className="text-[#030229] font-medium text-xl pt-4 text-center py-3">
@@ -163,79 +198,40 @@ console.log("details",shop?.singlePlant?.data)
               Description
             </h1>
             <p className="text-[#030229B2] text-sm pt-2">
-            {shop?.singlePlant?.data?.description}
+            {plant?.description}
             </p>
       </div>
       <div className="mts-[60rem] lg:mts-[50rem] xls:mt-[30rem] 2xls:mt-80 mt-5">
         <h1 className="text-2xl font-semibold text-center">Related Products</h1>
       </div>
+
+      {is_plants_loading ? (
+          <div className="grid grid-cols-4 gap-4">
+            <Skeleton />
+            <Skeleton />
+            <Skeleton />
+            <Skeleton />
+          </div>
+        ) : (
       <div className="p-10 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5 w-full m-auto">
-        <ProductCard
-          status={"For Sale"}
-          img1={aboutImage1}
-          img2={aboutImage2}
-          onClick={()=>navigate("/product/details")}
-          name={"Urtica massaica"}
-          amount={40000}
-          btnName={"ReadMore"}
-          btnSecondName={"Add to cart"}
-          description={
-            "Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"
-          }
-        />
-        <ProductCard
-          status={"Sold"}
-          img1={aboutImage1}
-          img2={aboutImage}
-          onClick={()=>navigate("/product/details")}
-          name={"Rubia cordifolia L"}
-          amount={50000}
-          btnName={"ReadMore"}
-          btnSecondName={"Add to cart"}
-          description={
-            "Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"
-          }
-        />
-        <ProductCard
-          status={"discount"}
-          img1={aboutImage2}
-          img2={aboutImage1}
-          onClick={()=>navigate("/product/details")}
-          name={"Rubia cordifolia L"}
-          amount={40000}
-          btnName={"ReadMore"}
-          btnSecondName={"Add to cart"}
-          description={
-            "Fresh roots are crushed, boiled and strained, and the liquid is used to treatgonorrhoea and syphilis"
-          }
-        />
-        <ProductCard
-          status={"For Sale"}
-          img1={aboutImage1}
-          img2={aboutImage2}
-          onClick={()=>navigate("/product/details")}
-          name={"Rubia cordifolia L"}
-          amount={3000}
-          btnName={"ReadMore"}
-          btnSecondName={"Add to cart"}
-          description={
-            "Clerodendrum myricoides is a tropical flowering shrub known for itsstriking blue-violet flowers and glossy green foliage."
-          }
-        />
-        <ProductCard
-          status={"For Sale"}
-          img1={aboutImage}
-          img2={aboutImage1}
-          onClick={()=>navigate("/product/details")}
-          name={"Rubia cordifolia L"}
-          amount={78000}
-          btnName={"ReadMore"}
-          btnSecondName={"Add to cart"}
-          description={
-            ": Tetradenia riparia, also known as Misty Plume Bush, is an aromatic shrubnative to Africa, characterized by its fragrant foliage and clusters of small, white or palepink flowers."
-          }
-        />
-      </div>
+      {allplants.map((el, i) => {
+              console.log("plant data", el);
+              return (
+                <ProductCard
+                  key={i}
+                  status={"For Sale"}
+                  img1={el?.images[0]?.url}
+                  img2={el?.images[1]?.url}
+                  name={el?.title}
+                  amount={el?.price}
+                  btnName={"ReadMore"}
+                  // btnSecondName={"Add to cart"}
+                  description={el?.description}
+                  onClick={() => navigate(`/shop/${el?._id}`)}
+                />
+              );
+            })}
+      </div>)}
       <Footer />
     </div>
   );

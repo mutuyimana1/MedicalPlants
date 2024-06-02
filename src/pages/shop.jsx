@@ -89,7 +89,7 @@ const Shop = () => {
                   name={el?.title}
                   amount={el?.price}
                   btnName={"ReadMore"}
-                  btnSecondName={"Add to cart"}
+                  // btnSecondName={"Add to cart"}
                   description={el?.description}
                   onClick={() => navigate(`/shop/${el?._id}`)}
                 />

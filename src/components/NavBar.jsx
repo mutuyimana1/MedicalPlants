@@ -24,7 +24,7 @@ const NavBar = () => {
         <div className="logo cursor-pointer" onClick={()=>navigate("/")}>
          <img src={LogoIcons} width={200} />
         </div>
-     {(pathname.includes("plant") || pathname.includes("shop")) && <Search placeholder="input search text" onSearch={onSearch} enterButton style={{width:"30%"}}/>}
+     {(pathname.includes("plant") || pathname.includes("shop")) && <Search  placeholder="input search text" onSearch={onSearch} enterButton style={{width:"30%"}}/>}
      {(pathname.includes("plant") || pathname.includes("shop")) &&  <Select
     showSearch
     style={{

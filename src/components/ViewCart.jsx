@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import product from "../assets/images/pexels-photo-4036233.jpeg";
 import { TfiMinus } from "react-icons/tfi";
 import { LiaPlusSolid } from "react-icons/lia";
@@ -10,8 +10,12 @@ import NavBar from "./NavBar";
 import Footer from "./Footer";
 import LogoIcons from "../assets/images/Logo_1.png";
 import SubHeader from "./SubHeader";
+import { fetchCart } from "../redux/slices/plant/plantThunks";
+import { useDispatch, useSelector } from "react-redux";
 const ViewCart = () => {
+  const { cartItems } = useSelector((state) => state.plants);
   const navigate = useNavigate();
+  const dispatch=useDispatch()
   const [countProduct, setCountProduct] = useState(1);
   const HandleCount = () => {
     setCountProduct(countProduct + 1);
@@ -19,6 +23,10 @@ const ViewCart = () => {
   const HandleRemoveCount = () => {
     setCountProduct(countProduct - 1);
   };
+  useEffect(()=>{
+    fetchCart()(dispatch)
+  },[dispatch])
+  console.log("cartItems",cartItems)
   return (
     <div className="w-full">
       {/* <NavBar /> */}

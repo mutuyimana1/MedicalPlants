@@ -41,7 +41,7 @@ const Index = () => {
         <Route path="/medicinalplants/flowers" element={<FlowerPlants />} />
         <Route path="/medicinalplants/edible" element={<EdiblePlants />} />
         <Route path="/medicinalplants/others" element={<OthersPlants />} />
-        <Route path="/Product/view" element={<ViewProducts />} />
+        <Route path="/plant/view/:plantId" element={<ViewProducts />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/cart" element={<ViewCart />} />
         <Route path="/signup" element={<SignUpForm />} />
