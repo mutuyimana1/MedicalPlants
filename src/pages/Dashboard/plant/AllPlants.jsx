@@ -10,16 +10,23 @@ import { MdOutlineMoreHoriz } from "react-icons/md";
 import { Fragment, useState } from "react";
 import { truncate } from "../../../utils";
 import AddPlant from "./modals/AddPlant";
+import DeletePlant from "./modals/DeletePlant";
 
 const AllPlants = () => {
   const { allplants } = useSelector((state) => state.plants);
   const [openAdd, setOPenAdd] = useState(false);
+  const [plantId, setPlantId] = useState(null);
   const navigate = useNavigate();
+
+  const [openDelete, setOpenDelete] = useState(false);
+
+  const handleDelete = () => {
+    setOpenDelete(!openDelete);
+  };
 
   const handleOpenAddPlant = () => {
     setOPenAdd(!openAdd);
   };
-  console.log("plants", allplants);
 
   const columns = [
     {
@@ -169,7 +176,6 @@ const AllPlants = () => {
       accessor: "created_at",
       filtable: "false",
       Cell: ({ row }) => {
-        console.log("row.original.createdAt", row.original.createdAt);
         return (
           <div className="flex gap-4 items-center">
             <p className="text-[#4B4B4B] font-normal">
@@ -218,7 +224,8 @@ const AllPlants = () => {
                     <h1
                       className="px-4 py-2 hover:bg-[#D9D9D9] text-center text-error cursor-pointer text-lg"
                       onClick={() => {
-                        // handleDelete(row.original._id);
+                        setPlantId(row.original._id);
+                        handleDelete();
                       }}
                     >
                       Delete
@@ -233,10 +240,17 @@ const AllPlants = () => {
     },
   ];
 
+  console.log("allplants", allplants);
+
   return (
     <DashboardLayout>
       <div>
         <AddPlant openModal={openAdd} handleModal={handleOpenAddPlant} />
+        <DeletePlant
+          handleModal={handleDelete}
+          isModalOpen={openDelete}
+          id={plantId}
+        />
         {/* <div className="flex justify-between my-5 ">
           <h1 className="poppins text-xl font-semibold">All Plants</h1>
           <button

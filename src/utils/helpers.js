@@ -10,7 +10,7 @@ export const setAuthHeaders = (token, extra) => {
   };
 };
 export const api = axios.create({
-  baseURL: BACKEND_URL,
+  baseURL: "https://medecinalbackend.onrender.com/api",
 });
 
 api.interceptors.request.use(

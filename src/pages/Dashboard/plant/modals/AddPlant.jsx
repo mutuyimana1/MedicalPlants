@@ -17,6 +17,8 @@ import { fetchPlants } from "../../../../redux/slices/plant/plantThunks";
 const AddPlant = ({ openModal, handleModal }) => {
   const [current, setCurrent] = useState(0);
   const [sideEffects, setSideEffects] = useState([]);
+  const [uploadLoading, setUploadLoading] = useState(false);
+
   const [dosages, setDosages] = useState({
     adults: [],
     children: [],
@@ -40,6 +42,9 @@ const AddPlant = ({ openModal, handleModal }) => {
     description: "",
     price: "",
   });
+
+  const [fileList, setFileList] = useState([]);
+
   const savePlant = async () => {
     const data = {
       ...plant,
@@ -69,14 +74,42 @@ const AddPlant = ({ openModal, handleModal }) => {
     }
   };
 
+  const handleUpload = async () => {
+    console.log("Updloading...");
+    if (fileList.length === 0) {
+      return alert("Please upload an image.");
+    }
+
+    setUploadLoading(true);
+    const formData = new FormData();
+    fileList.forEach((file) => {
+      formData.append("images", file.originFileObj);
+    });
+
+    try {
+      const response = await api.put(`/plants/upload/${plantId}`, formData);
+      console.log("Upload response:", response.data);
+      toastMessage("success", "Plant image uploaded successfully.");
+      dispatch(fetchPlants());
+      reset();
+      // Move to next step on success
+    } catch (error) {
+      errorHandler(error);
+    } finally {
+      setUploadLoading(false);
+    }
+  };
+
   const handleNext = async () => {
     if (current === 1) {
       const isSaved = await savePlant();
       if (!isSaved) {
-        handleSubmit(() => setCurrent(current - 1))();
+        handleSubmit(() => setCurrent(current))();
       } else {
         handleSubmit(() => setCurrent(current + 1))();
       }
+    } else if (current === 2) {
+      await handleUpload();
     } else {
       handleSubmit(() => setCurrent(current + 1))();
     }
@@ -92,7 +125,6 @@ const AddPlant = ({ openModal, handleModal }) => {
     description: "",
     status: "active",
   });
-  console.log("plant", partToUse);
 
   const {
     register,
@@ -166,7 +198,7 @@ const AddPlant = ({ openModal, handleModal }) => {
       onClose={() => {
         handleModal();
       }}
-      Style={"w-[90%] lg:w-1/3  flex m-auto py-4"}
+      Style={"w-[90%] max-h-[70vh] lg:w-1/3  flex m-auto py-4"}
     >
       {" "}
       <Modal.Header>
@@ -224,7 +256,13 @@ const AddPlant = ({ openModal, handleModal }) => {
                 setMeasurements={setMeasurements}
               />
             )}
-            {current === 2 && <Step3 id={plantId} />}
+            {current === 2 && (
+              <Step3
+                id={plantId}
+                fileList={fileList}
+                setFileList={setFileList}
+              />
+            )}
           </div>
 
           <div className="flex justify-end item-center w-full mt-6">
@@ -261,16 +299,18 @@ const AddPlant = ({ openModal, handleModal }) => {
                 />
               )}
 
-              {current === 1 ? (
+              {current === 1 || current === 2 ? (
                 <Button1
                   type="submit"
                   content={
                     <div className="flex items-center justify-center">
                       {/* <IoCheckmarkOutline color="#fff" size={20} /> */}
-                      <p className="text-white font-normal text-lg">Continue</p>
+                      <p className="text-white font-normal text-lg">
+                        {current === 2 ? "Submit" : "Continue"}
+                      </p>
                     </div>
                   }
-                  loading={submitLoading}
+                  loading={submitLoading || uploadLoading}
                   onClick={handleNext}
                   btnColor="primary"
                   Style={"w-fit h-12 mt-4 rounded-lg"}
