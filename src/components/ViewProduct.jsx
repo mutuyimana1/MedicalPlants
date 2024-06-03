@@ -101,9 +101,15 @@ const ViewProducts = () => {
             <p className="text-[#030229B2] text-sm pt-2">
               Family: <span className="pl-20">{plant?.famillyName} </span>
             </p>
-            <p className="text-[#030229B2] text-sm py-1">
-              Part to be used: <span className="pl-8">Leaves and stem </span>
-            </p>
+            <div className="flex gap-2">
+              <span className=" text-sm text-center pt-1"> Part To Use: </span>
+              <ul className="text-[#030229B2] text-sm">
+                {plant?.partToUse?.map((el) => {
+                  console.log("how", el);
+                  return <li className="list-disc py-1.5">{el}</li>;
+                })}
+              </ul>
+            </div>
           </div>
           <div>Categories:{plant?.category}</div>
         </div>
@@ -113,34 +119,77 @@ const ViewProducts = () => {
           {" "}
           Medicinal use:{" "}
         </h1>
-        <ul className="text-[#030229B2] text-sm ">
+        <ul className="text-[#030229B2] text-sm">
+          {plant?.medicinalUse?.map((el) => {
+            console.log("how", el);
+            return <li className="list-disc py-1.5">{el}</li>;
+          })}
+        </ul>
+        <h1 className="text-[#030229] font-medium text-2xl text-center py-1">
+          {" "}
+          How To Use:{" "}
+        </h1>
+        <ul className="text-[#030229B2] text-sm">
           {plant?.howToUse?.map((el) => {
             console.log("how", el);
             return <li className="list-disc py-1.5">{el}</li>;
           })}
         </ul>
+        {plant?.measurements?.length > 0 && (
+          <>
+            <h1 className="text-[#030229] font-medium text-2xl text-center py-1">
+              {" "}
+              Measurements:{" "}
+            </h1>
+            <ul className="text-[#030229B2] text-sm">
+              {plant?.measurements?.map((el) => {
+                console.log("how", el);
+                return <li className="list-disc py-1.5">{el}</li>;
+              })}
+            </ul>
+          </>
+        )}
         <h1 className="text-[#030229] font-medium text-2xl text-center py-3">
           {" "}
           Dosages and preparation:{" "}
         </h1>
-        <p className="text-[#030229B2] text-sm pt-1">
-          {plant?.dosages?.adults}
-        </p>
-        <h1 className="text-[#030229] font-medium text-xl pt-4 text-center py-3">
-          Side effects
-        </h1>
-        <p className="text-[#030229B2] text-sm pt-2">
-          Fresh roots are crushed, boiled and strained, and the liquid is used
-          to treat gonorrhoea and syphilis. Fresh leaf juice, sometimes with
-          Erythrina sacleuxii Hua, is used for the treatment of leprosy. Leaf
-          and roots are used for pleurisy, inflammatory conditions of chest and
-          for oxytocic activity. Is extensively used in many skin disease
-          medicine.
-        </p>
-        <h1 className="text-[#030229] font-medium text-xl pt-4 text-center py-3">
-          Description
-        </h1>
-        <p className="text-[#030229B2] text-sm pt-2">{plant?.description}</p>
+        <ul className="text-[#030229B2] text-sm">
+          {plant?.dosages?.all?.map((el) => {
+            console.log("how", el);
+            return <li className="list-disc py-1.5">{el}</li>;
+          })}
+        </ul>
+        <ul className="text-[#030229B2] text-sm">
+          {plant?.dosages?.adults?.map((el) => {
+            console.log("how", el);
+            return <li className="list-disc py-1.5">{el}</li>;
+          })}
+        </ul>
+        <ul className="text-[#030229B2] text-sm">
+          {plant?.dosages?.children?.map((el) => {
+            console.log("how", el);
+            return <li className="list-disc py-1.5">{el}</li>;
+          })}
+        </ul>
+        {plant?.sideEffect?.length > 0 && (
+          <>
+            <h1 className="text-[#030229] font-medium text-xl pt-4 text-center py-3">
+              Side effects
+            </h1>
+            <ul className="text-[#030229B2] text-sm">
+              {plant?.sideEffect?.map((el) => {
+                console.log("how", el);
+                return <li className="list-disc py-1.5">{el}</li>;
+              })}
+            </ul>
+            <h1 className="text-[#030229] font-medium text-xl pt-4 text-center py-3">
+              Description
+            </h1>
+            <p className="text-[#030229B2] text-sm pt-2">
+              {plant?.description}
+            </p>
+          </>
+        )}
       </div>
 
       <div className="mt-[d60rem] lg:mtddd-[50rem] xl:mdt-[30rem] 2xl:dmt-80">
