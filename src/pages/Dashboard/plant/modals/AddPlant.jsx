@@ -7,14 +7,12 @@ import { fetchCategory } from "../../../../redux/slices/category/categoryThunks"
 import { api } from "../../../../utils/helpers";
 import { errorHandler, toastMessage } from "../../../../utils/toast";
 import Modal from "../../../../components/modal/Modal";
-import Input from "../../../../components/Input";
-import Select from "../../../../components/Select";
-import TextArea from "antd/es/input/TextArea";
 import Button1 from "../../../../components/Button1";
 import { Steps } from "antd";
 import Step1 from "../stepper/Step1";
 import Step2 from "../stepper/Step2";
 import Step3 from "../stepper/Step3";
+import { fetchPlants } from "../../../../redux/slices/plant/plantThunks";
 
 const AddPlant = ({ openModal, handleModal }) => {
   const [current, setCurrent] = useState(0);
@@ -24,13 +22,16 @@ const AddPlant = ({ openModal, handleModal }) => {
     children: [],
     all: [],
   });
+  const dispatch = useDispatch();
   const [usages, setUsages] = useState([]);
   const [partToUse, setPartToUse] = useState([]);
   const [howToUse, setHowToUse] = useState([]);
   const [cautions, setCautions] = useState([]);
   const [precautions, setPrecautions] = useState([]);
+  const [measurements, setMeasurements] = useState([]);
   const [dosageType, setDosageType] = useState("all");
   const [plantId, setPlantId] = useState(null);
+
   const [plant, setPlant] = useState({
     title: "",
     scientificName: "",
@@ -40,11 +41,25 @@ const AddPlant = ({ openModal, handleModal }) => {
     price: "",
   });
   const savePlant = async () => {
+    const data = {
+      ...plant,
+      dosages,
+      howToUse,
+      partToUse,
+      precautions,
+      sideEffects,
+      cautions,
+      measurements,
+      medicinalUse: usages,
+    };
+
     setSubmitLoading(true);
     try {
-      const response = await api.post("/plants", plant);
+      const response = await api.post("/plants", data);
       console.log("API response:", response.data);
       setPlantId(response.data._id);
+      dispatch(fetchPlants());
+      toastMessage("success", "continue to upload image");
       return true; // Indicate success
     } catch (error) {
       errorHandler(error);
@@ -58,6 +73,8 @@ const AddPlant = ({ openModal, handleModal }) => {
     if (current === 1) {
       const isSaved = await savePlant();
       if (!isSaved) {
+        handleSubmit(() => setCurrent(current - 1))();
+      } else {
         handleSubmit(() => setCurrent(current + 1))();
       }
     } else {
@@ -70,7 +87,6 @@ const AddPlant = ({ openModal, handleModal }) => {
     setCurrent(newCurrent < 0 ? 0 : newCurrent);
   };
 
-  const dispatch = useDispatch();
   const [data, setData] = useState({
     title: "",
     description: "",
@@ -141,7 +157,7 @@ const AddPlant = ({ openModal, handleModal }) => {
   };
 
   const handleCategoryChange = (selectedOption) => {
-    setPlant((prevState) => ({ ...prevState, category: selectedOption.value }));
+    setPlant((prevState) => ({ ...prevState, category: selectedOption.label }));
   };
 
   return (
@@ -204,6 +220,8 @@ const AddPlant = ({ openModal, handleModal }) => {
                 setUsages={setUsages}
                 sideEffects={sideEffects}
                 usages={usages}
+                measurements={measurements}
+                setMeasurements={setMeasurements}
               />
             )}
             {current === 2 && <Step3 id={plantId} />}

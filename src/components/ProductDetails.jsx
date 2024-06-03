@@ -68,6 +68,7 @@ const ProductDetails = () => {
       .catch((error) => {
         setLoading(false);
         errorHandler(error);
+        console.log("msg errrr", error);
       });
 
     fetchCart()(dispatch);
@@ -224,7 +225,9 @@ const ProductDetails = () => {
         <p className="text-[#030229B2] text-sm pt-2">{plant?.description}</p>
       </div>
       <div className="mts-[60rem] lg:mts-[50rem] xls:mt-[30rem] 2xls:mt-80 mt-5">
-        <h1 className="text-2xl font-semibold text-center">Related Plants</h1>
+        <h1 className="text-2xl font-semibold text-center py-3">
+          Related Plants
+        </h1>
       </div>
 
       {is_plants_loading ? (

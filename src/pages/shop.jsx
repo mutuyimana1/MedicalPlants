@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Carousel, Skeleton } from "antd";
 import NavBar from "../components/NavBar";
 import img1 from "../assets/images/Clerodendrum myricoides R. Br.(umukuzanyana).jpg";
@@ -18,7 +18,7 @@ import aboutImage2 from "../assets/images/download (3).png";
 import aboutImage3 from "../assets/images/Clerodendrum myricoides R. Br.(umukuzanyana).jpg";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllPlantsAction } from "../redux/shop/actions";
+import { fetchPlantByCategories } from "../redux/slices/plant/plantThunks";
 import { fetchPlants } from "../redux/slices/plant/plantThunks";
 const contentStyle = {
   margin: 0,
@@ -30,20 +30,26 @@ const contentStyle = {
   borderRadius: "8px",
 };
 const Shop = () => {
-  const { allplants, is_plants_loading } = useSelector((state) => state.plants);
+  const { allplants, is_plants_loading ,plantCategory} = useSelector((state) => state.plants);
   const onChange = (currentSlide) => {
     console.log(currentSlide);
   };
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  const [selectedCategory,setSelectedCategory]=useState("")
+  console.log("selectedCategory",selectedCategory)
   useEffect(() => {
-    dispatch(fetchPlants());
-  }, []);
-  console.log("allplants", allplants);
+    if(selectedCategory){
+
+      fetchPlantByCategories(`?category=${selectedCategory}`)(dispatch)
+    }else{
+
+      dispatch(fetchPlantByCategories());
+    }
+  }, [dispatch,selectedCategory]);
   return (
     <>
-      <NavBar />
+      <NavBar setSelectedCategory={setSelectedCategory}/>
       <div className="mt-40 md:flex  gap-10 px-20">
         <div className="mt-5 w-full">
           <h1 className="py-4 text-lg font-medium ">
@@ -78,7 +84,23 @@ const Shop = () => {
           </div>
         ) : (
           <div className="p-10 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5 w-full m-auto">
-            {allplants.map((el, i) => {
+          {(selectedCategory)?  plantCategory.map((el, i) => {
+              console.log("plant data", el);
+              return (
+                <ProductCard
+                  key={i}
+                  status={"For Sale"}
+                  img1={el?.images[0]?.url}
+                  img2={el?.images[1]?.url}
+                  name={el?.title}
+                  amount={el?.price}
+                  btnName={"ReadMore"}
+                  // btnSecondName={"Add to cart"}
+                  description={el?.description}
+                  onClick={() => navigate(`/shop/${el?._id}`)}
+                />
+              );
+            }):  allplants.map((el, i) => {
               console.log("plant data", el);
               return (
                 <ProductCard

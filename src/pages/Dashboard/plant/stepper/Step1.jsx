@@ -67,7 +67,7 @@ const Step1 = ({
           options={categories.map((type) => {
             return {
               value: type._id,
-              label: type.title,
+              label: type.title.toLowerCase(),
             };
           })}
           handleChange={handleCategoryChange}

@@ -21,7 +21,7 @@ const AboutUs = () => {
   const onChange = (currentSlide) => {
     console.log(currentSlide);
   };
- 
+
   return (
     <>
       <div className="mt-5">
@@ -40,7 +40,7 @@ const AboutUs = () => {
                 <ProductCard
                   key={i}
                   img1={el?.images[0]?.url}
-                  img2={aboutImage2}
+                  img2={el?.images[1]?.url}
                   name={el?.title}
                   amount={el?.price}
                   btnName={"ReadMore"}

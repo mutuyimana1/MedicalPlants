@@ -19,6 +19,8 @@ const Step2 = ({
   setPrecautions,
   setDosageType,
   dosageType,
+  measurements,
+  setMeasurements,
 }) => {
   const addSideEffect = () => {
     setSideEffects([...sideEffects, ""]);
@@ -148,7 +150,7 @@ const Step2 = ({
     );
     setCautions(newSideEffects);
   };
-
+  // precaution
   const addPrecaution = () => {
     setPrecautions([...precautions, ""]);
   };
@@ -163,6 +165,23 @@ const Step2 = ({
       i === index ? event.target.value : effect
     );
     setPrecautions(newSideEffects);
+  };
+
+  //   measurement
+  const addMeasurement = () => {
+    setMeasurements([...measurements, ""]);
+  };
+
+  const removeMeasurement = (index) => {
+    const newSideEffects = measurements.filter((_, i) => i !== index);
+    setMeasurements(newSideEffects);
+  };
+
+  const handleMeasurementChange = (index, event) => {
+    const newSideEffects = measurements.map((effect, i) =>
+      i === index ? event.target.value : effect
+    );
+    setMeasurements(newSideEffects);
   };
 
   return (
@@ -535,6 +554,44 @@ const Step2 = ({
             </Form.Item>
           </>
         )}
+
+        {measurements.map((dose, index) => (
+          <Form.Item
+            key={index}
+            label={`Preparation ${index + 1}`}
+            required
+            rules={[
+              {
+                required: true,
+                message: "Please provide plant measurement",
+              },
+            ]}
+          >
+            <div className="flex space-x-10">
+              <Input
+                placeholder="Provide plant measurements"
+                value={dose}
+                onChange={(event) => handleMeasurementChange(index, event)}
+              />
+
+              <Button
+                type="danger"
+                onClick={() => removeMeasurement(index)}
+                style={{ marginLeft: 8 }}
+                className=" p-0 rounded-full"
+              >
+                <div className="bg-red-400 p-2 text-white rounded-full">
+                  <FiMinus size={15} />
+                </div>
+              </Button>
+            </div>
+          </Form.Item>
+        ))}
+        <Form.Item>
+          <Button type="dashed" onClick={addMeasurement}>
+            Add measurements:
+          </Button>
+        </Form.Item>
       </div>
     </div>
   );

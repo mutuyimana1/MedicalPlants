@@ -1,14 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchPlants, fetchSinglePlant ,fetchPlantByCategories, fetchCart, deleteCart} from "./plantThunks";
+import {
+  fetchPlants,
+  fetchSinglePlant,
+  fetchPlantByCategories,
+  fetchCart,
+  deleteCart,
+} from "./plantThunks";
 
 const initialState = {
   is_plant_loading: false,
   is_plants_loading: false,
   plant: {},
   allplants: [],
-  singlePlant:{},
-  plantCategory:{},
-  cartItems:{}
+  singlePlant: {},
+  plantCategory: {},
+  cartItems: {},
 };
 
 const plantsSlice = createSlice({
@@ -41,42 +47,41 @@ const plantsSlice = createSlice({
         state.is_plant_loading = false;
       })
       .addCase(fetchPlantByCategories.pending, (state) => {
-        state.is_plant_loading  = true;
+        state.is_plant_loading = true;
       })
       .addCase(fetchPlantByCategories.fulfilled, (state, action) => {
         const data = action.payload;
-        state.is_plant_loading  = false;
+        state.is_plant_loading = false;
         state.plantCategory = data;
       })
       .addCase(fetchPlantByCategories.rejected, (state, action) => {
         console.log(action.error.message, "error");
-        state.is_plant_loading  = false;
+        state.is_plant_loading = false;
       })
       .addCase(fetchCart.pending, (state) => {
-        state.is_plant_loading  = true;
+        state.is_plant_loading = true;
       })
       .addCase(fetchCart.fulfilled, (state, action) => {
         const data = action.payload;
-        state.is_plant_loading  = false;
+        state.is_plant_loading = false;
         state.cartItems = data;
       })
       .addCase(fetchCart.rejected, (state, action) => {
         console.log(action.error.message, "error");
-        state.is_plant_loading  = false;
+        state.is_plant_loading = false;
       })
       .addCase(deleteCart.pending, (state) => {
-        state.is_plant_loading  = true;
+        state.is_plant_loading = true;
       })
       .addCase(deleteCart.fulfilled, (state, action) => {
         const data = action.payload;
-        state.is_plant_loading  = false;
+        state.is_plant_loading = false;
         state.cartItems = data;
       })
       .addCase(deleteCart.rejected, (state, action) => {
         console.log(action.error.message, "error");
-        state.is_plant_loading  = false;
-      })
-      ;
+        state.is_plant_loading = false;
+      });
   },
 });
 

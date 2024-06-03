@@ -144,7 +144,9 @@ const ViewProducts = () => {
       </div>
 
       <div className="mt-[d60rem] lg:mtddd-[50rem] xl:mdt-[30rem] 2xl:dmt-80">
-        <h1 className="text-2xl font-semibold text-center">Related Plants</h1>
+        <h1 className="text-2xl font-semibold text-center py-3">
+          Related Plants
+        </h1>
       </div>
       {is_plants_loading ? (
         <div className="grid grid-cols-4 gap-4">

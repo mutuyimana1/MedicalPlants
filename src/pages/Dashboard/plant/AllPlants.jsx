@@ -12,14 +12,14 @@ import { truncate } from "../../../utils";
 import AddPlant from "./modals/AddPlant";
 
 const AllPlants = () => {
-  const { plants } = useSelector((state) => state.plants);
+  const { allplants } = useSelector((state) => state.plants);
   const [openAdd, setOPenAdd] = useState(false);
   const navigate = useNavigate();
 
   const handleOpenAddPlant = () => {
     setOPenAdd(!openAdd);
   };
-  console.log("plants", plants);
+  console.log("plants", allplants);
 
   const columns = [
     {
@@ -252,7 +252,7 @@ const AllPlants = () => {
             <div className="flex items-center space-x-5">
               <p className="text-lg font-bold">Plants</p>
               <div className="flex px-3 pt-2 text-[16px] items-center bg-lightWhite rounded-md">
-                <p className="text-black/70">{plants?.length}</p>
+                <p className="text-black/70">{allplants?.length}</p>
               </div>
             </div>
           }
@@ -275,7 +275,7 @@ const AllPlants = () => {
             </div>
           }
           columns={columns}
-          data={plants}
+          data={allplants}
         />
       </div>
     </DashboardLayout>

@@ -10,19 +10,13 @@ const Footer = () => {
               <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Location</h2>
               <ul className=" font-medium text-white">
                   <li className="mb-4">
-                      <a href="#" className=" hover:underline text-white">Rutsiro,Rwanda</a>
+                      <a href="#" className=" hover:underline text-white">Nyarugenge,Rwanda</a>
                   </li>
                   <li className="mb-4">
-                      <a href="#" className="hover:underline text-white">NR7,Kivumu Sector,​</a>
+                      <a href="#" className="hover:underline text-white">NR7,Kiyovu Sector,​</a>
                   </li>
                   <li className="mb-4">
-                      <a href="#" className="hover:underline text-white">Western Province</a>
-                  </li>
-                  <li className="mb-4">
-                      <a href="#" className="hover:underline text-white">Binyunju Cell</a>
-                  </li>
-                  <li className="mb-4">
-                      <a href="#" className="hover:underline text-white">tarafipolo Village</a>
+                      <a href="#" className="hover:underline text-white">Kigali</a>
                   </li>
               </ul>
           </div>
@@ -33,18 +27,18 @@ const Footer = () => {
                       <a href="/" className="hover:underline text-white">Home</a>
                   </li>
                   <li className="mb-4">
-                      <a href="" className="hover:underline text-white">About</a>
+                      <a href="/plants" className="hover:underline text-white">Medecinal Plants</a>
                   </li>
                   <li className="mb-4">
-                      <a href="/home/contact" className="hover:underline text-white">Contact Us</a>
+                      <a href="/login" className="hover:underline text-white">Account</a>
                   </li>
                   <li className="mb-4">
-                      <a href="/home/project" className="hover:underline text-white">Project</a>
+                      <a href="/shop" className="hover:underline text-white">Shop</a>
                   </li>
               </ul>
           </div>
           <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Eamil</h2>
+              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Email</h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                   <li className="mb-4">
                       <span className="hover:underline">info@medicinalplantsrwanda.org</span>
