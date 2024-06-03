@@ -13,7 +13,7 @@ const Heading = () => {
     width: "100%",
     lineHeight: "160px",
     textAlign: "center",
-    borderRadius: "6px"
+    borderRadius: "6px",
   };
   return (
     <>
@@ -22,14 +22,13 @@ const Heading = () => {
           <h1 className="text-[2.2rem] 2xl:text-[4.2rem] font-medium leading[1rem] 2xl:leading-[4rem] text-[#003F13]">
             Discover the Healing Power of Medicinal Plants
           </h1>
-          <p className="text-lg font-medium leading-[1.5rem] text-[#363636] py-8 pr-4">
-            Your health is too important to leave to chance. Take control, get
-            informed, and ensure that your journey with natural remedies is a
-            safe one. Explore the hidden truths about medicinal plants today!. <br/><br/>
+          <p className="text-xl font-normal text-justify leading-[1.5rem] text-[#363636] py-8 pr-4">
             It is too crucial to put your health in the hands of chance. Take
             charge, educate yourself, and make sure using natural medicines is
             safe for you. . Explore the hidden truths about
             medicinal plants today!
+            <br />
+            <br />
             {/* Are you feeling stressed? Struggling to manage life&apos;s
             pressures? Seeking natural remedies to support your health,
             including fighting cancer? We bring you a comprehensive guide to
