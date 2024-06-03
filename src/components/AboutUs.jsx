@@ -42,7 +42,7 @@ const AboutUs = () => {
                   img1={el?.images[0]?.url}
                   img2={el?.images[1]?.url}
                   name={el?.title}
-                  amount={el?.price}
+                  // amount={el?.price}
                   btnName={"ReadMore"}
                   // btnSecondName={"Add to cart"}
                   description={el?.description}
