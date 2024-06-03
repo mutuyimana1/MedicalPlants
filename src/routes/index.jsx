@@ -1,4 +1,3 @@
-import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import ProductDetails from "../components/ProductDetails";
@@ -8,11 +7,9 @@ import SignUpForm from "../components/Forms/SignUpForm";
 import LoginForm from "../components/Forms/LoginForm";
 import Shop from "../pages/shop";
 import DashboardLayout from "../components/DashboardLayout";
-import CreateProduct from "../pages/Dashboard/CreateProduct";
 import Dashboard from "../pages/Dashboard/dashboard";
 import OverView from "../pages/Dashboard/OverView";
 // import Dash from '../pages/Tes'
-import AllProducts from "../pages/Dashboard/plant/AllPlants";
 import AllUsers from "../pages/Dashboard/Users/allUsers";
 import UserOverView from "../pages/Dashboard/Users/UserOverView";
 import VegetablePlants from "../pages/VegetablePlants";

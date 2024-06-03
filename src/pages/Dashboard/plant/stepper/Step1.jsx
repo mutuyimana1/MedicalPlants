@@ -1,103 +1,111 @@
 import React from "react";
+import Input from "../../../../components/Input";
+import TextArea from "../../../../components/TextArea";
+import Select from "../../../../components/Select";
+import { useSelector } from "react-redux";
 
-const Step1 = () => {
+const Step1 = ({
+  errors,
+  control,
+  register,
+  handleInputChange,
+  plant,
+  handleCategoryChange,
+}) => {
+  const { categories } = useSelector((state) => state.category);
   return (
     <div>
-      <div className="flex gap-4 flex-wrap mt-10">
-        <Form.Item
-          label="Name"
-          name="title"
-          rules={[
-            {
-              required: true,
-              message: "Please input name of Plant!",
-            },
-          ]}
-        >
+      <div className="flex flex-col gap-2 mt-5">
+        <div>
           <Input
-            style={{
-              width: "100%",
-              height: "45px",
-            }}
+            labelFor={"name"}
+            labelText={"Name"}
+            name={"title"}
+            customClass="w-full"
+            inputStyle={"bg-lightGrey rounded-lg border-0"}
+            placeholder={"Enter name of plant"}
+            isRequired={false}
+            onChange={handleInputChange}
+            register={register}
+            errors={errors}
           />
-        </Form.Item>
-        <Form.Item
-          label="Scientific name"
-          name="scientificName"
-          rules={[
-            {
-              required: true,
-              message: "Please enter Scientific name!",
-            },
-          ]}
-        >
+        </div>
+
+        <div>
           <Input
-            style={{
-              width: "100%",
-              height: "45px",
-            }}
+            labelFor={"name"}
+            labelText={"Scientific name"}
+            name={"scientificName"}
+            customClass="w-full"
+            inputStyle={"bg-lightGrey rounded-lg border-0"}
+            placeholder={"Enter Scientific name"}
+            isRequired={false}
+            onChange={handleInputChange}
+            register={register}
+            errors={errors}
           />
-        </Form.Item>
-        <Form.Item
-          label="Common name"
-          name="commonName"
-          rules={[
-            {
-              required: true,
-              message: "Please enter Common name!",
-            },
-          ]}
-        >
-          <Input
-            style={{
-              width: "100%",
-              height: "45px",
-            }}
-          />
-        </Form.Item>
-      </div>
-      <Form.Item
-        label="Plant Category"
-        name="category"
-        rules={[
-          {
-            required: true,
-            message: "Please select category  of Plant!",
-          },
-        ]}
-      >
+        </div>
+
+        <Input
+          labelFor={"commonName"}
+          labelText={"Common name"}
+          name={"commonName"}
+          customClass="w-full"
+          inputStyle={"bg-lightGrey rounded-lg border-0"}
+          placeholder={"Enter Common name"}
+          isRequired={false}
+          onChange={handleInputChange}
+          register={register}
+          errors={errors}
+        />
+
         <Select
-          labelInValue
-          mode="single"
-          defaultValue={{
-            value: "vegetables",
-            label: "Vegetables",
-          }}
-          style={{
-            width: "100%",
-            height: "45px",
-          }}
-          onChange={handleChange}
-          options={categories.map((item) => {
+          label="Plant Category"
+          className="w-full mb-2"
+          isDisabled={false}
+          placeholder={"Select category"}
+          options={categories.map((type) => {
             return {
-              value: item._id,
-              label: item.title,
+              value: type._id,
+              label: type.title,
             };
           })}
+          handleChange={handleCategoryChange}
+          register={{
+            control,
+            name: "category",
+            rules: { required: "category is required" },
+          }}
+          error={errors["category"]?.message}
         />
-      </Form.Item>
-      <Form.Item
-        label="Description"
-        name="description"
-        rules={[
-          {
-            required: true,
-            message: "Please input plant description!",
-          },
-        ]}
-      >
-        <TextArea rows={3} placeholder="provide plant Descriptions" />
-      </Form.Item>
+
+        <TextArea
+          labelFor={"description"}
+          labelText={"Description"}
+          name={"description"}
+          customClass="w-full"
+          inputStyle={"bg-lightGrey rounded-lg border-0"}
+          placeholder={"Enter Description"}
+          value={plant?.description}
+          isRequired={false}
+          onChange={handleInputChange}
+          register={register}
+          errors={errors}
+        />
+
+        <Input
+          labelFor={"price"}
+          labelText={"Price"}
+          name={"price"}
+          customClass="w-full"
+          inputStyle={"bg-lightGrey rounded-lg border-0"}
+          placeholder={"Enter price"}
+          isRequired={false}
+          onChange={handleInputChange}
+          register={register}
+          errors={errors}
+        />
+      </div>
     </div>
   );
 };

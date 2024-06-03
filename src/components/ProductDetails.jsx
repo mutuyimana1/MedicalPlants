@@ -14,7 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   fetchCart,
   fetchPlants,
-  fetchSinglePlant
+  fetchSinglePlant,
 } from "../redux/slices/plant/plantThunks";
 import { Skeleton } from "antd";
 import { api } from "../utils/helpers";
@@ -55,9 +55,9 @@ const ProductDetails = () => {
         cart: [
           {
             _id: plantId,
-            count: count
-          }
-        ]
+            count: count,
+          },
+        ],
       })
       .then((res) => {
         setLoading(false);
@@ -69,15 +69,15 @@ const ProductDetails = () => {
         setLoading(false);
         errorHandler(error);
       });
-      
-      fetchCart()(dispatch);
+
+    fetchCart()(dispatch);
   };
   return (
     <div className="w-full">
       <NavBar />
       <div className="flex justify-between w-full px-20 py-10 mt-36">
         <h1 className="text-2xl font-semibold text-center ">Plant Details</h1>
-        <p className="text-lg font-normal">Home /Product /Details</p>
+        <p className="text-lg font-normal">Home /Plant /Details</p>
       </div>
       <div className="w-[85%] m-auto md:flex gap-5 h-[40rem]">
         <div className=" w-full md:w-2/5 h-full">
@@ -224,7 +224,7 @@ const ProductDetails = () => {
         <p className="text-[#030229B2] text-sm pt-2">{plant?.description}</p>
       </div>
       <div className="mts-[60rem] lg:mts-[50rem] xls:mt-[30rem] 2xls:mt-80 mt-5">
-        <h1 className="text-2xl font-semibold text-center">Related Products</h1>
+        <h1 className="text-2xl font-semibold text-center">Related Plants</h1>
       </div>
 
       {is_plants_loading ? (

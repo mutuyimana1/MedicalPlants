@@ -1,18 +1,14 @@
-import React, { useState } from 'react';
-import { Upload } from 'antd';
-import ImgCrop from 'antd-img-crop';
-const UploadComponent = () => {
-  const [fileList, setFileList] = useState([
-    {
-      uid: '-1',
-      name: 'image.png',
-      status: 'done',
-      url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
-    },
-  ]);
+import React, { useState } from "react";
+import { Upload } from "antd";
+import ImgCrop from "antd-img-crop";
+const UploadComponent = ({ onFileChange }) => {
+  const [fileList, setFileList] = useState([]);
+
   const onChange = ({ fileList: newFileList }) => {
     setFileList(newFileList);
+    onFileChange(newFileList); // Call the parent callback with new file list
   };
+
   const onPreview = async (file) => {
     let src = file.url;
     if (!src) {
@@ -27,16 +23,17 @@ const UploadComponent = () => {
     const imgWindow = window.open(src);
     imgWindow?.document.write(image.outerHTML);
   };
+
   return (
     <ImgCrop rotationSlider>
       <Upload
-        action="https://660d2bd96ddfa2943b33731c.mockapi.io/api/upload"
         listType="picture-card"
         fileList={fileList}
         onChange={onChange}
         onPreview={onPreview}
+        beforeUpload={() => false} // Prevent auto-upload
       >
-        {fileList.length < 5 && '+ Upload'}
+        {fileList.length < 5 && "+ Upload"}
       </Upload>
     </ImgCrop>
   );

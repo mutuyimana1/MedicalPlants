@@ -122,14 +122,14 @@ const Sidebar = () => {
             <li>
               <NavLink to={"/stroage"} className="link">
                 <HiOutlineDatabase size={23} className="min-w-max" />
-                Stroage
+                Storage
               </NavLink>
             </li>
 
             {(open || isTabletMid) && (
               <div className="border-y py-5 border-slate-300 ">
                 <small className="pl-3 text-slate-500 inline-block mb-2">
-                  Product categories
+                  Plant categories
                 </small>
                 {subMenusList?.map((menu) => (
                   <div key={menu.name} className="flex flex-col gap-1">

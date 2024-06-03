@@ -40,12 +40,16 @@ const Dash = () => {
           text={"ToDay's Sales"}
           icon={<RiMoneyEuroCircleLine size={23} />}
         />
-        <OverViewCard text={"Total Users"} total={"4000"} icon={<FaUsers size={20}/>}/>
+        <OverViewCard
+          text={"Total Users"}
+          total={"4000"}
+          icon={<FaUsers size={20} />}
+        />
       </div>
       <div className="flex gap-5 flex-wrap w-full">
         <div className="mt-5 bg-white p-5 w-1/2 rounded-md shadow-md ">
           <h1 className="text-[#030229] text-lg font-medium py-3">
-            Product Sales
+            Plant Sales
           </h1>
           <div>
             <ProductChart />
@@ -64,7 +68,7 @@ const Dash = () => {
         <div className="flex gap-5 flex-wrap w-full">
           <div className="mt-5 bg-white p-5 w-3/4 rounded-md shadow-md">
             <h1 className="text-[#030229] text-lg font-medium py-3">
-              Recent Product Ordered
+              Recent Plant Ordered
             </h1>
             <ProductOverviewTable />
           </div>
@@ -76,13 +80,13 @@ const Dash = () => {
               <div className="mt-2 p-2">
                 <p>User Created </p>
                 <p>
-                  created By <span>Claude</span>{" "}
+                  created By <span>Nikuze</span>{" "}
                 </p>
               </div>
               <div className="mt-3 p-2">
-                <p>Product wishList </p>
+                <p>Plant wishList </p>
                 <p>
-                  Done By <span>Claude</span>{" "}
+                  Done By <span>Nikuze</span>{" "}
                 </p>
               </div>
             </div>

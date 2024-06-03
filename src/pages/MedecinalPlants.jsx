@@ -10,7 +10,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchPlantByCategories } from "../redux/slices/plant/plantThunks";
 import { useNavigate } from "react-router-dom";
 import LeavesPlants from "./plantCategories/leavesPlants";
-import VegetablePlants from "./VegetablePlants";
 import Vegetables from "./plantCategories/Vegetables";
 import NotChecken from "./plantCategories/NotChecken";
 import Flower from "./plantCategories/Flowers";
@@ -109,8 +108,8 @@ const MedecinalPlants = () => {
             onClick={() => navigate("/plant/view")}
           />
         </div>
-      )
-    }
+      ),
+    },
   ];
   const dispatch = useDispatch();
   useEffect(() => {

@@ -13,11 +13,11 @@ const AddPlant = () => {
   const [dosages, setDosages] = useState([]);
   const [usages, setUsages] = useState([]);
   const [partToUse, setPartToUse] = useState([]);
-  const [current, setCurrent] = useState(0);
   const [howToUse, setHowToUse] = useState([]);
   const [cautions, setCautions] = useState([]);
   const [precautions, setPrecautions] = useState([]);
   const [dosageType, setDosageType] = useState("all");
+  const [current, setCurrent] = useState(0);
 
   const [form] = Form.useForm();
 
