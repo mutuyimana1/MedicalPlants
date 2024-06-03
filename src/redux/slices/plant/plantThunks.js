@@ -28,6 +28,7 @@ export const fetchPlantByCategories = createAsyncThunk(
       const response = await api.get(`/plants/${query}`);
       return response.data;
     } catch (err) {
+      console.log("categoriessss",err)
       throw new Error(err);
     }
   }

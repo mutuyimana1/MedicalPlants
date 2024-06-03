@@ -1,31 +1,16 @@
-import Carousel from "react-bootstrap/Carousel";
-import ExampleCarouselImage from "../assets/images/Clerodendrum myricoides R. Br.(umukuzanyana).jpg";
-import ExampleCarouselImage2 from "../assets/images/depositphotos_210464032-stock-photo-close-green-leaves-water-drops.jpg";
-import ExampleCarouselImage3 from "../assets/images/Clerodendrum myricoides R. Br.(umukuzanyana).jpg";
+import Carousel from 'react-bootstrap/Carousel';
+import ExampleCarouselImage from '../assets/images/pexels-ti-u-b-o-tr-ng-41366219-8030999.jpg';
+import ExampleCarouselImage2 from '../assets/images/pexels-captureblinks-628262.jpg';
+import ExampleCarouselImage3 from '../assets/images/pexels-fox-58267-998522.jpg';
 
 function UnControlebleSlideShow() {
   return (
-    <Carousel>
-      <Carousel.Item>
-        <div className="bg-white block md:flex justify-between px-10 pt-10 ">
-          <div className="w-full md:w-1/2 pb-5">
-            <div className="w-[25rem] h-[20rem] m-auto">
-              <img
-                src={ExampleCarouselImage}
-                alt=""
-                className="w-full h-full rounded-md"
-              />
-            </div>
-          </div>
-          <div className="w-full md:w-2/3 pt-80 md:pt-10">
-            <h1 className="text-4xl font-medium leading-[4rem] text-[#363636] w-full lg:w-1/2 ">
-              Plants for healthy.
-            </h1>
-
-            <p className="text-lg font-medium leading-[1.5rem] text-[#363636] py-8 w-2/3">
-              Explore nature's pharmacy with us, where each leaf, flower, and
-              root holds the secret to holistic well-being and vibrant health.
-            </p>
+    <Carousel interval={7000}>
+      <Carousel.Item >
+      <div className="bg-white block md:flex justify-between px-10 pt-10 ">
+        <div className="w-full md:w-1/2 pb-5">
+          <div className="w-[25rem] h-[20rem] m-auto">
+            <img src={ExampleCarouselImage} alt="" className="w-full h-full rounded-md" />
           </div>
         </div>
         <Carousel.Caption>

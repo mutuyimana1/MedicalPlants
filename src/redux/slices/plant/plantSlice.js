@@ -53,6 +53,7 @@ const plantsSlice = createSlice({
         const data = action.payload;
         state.is_plant_loading = false;
         state.plantCategory = data;
+        console.log(data, "dataaaaaaa");
       })
       .addCase(fetchPlantByCategories.rejected, (state, action) => {
         console.log(action.error.message, "error");
