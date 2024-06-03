@@ -5,15 +5,13 @@ import { useEffect } from "react";
 import ProductCard from "../../components/ProductCard";
 
 const NotChecken = () => {
-  const { plantCategory } = useSelector((state) => state.plants);
-
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-  useEffect(() => {
-    fetchPlantByCategories(`?category=not for kitchen daily activities`)(
-      dispatch
-    );
-  }, [dispatch]);
+    const { plantCategory } = useSelector((state) => state.plants);
+    
+    const navigate=useNavigate();
+  const dispatch=useDispatch();
+  useEffect(()=>{
+    fetchPlantByCategories(`?category=unkonwn`)(dispatch)
+  },[dispatch])
   return (
     <>
       <div className="bg-white relative top-[19%] px-5">
@@ -21,7 +19,7 @@ const NotChecken = () => {
           Not for kitchen daily activities plants
         </h1>
         <div className="p-10 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5 w-full m-auto">
-          {plantCategory.map((el, i) => {
+          {plantCategory.length>0 && plantCategory.map((el, i) => {
             console.log("plant data", el);
             return (
               <ProductCard

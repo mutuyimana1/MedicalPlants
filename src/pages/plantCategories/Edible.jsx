@@ -10,7 +10,7 @@ const Edible = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
-    fetchPlantByCategories(`?category=edible`)(dispatch);
+    fetchPlantByCategories(`?category=edibles`)(dispatch);
   }, [dispatch]);
   console.log("plant categories", plantCategory);
   return (
@@ -18,7 +18,7 @@ const Edible = () => {
       <div className="bg-white relative top-[19%] px-5">
         <h1 className="font-bold text-center text-2xl pt-5">Edible</h1>
         <div className="p-10 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5 w-full m-auto">
-          {plantCategory?.map((el, i) => {
+          {plantCategory.length>0 && plantCategory?.map((el, i) => {
             return (
               <ProductCard
                 key={i}
