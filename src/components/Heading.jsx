@@ -13,7 +13,7 @@ const Heading = () => {
     width: "100%",
     lineHeight: "160px",
     textAlign: "center",
-    borderRadius:"6px"
+    borderRadius: "6px"
   };
   return (
     <>
@@ -23,12 +23,19 @@ const Heading = () => {
             Discover the Healing Power of Medicinal Plants
           </h1>
           <p className="text-lg font-medium leading-[1.5rem] text-[#363636] py-8 pr-4">
-            Are you feeling stressed? Struggling to manage life&apos;s
+            Your health is too important to leave to chance. Take control, get
+            informed, and ensure that your journey with natural remedies is a
+            safe one. Explore the hidden truths about medicinal plants today!. <br/><br/>
+            It is too crucial to put your health in the hands of chance. Take
+            charge, educate yourself, and make sure using natural medicines is
+            safe for you. . Explore the hidden truths about
+            medicinal plants today!
+            {/* Are you feeling stressed? Struggling to manage life&apos;s
             pressures? Seeking natural remedies to support your health,
             including fighting cancer? We bring you a comprehensive guide to
             medicinal plants that can transform your well-being. Explore our
             selection of healing plants and embark on a journey to a healthier,
-            happier you.
+            happier you. */}
           </p>
           <CustomButton />
           {/* <div className="flex gap-2 mt-2 cursor-pointer pt-4 text-[#363636] font-bold">View All Products <MdOutlineReadMore size={25}/></div> */}
@@ -54,7 +61,11 @@ const Heading = () => {
         </div>
       </div>
       <div className="w-full h-[5vh]">
-        <img src={leaveImage} alt="" className="w-full h-full bg-top rounded-md" />
+        <img
+          src={leaveImage}
+          alt=""
+          className="w-full h-full bg-top rounded-md"
+        />
       </div>
     </>
   );
