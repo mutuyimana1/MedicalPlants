@@ -44,7 +44,7 @@ const Shop = () => {
       fetchPlantByCategories(`?category=${selectedCategory}`)(dispatch)
     }else{
 
-      dispatch(fetchPlantByCategories());
+      dispatch(fetchPlants());
     }
   }, [dispatch,selectedCategory]);
   return (

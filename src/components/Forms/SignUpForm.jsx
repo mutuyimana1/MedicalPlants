@@ -92,7 +92,7 @@ const SignUpForm = () => {
           </Form.Item>
 
           <Form.Item
-            name="phone"
+            name="Phone"
             label=<h1 className="text-base">Phone Number</h1>
           >
             <Input

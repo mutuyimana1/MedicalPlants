@@ -72,25 +72,24 @@ const ViewProducts = () => {
             })}
           </div>
         </div>
-        <div className="ml-10 w-full md:w-1/2 mt-10">
-          <h1 className="text-base font-medium">Details about plant</h1>
-
-          <div className="p-2 md:w-[55%] w-full mt-5">
-            <h1 className="text-[#030229] font-medium text-2xl underline">
-              {plant?.title}
+        <div className="ml-10 w-full md:w-1/2 ">
+        
+          <div className="px-2  w-full ">
+            <h1 className="text-[#030229] font-medium text-2xl underline pb-4">
+            {plant?.title} 
             </h1>
             {/* <p className="text-[#030229] font-medium text-md pt-3">
               Kinyarwanda Name
               <span className="font-medium text-sm pl-4"> Igisura</span>
             </p> */}
-            <p className="text-[#030229] font-medium text-md py-1">
+            <p className="text-[#030229] font-bold text-md py-1">
               {" "}
               Scientific name:{" "}
               <span className="font-medium text-sm pl-4">
                 {plant?.scientificName}
               </span>
             </p>
-            <p className="text-[#030229] font-medium text-md py-[2px]">
+            <p className="text-[#030229] font-bold text-md py-[2px]">
               {" "}
               Common name:{" "}
               <span className="font-medium text-sm pl-4">
@@ -98,20 +97,24 @@ const ViewProducts = () => {
                 {plant?.commonName}
               </span>
             </p>
-            <p className="text-[#030229B2] text-sm pt-2">
-              Family: <span className="pl-20">{plant?.famillyName} </span>
+            <p className="text-[#030229B2] text-sm pt-2 font-bold">
+              Family: <span className="pl-[5.5rem] font-medium">{plant?.famillyName} </span>
             </p>
             <div className="flex gap-2">
-              <span className=" text-sm text-center pt-1"> Part To Use: </span>
-              <ul className="text-[#030229B2] text-sm">
-                {plant?.partToUse?.map((el) => {
-                  console.log("how", el);
-                  return <li className="list-disc py-1.5">{el}</li>;
-                })}
-              </ul>
+            <span className=" text-sm text-center pt-1 font-bold">
+          {" "}
+          Part To Use:{" "}
+        </span>
+        <ul className="text-[#030229B2] text-sm ml-10">
+          {plant?.partToUse?.map((el) => {
+            console.log("how", el);
+            return <li className="list-disc py-1.5">{el}</li>;
+          })}
+        </ul>
             </div>
           </div>
-          <div>Categories:{plant?.category}</div>
+          <div className="font-bold">Categories:<span className="pl-[4rem] font-medium">{plant?.category}</span></div>
+        
         </div>
       </div>
       <div className="px-20 mt-[30rem] md:mt-5 lg:mts-[50rem] xls:mt-[30rem] 2xls:mt-80 w-[75%] m-auto">

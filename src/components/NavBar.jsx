@@ -38,7 +38,7 @@ const NavBar = (props) => {
       options={[
         
         {
-          value: 'Vegetables',
+          value: 'vegetables',
           label: 'Vegetables',
         },
         {
@@ -74,13 +74,13 @@ const NavBar = (props) => {
           label: 'Lesser- known ',
         },
         {
-          value: 'edible',
+          value: 'edibles',
           label: 'Edible Plants',
         },
-        {
-          value: 'not for kitchen daily activities',
-          label: 'Not for kitchen daily activities',
-        },
+        // {
+        //   value: 'not for kitchen daily activities',
+        //   label: 'Not for kitchen daily activities',
+        // },
       ]}
     />
       

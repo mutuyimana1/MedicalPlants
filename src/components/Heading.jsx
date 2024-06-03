@@ -2,8 +2,8 @@ import CustomButton from "./CustomButton";
 import headingImage from "../assets/images/depositphotos_210464032-stock-photo-close-green-leaves-water-drops.jpg";
 import leaveImage from "../assets/images/banner-v4-2.webp";
 import img2 from "../assets/images/banner-v4-2.webp";
-import img3 from "../assets/images/istockphoto-618977310-612x612.jpg";
-import img4 from "../assets/images/depositphotos_387030350-stock-photo-medicinal-plants-bowls-dry-medicinal.jpg";
+import img3 from "../assets/images/amazing-beautiful-beauty-blue.jpg";
+import img4 from "../assets/images/bladder-plant-bladder-plant-red-419687.jpeg";
 import { Carousel } from "antd";
 const Heading = () => {
   const contentStyle = {

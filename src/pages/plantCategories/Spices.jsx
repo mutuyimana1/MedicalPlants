@@ -5,22 +5,19 @@ import { useEffect } from "react";
 import ProductCard from "../../components/ProductCard";
 
 const Spices = () => {
-  const { plantCategory } = useSelector((state) => state.plants);
-
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-  useEffect(() => {
-    fetchPlantByCategories(`?category=Not for kitchen daily activities plants`)(
-      dispatch
-    );
-  }, [dispatch]);
-  console.log("plant categories", plantCategory);
+    const { plantCategory } = useSelector((state) => state.plants);
+    
+    const navigate=useNavigate();
+  const dispatch=useDispatch();
+  useEffect(()=>{
+    fetchPlantByCategories(`?category=leaves`)(dispatch)
+  },[dispatch])
   return (
     <>
       <div className="bg-white relative top-[19%] px-5">
         <h1 className="font-bold text-center text-2xl pt-5">Spices</h1>
         <div className="p-10 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5 w-full m-auto">
-          {plantCategory?.map((el, i) => {
+          {plantCategory.length>0 && plantCategory?.map((el, i) => {
             console.log("plant data", el);
             return (
               <ProductCard
