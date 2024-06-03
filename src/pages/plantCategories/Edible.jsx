@@ -10,7 +10,7 @@ const Edible = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
-    fetchPlantByCategories(`?category=edible`)(dispatch);
+    fetchPlantByCategories(`?category=edibles`)(dispatch);
   }, [dispatch]);
   console.log("plant categories", plantCategory);
   return (

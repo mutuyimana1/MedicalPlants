@@ -13,6 +13,17 @@ function UnControlebleSlideShow() {
             <img src={ExampleCarouselImage} alt="" className="w-full h-full rounded-md" />
           </div>
         </div>
+        <div className="w-full md:w-2/3 pt-80 md:pt-10">
+            <h1 className="text-4xl font-medium leading-[4rem] text-[#363636] w-full lg:w-1/2 ">
+              Plants for healthy.
+            </h1>
+
+            <p className="text-lg font-medium leading-[1.5rem] text-[#363636] py-8 w-2/3">
+              Explore nature's pharmacy with us, where each leaf, flower, and
+              root holds the secret to holistic well-being and vibrant health.
+            </p>
+          </div>
+        </div>
         <Carousel.Caption>
           <h3>First slide label</h3>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
